@@ -1,2 +1,0 @@
-import "./ethereum"
-import "./aptos"

@@ -1,6 +1,0 @@
-import './cetus.js'
-import './movex.js'
-import './navi.js'
-import './scallop.js'
-import './typus.js'
-import './cryptopedia.js'

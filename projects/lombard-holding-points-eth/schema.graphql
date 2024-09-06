@@ -1,5 +1,0 @@
-type AccountSnapshot @entity {
-  id: String!
-  timestampMilli: BigInt!
-  lbtcBalance: BigDecimal!
-}
