@@ -1169,8 +1169,7 @@ SuiWrappedObjectProcessor.bind({
   objectId: SINGLE_DEPOSIT_VAULT_REGISTRY,
 }).onTimeInterval(
   async (objects, ctx) => {
-    ctx.meter.Gauge("num_of_vaults").record(objects.length);
-
+    // ctx.meter.Gauge("num_of_vaults").record(objects.length);
     for (const object of objects) {
       // console.log("object", JSON.stringify(object))
       const newDepositVault = await ctx.coder.decodedType(object, vault.DepositVault.type());
@@ -1210,44 +1209,48 @@ SuiWrappedObjectProcessor.bind({
   { owned: true }
 );
 
-// const SAFU_REGISTRY = "0xdc970d638d1489385e49ddb76889748011bac4616b95a51aa63633972b841706";
+const SAFU_REGISTRY = "0xdc970d638d1489385e49ddb76889748011bac4616b95a51aa63633972b841706";
 
-// SuiWrappedObjectProcessor.bind({
-//     network: SuiNetwork.MAIN_NET,
-//     startCheckpoint: BigInt(54910325),
-//     objectId: SAFU_REGISTRY,
-// }).onTimeInterval(
-//     async (objects, ctx) => {
-//         for (const object of objects) {
-//             console.log("safu object", JSON.stringify(object));
-//             const safuVault = await ctx.coder.decodedType(object, safu.Vault.type());
-//             console.log("safu decoded vault", JSON.stringify(safuVault));
+SuiWrappedObjectProcessor.bind({
+  network: SuiNetwork.MAIN_NET,
+  startCheckpoint: BigInt(54910325),
+  objectId: SAFU_REGISTRY,
+}).onTimeInterval(
+  async (objects, ctx) => {
+    for (const object of objects) {
+      // console.log(object.type);
+      if (object.type.includes("Vault")) {
+        // console.log("safu object", JSON.stringify(object));
+        const safuVault = object.fields as any;
+        const index = safuVault.info[0].toString();
+        const deposit_token = parse_token("0x" + safuVault.deposit_token.fields.name);
 
-//             const index = safuVault!.info[0].toString();
-//             const deposit_token = parse_token("0x" + safuVault!.deposit_token.name);
+        const share_supply = safuVault.share_supply;
+        // deposit_token
+        const total_share =
+          Number(share_supply[0]) +
+          Number(share_supply[1]) +
+          Number(share_supply[2]) +
+          Number(share_supply[3]);
+        const price_deposit_token = await getPriceBySymbol(deposit_token, ctx.timestamp);
+        var tvl = (Number(total_share) / 10 ** token_decimal(deposit_token)) * price_deposit_token!;
 
-//             const share_supply = safuVault!.share_supply;
-//             // deposit_token
-//             const total_share = share_supply[0] + share_supply[1] + share_supply[2] + share_supply[3];
-//             const price_deposit_token = await getPriceBySymbol(deposit_token, ctx.timestamp);
-//             var tvl = (Number(total_share) / 10 ** token_decimal(deposit_token)) * price_deposit_token!;
-
-//             // reward_tokens
-//             var n = 0;
-//             for (const type_name of safuVault!.reward_tokens) {
-//                 const reward_token = parse_token("0x" + type_name.name);
-//                 const price_reward_token = await getPriceBySymbol(reward_token, ctx.timestamp);
-//                 tvl += (Number(share_supply[n + 5]) / 10 ** token_decimal(reward_token)) * price_reward_token!;
-//                 n += 1;
-//             }
-
-//             ctx.meter.Gauge("SafuTvl_USD").record(tvl, {
-//                 index,
-//             });
-//         }
-//     },
-//     60,
-//     60,
-//     undefined,
-//     { owned: true }
-// );
+        // reward_tokens
+        var n = 0;
+        for (const type_name of safuVault.reward_tokens) {
+          const reward_token = parse_token("0x" + type_name.fields.name);
+          const price_reward_token = await getPriceBySymbol(reward_token, ctx.timestamp);
+          tvl += (Number(share_supply[n + 5]) / 10 ** token_decimal(reward_token)) * price_reward_token!;
+          n += 1;
+        }
+        ctx.meter.Gauge("SafuTvl_USD").record(tvl, {
+          index,
+        });
+      }
+    }
+  },
+  60,
+  60,
+  undefined,
+  { owned: true }
+);
