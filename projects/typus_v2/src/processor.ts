@@ -400,10 +400,18 @@ tails_staking_v2
 
 tds_registry_authorized_entry
   .bind({ network: SuiNetwork.MAIN_NET, startCheckpoint })
-  .onEventNewPortfolioVaultEvent((event, ctx) => {
+  .onEventNewPortfolioVaultEvent(async (event, ctx) => {
+    const res = await ctx.client.getDynamicFieldObject({
+      parentId: PortfolioVaultRegistry,
+      name: {
+        type: "u64",
+        value: event.data_decoded.index.toString(),
+      },
+    });
     ctx.eventLogger.emit("NewPortfolioVault", {
       distinctId: event.sender,
       index: event.data_decoded.index,
+      portfolio_vault_object_id: res.data?.objectId,
       // info
       option_type: event.data_decoded.info.option_type,
       period: event.data_decoded.info.period,
@@ -431,6 +439,8 @@ tds_registry_authorized_entry
       // symbol
     });
   });
+
+const PortfolioVaultRegistry = "0xa1a186d050e3172ef4701c16048c99b11f785969874fa2642b9cbcf59cde7fc0";
 
 tails_staking
   .bind({ network: SuiNetwork.MAIN_NET, startCheckpoint })
@@ -778,9 +788,9 @@ typus_dov_single
       coin_symbol: o_token,
     });
 
+    const price_o_token = await getPriceBySymbol(o_token, ctx.timestamp);
     try {
       //getPrice
-      const price_o_token = await getPriceBySymbol(o_token, ctx.timestamp);
       if (price_o_token) {
         ctx.meter.Counter("AccumulatedNotionalVolumeUSD").add(delivery_size * price_o_token, {
           index: event.data_decoded.index.toString(),
@@ -818,9 +828,9 @@ typus_dov_single
       // });
     }
 
+    const price_b_token = await getPriceBySymbol(b_token, ctx.timestamp);
     try {
       //getPrice
-      const price_b_token = await getPriceBySymbol(b_token, ctx.timestamp);
       if (price_b_token) {
         ctx.meter
           .Counter("AccumulatedPremiumUSD")
@@ -869,31 +879,39 @@ typus_dov_single
 
     ctx.eventLogger.emit("Delivery", {
       index: event.data_decoded.index,
-      b_token: b_token,
-      o_token: o_token,
+      b_token,
+      o_token,
       distinctId: event.data_decoded.signer,
       round: event.data_decoded.round,
-      delivery_price: delivery_price,
-      delivery_size: delivery_size,
-      bidder_bid_value: bidder_bid_value,
-      bidder_fee: bidder_fee,
-      incentive_bid_value: incentive_bid_value,
-      incentive_fee: incentive_fee,
+      delivery_price,
+      delivery_size,
+      bidder_bid_value,
+      bidder_fee,
+      incentive_bid_value,
+      incentive_fee,
       depositor_incentive_value,
       fixed_incentive_amount,
       max_size,
       deposit_incentive_bp,
       bid_incentive_bp,
+      price_o_token,
+      price_b_token,
     });
   })
-  .onEventNewBidEvent((event, ctx) => {
+  .onEventNewBidEvent(async (event, ctx) => {
     let b_token = parse_token(event.data_decoded.b_token.name);
     let o_token = parse_token(event.data_decoded.o_token.name);
+
+    const price_b_token = await getPriceBySymbol(b_token, ctx.timestamp);
+    const price_o_token = await getPriceBySymbol(o_token, ctx.timestamp);
 
     // ctx.meter.Counter("totalNewBid").add(Number(event.data_decoded.size) / 10 ** token_decimal(o_token), {
     //     index: event.data_decoded.index.toString(),
     //     coin_symbol: o_token,
     // });
+    const size = Number(event.data_decoded.size) / 10 ** token_decimal(o_token);
+    const bidder_balance = Number(event.data_decoded.bidder_balance) / 10 ** token_decimal(b_token);
+    const incentive_balance = Number(event.data_decoded.incentive_balance) / 10 ** token_decimal(b_token);
 
     ctx.eventLogger.emit("NewBid", {
       distinctId: event.data_decoded.signer,
@@ -902,16 +920,18 @@ typus_dov_single
       o_token,
       bid_index: event.data_decoded.bid_index,
       price: Number(event.data_decoded.price) / 10 ** token_decimal(b_token),
-      size: Number(event.data_decoded.size) / 10 ** token_decimal(o_token),
-      bidder_balance: Number(event.data_decoded.bidder_balance) / 10 ** token_decimal(b_token),
-      incentive_balance: Number(event.data_decoded.incentive_balance) / 10 ** token_decimal(b_token),
+      size,
+      bidder_balance,
+      incentive_balance,
+      notional_value_usd: size * price_o_token!,
+      amount_usd: (bidder_balance + incentive_balance) * price_b_token!,
       ts_ms: event.data_decoded.ts_ms,
       is_autobid: event.data_decoded.signer != event.sender,
     });
   })
-  .onEventSettleEvent((event, ctx) => {
+  .onEventSettleEvent(async (event, ctx) => {
     let d_token = parse_token(event.data_decoded.d_token.name);
-
+    const price_d_token = await getPriceBySymbol(d_token, ctx.timestamp);
     ctx.eventLogger.emit("Settle", {
       index: event.data_decoded.index,
       d_token,
@@ -924,6 +944,7 @@ typus_dov_single
         Number(event.data_decoded.settle_balance) / 10 ** Number(event.data_decoded.d_token_decimal),
       settled_balance:
         Number(event.data_decoded.settled_balance) / 10 ** Number(event.data_decoded.d_token_decimal),
+      price_d_token,
     });
   })
   .onEventActivateEvent((event, ctx) => {
