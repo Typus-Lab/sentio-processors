@@ -403,53 +403,82 @@ tails_staking_v2
 
 tds_registry_authorized_entry
   .bind({ network: SuiNetwork.MAIN_NET, startCheckpoint })
-  .onEventNewPortfolioVaultEvent(async (event, ctx) => {
-    const portfolio_vault = await ctx.client.getDynamicFieldObject({
-      parentId: PORTFOLIO_VAULT_REGISTRY,
-      name: {
-        type: "u64",
-        value: event.data_decoded.index.toString(),
-      },
-    });
-    const deposit_vault = await ctx.client.getDynamicFieldObject({
-      parentId: DEPOSIT_VAULT_REGISTRY,
-      name: {
-        type: "u64",
-        value: event.data_decoded.index.toString(),
-      },
-    });
-    ctx.eventLogger.emit("NewPortfolioVault", {
-      distinctId: event.sender,
-      index: event.data_decoded.index,
-      portfolio_vault_object_id: portfolio_vault.data?.objectId,
-      deposit_vault_object_id: deposit_vault.data?.objectId,
-      // info
-      option_type: event.data_decoded.info.option_type,
-      period: event.data_decoded.info.period,
-      deposit_token: event.data_decoded.info.deposit_token.name,
-      bid_token: event.data_decoded.info.bid_token.name,
-      settlement_base: event.data_decoded.info.settlement_base.name,
-      settlement_quote: event.data_decoded.info.settlement_quote.name,
-      d_token_decimal: event.data_decoded.info.d_token_decimal,
-      b_token_decimal: event.data_decoded.info.b_token_decimal,
-      o_token_decimal: event.data_decoded.info.o_token_decimal,
-      create_ts_ms: event.data_decoded.info.create_ts_ms,
-      // config
-      oracle_id: event.data_decoded.config.oracle_id,
-      deposit_lot_size: event.data_decoded.config.deposit_lot_size,
-      bid_lot_size: event.data_decoded.config.bid_lot_size,
-      min_deposit_size: event.data_decoded.config.min_deposit_size,
-      min_bid_size: event.data_decoded.config.min_bid_size,
-      max_deposit_entry: event.data_decoded.config.max_deposit_entry,
-      max_bid_entry: event.data_decoded.config.max_bid_entry,
-      deposit_fee_bp: event.data_decoded.config.deposit_fee_bp,
-      bid_fee_bp: event.data_decoded.config.bid_fee_bp,
-      capacity: event.data_decoded.config.capacity,
-      leverage: event.data_decoded.config.leverage,
-      risk_level: event.data_decoded.config.risk_level,
-      // symbol
-    });
-  });
+  .onEventNewPortfolioVaultEvent(
+    async (event, ctx) => {
+      // @ts-ignore
+      const ObjectOwners = ctx.transaction.effects?.created?.filter((e) => e.owner.ObjectOwner)!;
+
+      const df_portfolio_vault = ObjectOwners.find(
+        // @ts-ignore
+        (e) => e.owner.ObjectOwner == PORTFOLIO_VAULT_REGISTRY
+      )?.reference.objectId;
+
+      const df_deposit_vault = ObjectOwners.find(
+        // @ts-ignore
+        (e) => e.owner.ObjectOwner == DEPOSIT_VAULT_REGISTRY
+      )?.reference.objectId;
+
+      const portfolio_vault_object_id = ObjectOwners.find(
+        // @ts-ignore
+        (e) => e.owner.ObjectOwner == df_portfolio_vault
+      )?.reference.objectId;
+
+      const deposit_vault_object_id = ObjectOwners.find(
+        // @ts-ignore
+        (e) => e.owner.ObjectOwner == df_deposit_vault
+      )?.reference.objectId;
+
+      // const portfolio_vault = await ctx.client.getDynamicFieldObject({
+      //   parentId: PORTFOLIO_VAULT_REGISTRY,
+      //   name: {
+      //     type: "u64",
+      //     value: event.data_decoded.index.toString(),
+      //   },
+      // });
+      // const deposit_vault = await ctx.client.getDynamicFieldObject({
+      //   parentId: DEPOSIT_VAULT_REGISTRY,
+      //   name: {
+      //     type: "u64",
+      //     value: event.data_decoded.index.toString(),
+      //   },
+      // });
+      // const portfolio_vault_object_id = portfolio_vault.data?.objectId;
+      // const deposit_vault_object_id = deposit_vault.data?.objectId;
+
+      ctx.eventLogger.emit("NewPortfolioVault", {
+        distinctId: event.sender,
+        index: event.data_decoded.index,
+        portfolio_vault_object_id,
+        deposit_vault_object_id,
+        // info
+        option_type: event.data_decoded.info.option_type,
+        period: event.data_decoded.info.period,
+        deposit_token: event.data_decoded.info.deposit_token.name,
+        bid_token: event.data_decoded.info.bid_token.name,
+        settlement_base: event.data_decoded.info.settlement_base.name,
+        settlement_quote: event.data_decoded.info.settlement_quote.name,
+        d_token_decimal: event.data_decoded.info.d_token_decimal,
+        b_token_decimal: event.data_decoded.info.b_token_decimal,
+        o_token_decimal: event.data_decoded.info.o_token_decimal,
+        create_ts_ms: event.data_decoded.info.create_ts_ms,
+        // config
+        oracle_id: event.data_decoded.config.oracle_id,
+        deposit_lot_size: event.data_decoded.config.deposit_lot_size,
+        bid_lot_size: event.data_decoded.config.bid_lot_size,
+        min_deposit_size: event.data_decoded.config.min_deposit_size,
+        min_bid_size: event.data_decoded.config.min_bid_size,
+        max_deposit_entry: event.data_decoded.config.max_deposit_entry,
+        max_bid_entry: event.data_decoded.config.max_bid_entry,
+        deposit_fee_bp: event.data_decoded.config.deposit_fee_bp,
+        bid_fee_bp: event.data_decoded.config.bid_fee_bp,
+        capacity: event.data_decoded.config.capacity,
+        leverage: event.data_decoded.config.leverage,
+        risk_level: event.data_decoded.config.risk_level,
+        // symbol
+      });
+    },
+    { resourceChanges: true }
+  );
 
 tails_staking
   .bind({ network: SuiNetwork.MAIN_NET, startCheckpoint })
