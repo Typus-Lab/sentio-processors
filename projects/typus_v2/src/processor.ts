@@ -1212,14 +1212,14 @@ SuiWrappedObjectProcessor.bind({
           ) /
             10 ** token_decimal(deposit_token),
           {
-            // index,
+            index, // need this for seperating log!
             coin_symbol: deposit_token,
           }
         );
       ctx.meter
         .Gauge("premium_share")
         .record(Number(newDepositVault!.premium_share_supply) / 10 ** token_decimal(bid_token), {
-          // index,
+          index,
           coin_symbol: bid_token,
         });
     }
