@@ -1,6 +1,5 @@
 import { SuiNetwork, SuiWrappedObjectProcessor } from "@sentio/sdk/sui";
 import {
-  tds_user_entry,
   auto_bid,
   typus_dov_single,
   tails_staking,
@@ -17,6 +16,10 @@ import { tails_staking as tails_staking_v2 } from "./types/sui/typus.js";
 import { BcsReader } from "@mysten/bcs";
 
 const startCheckpoint = BigInt(15970051);
+
+const PORTFOLIO_VAULT_REGISTRY = "0xa1a186d050e3172ef4701c16048c99b11f785969874fa2642b9cbcf59cde7fc0";
+const DEPOSIT_VAULT_REGISTRY = "0xd67cf93a0df61b4b3bbf6170511e0b28b21578d9b87a8f4adafec96322dd284d";
+const SAFU_REGISTRY = "0xdc970d638d1489385e49ddb76889748011bac4616b95a51aa63633972b841706";
 
 safu
   .bind({ network: SuiNetwork.MAIN_NET, startCheckpoint: BigInt(25518308) })
@@ -401,8 +404,15 @@ tails_staking_v2
 tds_registry_authorized_entry
   .bind({ network: SuiNetwork.MAIN_NET, startCheckpoint })
   .onEventNewPortfolioVaultEvent(async (event, ctx) => {
-    const res = await ctx.client.getDynamicFieldObject({
-      parentId: PortfolioVaultRegistry,
+    const portfolio_vault = await ctx.client.getDynamicFieldObject({
+      parentId: PORTFOLIO_VAULT_REGISTRY,
+      name: {
+        type: "u64",
+        value: event.data_decoded.index.toString(),
+      },
+    });
+    const deposit_vault = await ctx.client.getDynamicFieldObject({
+      parentId: DEPOSIT_VAULT_REGISTRY,
       name: {
         type: "u64",
         value: event.data_decoded.index.toString(),
@@ -411,7 +421,8 @@ tds_registry_authorized_entry
     ctx.eventLogger.emit("NewPortfolioVault", {
       distinctId: event.sender,
       index: event.data_decoded.index,
-      portfolio_vault_object_id: res.data?.objectId,
+      portfolio_vault_object_id: portfolio_vault.data?.objectId,
+      deposit_vault_object_id: deposit_vault.data?.objectId,
       // info
       option_type: event.data_decoded.info.option_type,
       period: event.data_decoded.info.period,
@@ -439,8 +450,6 @@ tds_registry_authorized_entry
       // symbol
     });
   });
-
-const PortfolioVaultRegistry = "0xa1a186d050e3172ef4701c16048c99b11f785969874fa2642b9cbcf59cde7fc0";
 
 tails_staking
   .bind({ network: SuiNetwork.MAIN_NET, startCheckpoint })
@@ -1182,12 +1191,10 @@ function token_decimal(token: string): number {
   }
 }
 
-const SINGLE_DEPOSIT_VAULT_REGISTRY = "0xd67cf93a0df61b4b3bbf6170511e0b28b21578d9b87a8f4adafec96322dd284d";
-
 SuiWrappedObjectProcessor.bind({
   network: SuiNetwork.MAIN_NET,
   startCheckpoint,
-  objectId: SINGLE_DEPOSIT_VAULT_REGISTRY,
+  objectId: DEPOSIT_VAULT_REGISTRY,
 }).onTimeInterval(
   async (objects, ctx) => {
     // ctx.meter.Gauge("num_of_vaults").record(objects.length);
@@ -1229,8 +1236,6 @@ SuiWrappedObjectProcessor.bind({
   undefined,
   { owned: true }
 );
-
-const SAFU_REGISTRY = "0xdc970d638d1489385e49ddb76889748011bac4616b95a51aa63633972b841706";
 
 SuiWrappedObjectProcessor.bind({
   network: SuiNetwork.MAIN_NET,
