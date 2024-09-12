@@ -14,6 +14,7 @@ import { vault } from "./types/sui/0xb4f25230ba74837d8299e92951306100c4a532e8c48
 import { getPriceBySymbol } from "@sentio/sdk/utils";
 import { tails_staking as tails_staking_v2 } from "./types/sui/typus.js";
 import { BcsReader } from "@mysten/bcs";
+import { VaultSnapshot } from "./schema/store.js";
 
 const startCheckpoint = BigInt(15970051);
 
@@ -985,7 +986,7 @@ typus_dov_single
       price_d_token,
     });
   })
-  .onEventActivateEvent((event, ctx) => {
+  .onEventActivateEvent(async (event, ctx) => {
     let bp_incentive_amount;
     if (event.data_decoded.u64_padding.at(0)) {
       bp_incentive_amount = event.data_decoded.u64_padding.at(0)! / BigInt(10 ** 9);
@@ -994,15 +995,20 @@ typus_dov_single
     if (event.data_decoded.u64_padding.at(1)) {
       fixed_incentive_amount = event.data_decoded.u64_padding.at(1)! / BigInt(10 ** 9);
     }
+    const index = event.data_decoded.index;
+    const vaultSnapshot = await ctx.store.get(VaultSnapshot, index.toString());
     ctx.eventLogger.emit("Activate", {
-      index: event.data_decoded.index,
+      index,
       distinctId: event.data_decoded.signer,
       round: event.data_decoded.round,
       oracle_info: event.data_decoded.oracle_info,
-      deposit_amount: event.data_decoded.deposit_amount / BigInt(10) ** event.data_decoded.d_token_decimal, // important!
+      activate_deposit_amount:
+        event.data_decoded.deposit_amount / BigInt(10) ** event.data_decoded.d_token_decimal,
       contract_size: event.data_decoded.contract_size / BigInt(10) ** event.data_decoded.o_token_decimal,
       bp_incentive_amount,
       fixed_incentive_amount,
+      deposit_balance: vaultSnapshot?.deposit_balance,
+      premium_balance: vaultSnapshot?.premium_balance,
     });
   })
   .onEventNewAuctionEvent((event, ctx) => {
@@ -1232,32 +1238,35 @@ SuiWrappedObjectProcessor.bind({
       const newDepositVault = await ctx.coder.decodedType(object, vault.DepositVault.type());
       // console.log("decoded vault", JSON.stringify(newDepositVault));
       // decoded vault {"id":{"id":"0xd0f9ec19081ca68abad17a0c1ae80f167dc08859cd66813e8cf28cda3986ceae"},"deposit_token":{"name":"5d4b302506645c37ff133b98c4b50a5ae14841659738d6d733d59d0d217a93bf::coin::COIN"},"bid_token":{"name":"5d4b302506645c37ff133b98c4b50a5ae14841659738d6d733d59d0d217a93bf::coin::COIN"},"incentive_token":null,"index":"10","fee_bp":"1000","fee_share_bp":"0","shared_fee_pool":null,"active_share_supply":"0","deactivating_share_supply":"0","inactive_share_supply":"0","warmup_share_supply":"0","premium_share_supply":"0","incentive_share_supply":"0","has_next":true,"metadata":"ETH-Daily-Put","u64_padding":[],"bcs_padding":[]}
-
       const index = newDepositVault!.index.toString();
       const deposit_token = parse_token("0x" + newDepositVault!.deposit_token.name);
       const bid_token = parse_token("0x" + newDepositVault!.bid_token.name);
 
-      ctx.meter
-        .Gauge("deposit_share")
-        .record(
-          Number(
-            newDepositVault!.active_share_supply +
-              newDepositVault!.deactivating_share_supply +
-              newDepositVault!.inactive_share_supply +
-              newDepositVault!.warmup_share_supply
-          ) /
-            10 ** token_decimal(deposit_token),
-          {
-            index, // need this for seperating log!
-            coin_symbol: deposit_token,
-          }
-        );
-      ctx.meter
-        .Gauge("premium_share")
-        .record(Number(newDepositVault!.premium_share_supply) / 10 ** token_decimal(bid_token), {
-          index,
-          coin_symbol: bid_token,
-        });
+      const deposit_balance =
+        (newDepositVault!.active_share_supply +
+          newDepositVault!.deactivating_share_supply +
+          newDepositVault!.inactive_share_supply +
+          newDepositVault!.warmup_share_supply) /
+        BigInt(10 ** token_decimal(deposit_token));
+
+      const premium_balance = newDepositVault!.premium_share_supply / BigInt(10 ** token_decimal(bid_token));
+
+      const vaultSnapshot = new VaultSnapshot({
+        id: newDepositVault?.index.toString(),
+        deposit_balance,
+        premium_balance,
+      });
+      await ctx.store.upsert(vaultSnapshot);
+
+      ctx.meter.Gauge("deposit_share").record(deposit_balance, {
+        index, // need this for seperating log!
+        coin_symbol: deposit_token,
+      });
+
+      ctx.meter.Gauge("premium_share").record(premium_balance, {
+        index,
+        coin_symbol: bid_token,
+      });
     }
   },
   60,

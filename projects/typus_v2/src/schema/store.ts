@@ -20,14 +20,6 @@ export class VaultSnapshot extends AbstractEntity  {
 	id: ID
 
 	@Required
-	@Column("Int")
-	index: Int
-
-	@Required
-	@Column("Int")
-	round: Int
-
-	@Required
 	@Column("BigInt")
 	deposit_balance: BigInt
 
@@ -40,8 +32,6 @@ export class VaultSnapshot extends AbstractEntity  {
 
 const source = `type VaultSnapshot @entity {
   id: ID!
-  index: Int!
-  round: Int!
   deposit_balance: BigInt!
   premium_balance: BigInt!
 }

@@ -1,7 +1,5 @@
 type VaultSnapshot @entity {
   id: ID!
-  index: Int!
-  round: Int!
   deposit_balance: BigInt!
   premium_balance: BigInt!
 }
