@@ -747,12 +747,14 @@ typus_dov_single
       fee_amount,
     });
   })
-  .onEventRedeemEvent((event, ctx) => {
+  .onEventRedeemEvent(async (event, ctx) => {
     let token = parse_token(event.data_decoded.token.name);
+    const price = await getPriceBySymbol(token, ctx.timestamp);
     ctx.eventLogger.emit("DepositorRewardClaimed", {
       distinctId: event.data_decoded.signer,
       index: event.data_decoded.index,
       coin_symbol: token,
+      price,
       amount: Number(event.data_decoded.amount) / 10 ** token_decimal(token),
       fee_amount: Number(event.data_decoded.u64_padding[0]) / 10 ** token_decimal(token),
       fee_share_amount: Number(event.data_decoded.u64_padding[1]) / 10 ** token_decimal(token),
@@ -1064,7 +1066,7 @@ typus_dov_single
       });
     }
   })
-  .onEventReduceFundEvent((event, ctx) => {
+  .onEventReduceFundEvent(async (event, ctx) => {
     let index = event.data_decoded.log[0];
     let d_token = parse_token(event.data_decoded.d_token.name);
     let b_token = parse_token(event.data_decoded.b_token.name);
@@ -1118,10 +1120,12 @@ typus_dov_single
     }
     if (event.data_decoded.log[10] > 0) {
       // redeem
+      const price = await getPriceBySymbol(i_token, ctx.timestamp);
       ctx.eventLogger.emit("DepositorRewardClaimed", {
         distinctId: event.data_decoded.signer,
         index,
         coin_symbol: i_token,
+        price,
         amount: Number(event.data_decoded.log[10]) / 10 ** token_decimal(i_token),
         fee_amount: Number(event.data_decoded.log[11]) / 10 ** token_decimal(i_token),
         fee_share_amount: Number(event.data_decoded.log[12]) / 10 ** token_decimal(i_token),
