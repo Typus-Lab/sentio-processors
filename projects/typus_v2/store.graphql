@@ -3,3 +3,10 @@ type VaultSnapshot @entity {
   deposit_balance: BigInt!
   premium_balance: BigInt!
 }
+
+type VaultInfo @entity {
+  id: ID!
+  d_token: String!
+  b_token: String!
+  o_token: String!
+}

@@ -14,7 +14,7 @@ import { vault } from "./types/sui/0xb4f25230ba74837d8299e92951306100c4a532e8c48
 import { getPriceBySymbol } from "@sentio/sdk/utils";
 import { tails_staking as tails_staking_v2 } from "./types/sui/typus.js";
 import { BcsReader } from "@mysten/bcs";
-import { VaultSnapshot } from "./schema/store.js";
+import { VaultSnapshot, VaultInfo } from "./schema/store.js";
 
 const startCheckpoint = BigInt(15970051);
 
@@ -71,26 +71,38 @@ safu
       case "deposit_scallop_spool":
       case "deposit_scallop_basic":
       case "deposit_suilend":
+      case "deposit_navi":
         ctx.eventLogger.emit("SafuDepositLending", {
           distinctId: event.sender,
           index: log[0],
           round: log[1],
           balance: log[2],
-          minted_coin_value: log[3],
+          minted_coin_value: log.at(3),
           protocol: action.slice("deposit_".length),
         });
         break;
       case "withdraw_scallop_spool":
       case "withdraw_scallop_basic":
       case "withdraw_suilend":
+      case "withdraw_navi":
         ctx.eventLogger.emit("SafuWithdrawLending", {
           distinctId: event.sender,
           index: log[0],
           round: log[1],
           share_supply: log[2],
           balance: log[3],
-          reward: log[4],
+          reward: log.at(4),
           protocol: action.slice("withdraw_".length),
+        });
+        break;
+      case "reward_suilend":
+      case "reward_navi":
+        ctx.eventLogger.emit("SafuWithdrawReward", {
+          distinctId: event.sender,
+          index: log[0],
+          round: log[1],
+          reward: log[2],
+          protocol: action.slice("reward_".length),
         });
         break;
       case "safu_swap":
@@ -477,6 +489,16 @@ tds_registry_authorized_entry
         risk_level: event.data_decoded.config.risk_level,
         // symbol
       });
+      const d_token = parse_token(event.data_decoded.info.deposit_token.name);
+      const b_token = parse_token(event.data_decoded.info.bid_token.name);
+      const o_token = parse_token(event.data_decoded.info.settlement_base.name);
+      const vault_info = new VaultInfo({
+        id: event.data_decoded.index.toString(),
+        d_token,
+        b_token,
+        o_token,
+      });
+      await ctx.store.upsert(vault_info);
     },
     { resourceChanges: true }
   );
@@ -1151,7 +1173,7 @@ typus_dov_single
     //     ],
     // });
   })
-  .onEventOtcEvent((event, ctx) => {
+  .onEventOtcEvent(async (event, ctx) => {
     let b_token_decimal = Number(event.data_decoded.b_token_decimal);
     let o_token_decimal = Number(event.data_decoded.o_token_decimal);
 
@@ -1159,6 +1181,8 @@ typus_dov_single
     let bidder_fee = Number(event.data_decoded.bidder_fee) / 10 ** b_token_decimal;
     let delivery_price = Number(event.data_decoded.delivery_price) / 10 ** b_token_decimal;
     let delivery_size = Number(event.data_decoded.delivery_size) / 10 ** o_token_decimal;
+
+    const vaultInfo = await ctx.store.get(VaultInfo, event.data_decoded.index.toString());
 
     ctx.eventLogger.emit("SafuOtc", {
       distinctId: event.data_decoded.signer,
@@ -1168,6 +1192,7 @@ typus_dov_single
       delivery_size,
       bidder_bid_value,
       bidder_fee,
+      coin_symbol: vaultInfo?.b_token,
     });
   });
 
