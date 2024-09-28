@@ -1200,6 +1200,8 @@ function parse_token(name: string): string {
   let typeArgs = name.split("::");
   if (typeArgs[2] == "MFUD") {
     return "FUD";
+  } else if (typeArgs[2] == "MBLUB") {
+    return "BLUB";
   }
   switch (normalizeSuiAddress(typeArgs[0])) {
     case "0x027792d9fed7f9844eb4839566001bb6f6cb4804f66aa2da6fe1ee242d896881":
@@ -1249,7 +1251,11 @@ function token_decimal(token: string): number {
     case "MFUD":
       return 6;
     case "FUD":
-      return 0;
+      return 0; // 5
+    case "MBLUB":
+      return 6;
+    case "BLUB":
+      return 0; // 2
     default:
       return 9;
   }
