@@ -27,8 +27,19 @@ safu
   .onEventManagerEvent((event, ctx) => {
     const action = event.data_decoded.action;
     const log = event.data_decoded.log;
-    // const bcs_padding = event.data_decoded.bcs_padding;
     switch (action) {
+      case "new_vault":
+        const bcs_padding = event.data_decoded.bcs_padding;
+        const reader = new BcsReader(new Uint8Array(bcs_padding[0]));
+        const tokenType = String.fromCharCode.apply(null, Array.from(reader.readBytes(reader.read8())));
+        const token = parse_token(tokenType);
+        ctx.eventLogger.emit("SafuNewVault", {
+          distinctId: event.sender,
+          index: log[0],
+          portfolioVaultIndex: log[1],
+          d_token: token,
+        });
+        break;
       case "refresh":
         ctx.eventLogger.emit("SafuRefresh", {
           distinctId: event.sender,
