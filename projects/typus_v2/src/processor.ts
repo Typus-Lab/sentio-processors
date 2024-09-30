@@ -62,7 +62,7 @@ safu
         });
         break;
       case "post_bid_balance":
-        ctx.eventLogger.emit("SafuBid", {
+        ctx.eventLogger.emit("SafuPostBidBalance", {
           distinctId: event.sender,
           index: log[0],
           round: log[1],
