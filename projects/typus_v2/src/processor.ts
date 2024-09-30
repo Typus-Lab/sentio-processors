@@ -54,7 +54,7 @@ safu
         });
         break;
       case "post_exercise":
-        ctx.eventLogger.emit("SafuExercise", {
+        ctx.eventLogger.emit("SafuPostExercise", {
           distinctId: event.sender,
           index: log[0],
           round: log[1],
