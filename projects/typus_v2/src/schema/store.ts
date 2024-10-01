@@ -50,6 +50,27 @@ export class VaultInfo extends AbstractEntity  {
   constructor(data: Partial<VaultInfo>) {super()}
 }
 
+@Entity("SafuInfo")
+export class SafuInfo extends AbstractEntity  {
+
+	@Required
+	@Column("ID")
+	id: ID
+
+	@Required
+	@Column("String")
+	d_token: String
+
+	@Required
+	@Column("String")
+	dov_d_token: String
+
+	@Required
+	@Column("String")
+	dov_b_token: String
+  constructor(data: Partial<SafuInfo>) {super()}
+}
+
 
 const source = `type VaultSnapshot @entity {
   id: ID!
@@ -63,11 +84,19 @@ type VaultInfo @entity {
   b_token: String!
   o_token: String!
 }
+
+type SafuInfo @entity {
+  id: ID!
+  d_token: String!
+  dov_d_token: String!
+  dov_b_token: String!
+}
 `
 DatabaseSchema.register({
   source,
   entities: {
     "VaultSnapshot": VaultSnapshot,
-		"VaultInfo": VaultInfo
+		"VaultInfo": VaultInfo,
+		"SafuInfo": SafuInfo
   }
 })

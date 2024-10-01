@@ -10,3 +10,10 @@ type VaultInfo @entity {
   b_token: String!
   o_token: String!
 }
+
+type SafuInfo @entity {
+  id: ID!
+  d_token: String!
+  dov_d_token: String!
+  dov_b_token: String!
+}

@@ -14,7 +14,7 @@ import { vault } from "./types/sui/0xb4f25230ba74837d8299e92951306100c4a532e8c48
 import { getPriceBySymbol } from "@sentio/sdk/utils";
 import { tails_staking as tails_staking_v2 } from "./types/sui/typus.js";
 import { BcsReader } from "@mysten/bcs";
-import { VaultSnapshot, VaultInfo } from "./schema/store.js";
+import { VaultSnapshot, VaultInfo, SafuInfo } from "./schema/store.js";
 
 const startCheckpoint = BigInt(15970051);
 
@@ -24,21 +24,31 @@ const SAFU_REGISTRY = "0xdc970d638d1489385e49ddb76889748011bac4616b95a51aa636339
 
 safu
   .bind({ network: SuiNetwork.MAIN_NET, startCheckpoint: BigInt(25518308) })
-  .onEventManagerEvent((event, ctx) => {
+  .onEventManagerEvent(async (event, ctx) => {
     const action = event.data_decoded.action;
     const log = event.data_decoded.log;
+    const safu_info = await ctx.store.get(SafuInfo, log[0].toString());
+    var token: string | undefined;
     switch (action) {
       case "new_vault":
         const bcs_padding = event.data_decoded.bcs_padding;
         const reader = new BcsReader(new Uint8Array(bcs_padding[0]));
         const tokenType = String.fromCharCode.apply(null, Array.from(reader.readBytes(reader.read8())));
-        const token = parse_token(tokenType);
+        token = parse_token(tokenType);
         ctx.eventLogger.emit("SafuNewVault", {
           distinctId: event.sender,
           index: log[0],
           portfolioVaultIndex: log[1],
           d_token: token,
         });
+        const vaultInfo = await ctx.store.get(VaultInfo, log[1].toString());
+        const new_safu_info = new SafuInfo({
+          id: log[0].toString(),
+          d_token: token,
+          dov_b_token: vaultInfo?.b_token,
+          dov_d_token: vaultInfo?.d_token,
+        });
+        await ctx.store.upsert(new_safu_info);
         break;
       case "refresh":
         ctx.eventLogger.emit("SafuRefresh", {
@@ -54,60 +64,89 @@ safu
         });
         break;
       case "post_exercise":
+        token = safu_info?.dov_d_token!;
+        var balance = Number(log[2]) / token_decimal(token!);
         ctx.eventLogger.emit("SafuPostExercise", {
           distinctId: event.sender,
           index: log[0],
           round: log[1],
-          balance: log[2],
+          balance,
+          token,
+        });
+        var price = await getPriceBySymbol(token, ctx.timestamp);
+        ctx.meter.Counter("SafuAccumulatedRewardGeneratedUSD").add(balance * price!, {
+          coin_symbol: token,
         });
         break;
       case "post_bid_balance":
+        token = safu_info?.d_token!;
+        var balance = Number(log[2]) / token_decimal(token!);
+        var fee = Number(log[3]) / token_decimal(token!);
         ctx.eventLogger.emit("SafuPostBidBalance", {
           distinctId: event.sender,
           index: log[0],
           round: log[1],
-          balance: log[2],
-          fee: log[3],
+          balance,
+          fee,
+          token,
+        });
+        var price = await getPriceBySymbol(token, ctx.timestamp);
+        ctx.meter.Counter("SafuAccumulatedRewardGeneratedUSD").add(balance * price!, {
+          coin_symbol: token,
         });
         break;
       case "set_incentivise_fixed":
       case "set_incentivise_bp":
+        // WARNING: SUI only
+        token = "SUI";
+        var balance = Number(log[2]) / token_decimal(token!);
         ctx.eventLogger.emit("SafuSetIncentivise", {
           distinctId: event.sender,
           index: log[0],
           round: log[1],
-          balance: log[2],
+          balance,
         });
         break;
       case "deposit_scallop_spool":
       case "deposit_scallop_basic":
       case "deposit_suilend":
       case "deposit_navi":
+        token = safu_info?.d_token!;
+        var balance = Number(log[2]) / token_decimal(token!);
+        var minted_coin_value = Number(log[3]) / token_decimal(token!);
         ctx.eventLogger.emit("SafuDepositLending", {
           distinctId: event.sender,
           index: log[0],
           round: log[1],
-          balance: log[2],
-          minted_coin_value: log.at(3),
+          balance,
+          minted_coin_value,
           protocol: action.slice("deposit_".length),
+          token,
         });
         break;
       case "withdraw_scallop_spool":
       case "withdraw_scallop_basic":
       case "withdraw_suilend":
       case "withdraw_navi":
+        token = safu_info?.d_token!;
+        var share_supply = Number(log[2]) / token_decimal(token!);
+        var balance = Number(log[3]) / token_decimal(token!);
+        // SUI incentive only withdraw_scallop_spool
+        var sui_reward = log.at(4) ? Number(log.at(4)) / token_decimal("SUI") : 0;
         ctx.eventLogger.emit("SafuWithdrawLending", {
           distinctId: event.sender,
           index: log[0],
           round: log[1],
-          share_supply: log[2],
-          balance: log[3],
-          reward: log.at(4),
+          share_supply,
+          balance, // balance - share_supply = interest
+          sui_reward, // in SUI
           protocol: action.slice("withdraw_".length),
+          d_token: token,
         });
         break;
       case "reward_suilend":
       case "reward_navi":
+        // don't know token
         ctx.eventLogger.emit("SafuWithdrawReward", {
           distinctId: event.sender,
           index: log[0],
@@ -1194,6 +1233,7 @@ typus_dov_single
     let delivery_size = Number(event.data_decoded.delivery_size) / 10 ** o_token_decimal;
 
     const vaultInfo = await ctx.store.get(VaultInfo, event.data_decoded.index.toString());
+    const coin_symbol = vaultInfo?.b_token;
 
     ctx.eventLogger.emit("SafuOtc", {
       distinctId: event.data_decoded.signer,
@@ -1203,7 +1243,7 @@ typus_dov_single
       delivery_size,
       bidder_bid_value,
       bidder_fee,
-      coin_symbol: vaultInfo?.b_token,
+      coin_symbol,
     });
   });
 
