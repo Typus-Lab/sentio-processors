@@ -113,7 +113,7 @@ safu
       case "deposit_navi":
         token = safu_info?.d_token!;
         var balance = Number(log[2]) / token_decimal(token!);
-        var minted_coin_value = Number(log[3]) / token_decimal(token!);
+        var minted_coin_value = log.at(3) ? Number(log.at(3)) / token_decimal(token!) : 0;
         ctx.eventLogger.emit("SafuDepositLending", {
           distinctId: event.sender,
           index: log[0],
