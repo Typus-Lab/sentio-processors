@@ -38,7 +38,7 @@ safu
         ctx.eventLogger.emit("SafuNewVault", {
           distinctId: event.sender,
           index: log[0],
-          portfolioVaultIndex: log[1],
+          portfolioVaultIndex: log[2],
           d_token: token,
         });
         const vaultInfo = await ctx.store.get(VaultInfo, log[1].toString());
