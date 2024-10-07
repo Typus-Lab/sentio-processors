@@ -1253,6 +1253,8 @@ function parse_token(name: string): string {
     return "FUD";
   } else if (typeArgs[2] == "MBLUB") {
     return "BLUB";
+  } else if (typeArgs[2] == "MLIQ") {
+    return "LIQ";
   }
   switch (normalizeSuiAddress(typeArgs[0])) {
     case "0x027792d9fed7f9844eb4839566001bb6f6cb4804f66aa2da6fe1ee242d896881":
@@ -1275,6 +1277,8 @@ function parse_token(name: string): string {
       return "AFSUI";
     case "0x549e8b69270defbfafd4f94e17ec44cdbdd99820b33bda2278dea3b9a32d3f55":
       return "VSUI";
+    case "0x8993129d72e733985f7f1a00396cbd055bad6f817fee36576ce483c8bbb8b87b":
+      return "HIPPO";
     default:
       return typeArgs[2];
   }
@@ -1290,6 +1294,7 @@ function token_decimal(token: string): number {
     case "CETUS":
     case "TURBOS":
     case "SCA":
+    case "HIPPO":
       return 9;
     case "BTC":
     case "ETH":
@@ -1302,13 +1307,13 @@ function token_decimal(token: string): number {
     case "USDC":
     case "USDT":
     case "MFUD":
-      return 6;
-    case "FUD":
-      return 0; // 5
     case "MBLUB":
+    case "MLIQ":
       return 6;
-    case "BLUB":
-      return 0; // 2
+    case "FUD": // actual 5
+    case "LIQ": // actual 6
+    case "BLUB": // actual 2
+      return 0;
     default:
       return 9;
   }
