@@ -35,15 +35,17 @@ safu
         const reader = new BcsReader(new Uint8Array(bcs_padding[0]));
         const tokenType = String.fromCharCode.apply(null, Array.from(reader.readBytes(reader.read8())));
         token = parse_token(tokenType);
+        const index = log[0];
+        const portfolioVaultIndex = log[2];
         ctx.eventLogger.emit("SafuNewVault", {
           distinctId: event.sender,
-          index: log[0],
-          portfolioVaultIndex: log[2],
+          index,
+          portfolioVaultIndex,
           d_token: token,
         });
-        const vaultInfo = await ctx.store.get(VaultInfo, log[1].toString());
+        const vaultInfo = await ctx.store.get(VaultInfo, portfolioVaultIndex.toString());
         const new_safu_info = new SafuInfo({
-          id: log[0].toString(),
+          id: index.toString(),
           d_token: token,
           dov_b_token: vaultInfo?.b_token,
           dov_d_token: vaultInfo?.d_token,
