@@ -460,7 +460,7 @@ tails_staking_v2
     var amount = Number(event.data_decoded.log[0]) / 10 ** token_decimal(token);
     ctx.eventLogger.emit("ClaimProfitSharing", {
       distinctId: event.sender,
-      numbers: event.data_decoded.tails,
+      numbers: event.data_decoded.tails.join(","),
       token: token,
       amount: amount,
     });
