@@ -1017,8 +1017,8 @@ typus_dov_single
     let b_token = parse_token(event.data_decoded.b_token.name);
     let o_token = parse_token(event.data_decoded.o_token.name);
 
-    const price_b_token = await getPriceBySymbol(b_token, ctx.timestamp);
-    const price_o_token = await getPriceBySymbol(o_token, ctx.timestamp);
+    const price_b_token = (await getPriceBySymbol(b_token, ctx.timestamp)) || 0;
+    const price_o_token = (await getPriceBySymbol(o_token, ctx.timestamp)) || 0;
 
     // ctx.meter.Counter("totalNewBid").add(Number(event.data_decoded.size) / 10 ** token_decimal(o_token), {
     //     index: event.data_decoded.index.toString(),
@@ -1038,8 +1038,8 @@ typus_dov_single
       size,
       bidder_balance,
       incentive_balance,
-      notional_value_usd: size * price_o_token!,
-      amount_usd: (bidder_balance + incentive_balance) * price_b_token!,
+      notional_value_usd: size * price_o_token,
+      amount_usd: (bidder_balance + incentive_balance) * price_b_token,
       ts_ms: event.data_decoded.ts_ms,
       is_autobid: event.data_decoded.signer != event.sender,
     });
