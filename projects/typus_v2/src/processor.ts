@@ -326,7 +326,7 @@ discount_mint
   });
 
 tails_exp
-  .bind({ network: SuiNetwork.MAIN_NET, startCheckpoint })
+  .bind({ network: SuiNetwork.MAIN_NET, startCheckpoint: BigInt(68435229) })
   .onEventNewGame((event, ctx) => {
     let token = parse_token(event.type_arguments[0]);
     let stake_amount = Number(event.data_decoded.stake_amount) / 10 ** token_decimal(token);
@@ -368,7 +368,7 @@ tails_exp
   });
 
 combo_dice
-  .bind({ network: SuiNetwork.MAIN_NET, startCheckpoint: BigInt(41546384) })
+  .bind({ network: SuiNetwork.MAIN_NET, startCheckpoint: BigInt(68435229) })
   .onEventNewGame((event, ctx) => {
     let token = parse_token(event.type_arguments[0]);
     let player_stake_amount = Number(event.data_decoded.player_stake_amount) / 10 ** token_decimal(token);
@@ -1264,7 +1264,7 @@ function parse_token(name: string): string {
     case "0xaf8cd5edc19c4512f4259f0bee101a40d41ebed738ade5874359610ef8eeced5":
       return "ETH";
     case "0x5d4b302506645c37ff133b98c4b50a5ae14841659738d6d733d59d0d217a93bf":
-      return "USDC";
+      return "WUSDC";
     case "0xc060006111016b8a020ad5b33834984a437aaa7d3c74c18e09a95d48aceab08c":
       return "USDT";
     case "0xb7844e289a8410e50fb3ca48d69eb9cf29e27d223ef90353fe1bd8e27ff8f3f8":
@@ -1281,6 +1281,8 @@ function parse_token(name: string): string {
       return "VSUI";
     case "0x8993129d72e733985f7f1a00396cbd055bad6f817fee36576ce483c8bbb8b87b":
       return "HIPPO";
+    case "0xdba34672e30cb065b1f93e3ab55318768fd6fef66c15942c9f7cb846e2f900e7":
+      return "USDC";
     default:
       return typeArgs[2];
   }
@@ -1307,6 +1309,7 @@ function token_decimal(token: string): number {
     case "JUP":
       return 8;
     case "USDC":
+    case "WUSDC":
     case "USDT":
     case "MFUD":
     case "MBLUB":
