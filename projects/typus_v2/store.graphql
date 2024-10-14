@@ -17,3 +17,9 @@ type SafuInfo @entity {
   dov_d_token: String!
   dov_b_token: String!
 }
+
+type TokenMapping @entity {
+  id: ID!
+  decimal: BigInt!
+  address: String!
+}

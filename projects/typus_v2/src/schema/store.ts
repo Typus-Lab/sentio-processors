@@ -71,6 +71,23 @@ export class SafuInfo extends AbstractEntity  {
   constructor(data: Partial<SafuInfo>) {super()}
 }
 
+@Entity("TokenMapping")
+export class TokenMapping extends AbstractEntity  {
+
+	@Required
+	@Column("ID")
+	id: ID
+
+	@Required
+	@Column("BigInt")
+	decimal: BigInt
+
+	@Required
+	@Column("String")
+	address: String
+  constructor(data: Partial<TokenMapping>) {super()}
+}
+
 
 const source = `type VaultSnapshot @entity {
   id: ID!
@@ -91,12 +108,19 @@ type SafuInfo @entity {
   dov_d_token: String!
   dov_b_token: String!
 }
+
+type TokenMapping @entity {
+  id: ID!
+  decimal: BigInt!
+  address: String!
+}
 `
 DatabaseSchema.register({
   source,
   entities: {
     "VaultSnapshot": VaultSnapshot,
 		"VaultInfo": VaultInfo,
-		"SafuInfo": SafuInfo
+		"SafuInfo": SafuInfo,
+		"TokenMapping": TokenMapping
   }
 })

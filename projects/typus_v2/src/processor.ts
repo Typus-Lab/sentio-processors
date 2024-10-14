@@ -9,12 +9,12 @@ import {
 import { tails_exp, combo_dice } from "./types/sui/dice.js";
 import { safu } from "./types/sui/safu.js";
 import { discount_mint, typus_nft } from "./types/sui/typus_nft.js";
-import { normalizeSuiAddress } from "@mysten/sui.js/utils";
+import { normalizeSuiAddress, normalizeStructTag } from "@mysten/sui.js/utils";
 import { vault } from "./types/sui/0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274.js";
 import { getPriceBySymbol } from "@sentio/sdk/utils";
 import { tails_staking as tails_staking_v2 } from "./types/sui/typus.js";
 import { BcsReader } from "@mysten/bcs";
-import { VaultSnapshot, VaultInfo, SafuInfo } from "./schema/store.js";
+import { VaultSnapshot, VaultInfo, SafuInfo, TokenMapping } from "./schema/store.js";
 
 const startCheckpoint = BigInt(15970051);
 
@@ -551,6 +551,26 @@ tds_registry_authorized_entry
         o_token,
       });
       await ctx.store.upsert(vault_info);
+      const d_token_mapping = new TokenMapping({
+        id: d_token,
+        decimal: BigInt(token_decimal(d_token)),
+        address: normalizeStructTag(event.data_decoded.info.deposit_token.name),
+      });
+      await ctx.store.upsert(d_token_mapping);
+
+      const b_token_mapping = new TokenMapping({
+        id: b_token,
+        decimal: BigInt(token_decimal(b_token)),
+        address: normalizeStructTag(event.data_decoded.info.bid_token.name),
+      });
+      await ctx.store.upsert(b_token_mapping);
+
+      const o_token_mapping = new TokenMapping({
+        id: o_token,
+        decimal: BigInt(token_decimal(o_token)),
+        address: normalizeStructTag(event.data_decoded.info.settlement_base.name),
+      });
+      await ctx.store.upsert(o_token_mapping);
     },
     { resourceChanges: true }
   );
