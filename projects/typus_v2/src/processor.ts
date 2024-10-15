@@ -828,6 +828,7 @@ typus_dov_single
     ctx.meter.Counter("harvestFee").add(fee_amount, {
       index: event.data_decoded.index.toString(),
       coin_symbol: token,
+      token_address: normalizeStructTag(event.data_decoded.token.name),
     });
     // ctx.meter.Counter("totalHarvest").add(Number(event.data_decoded.amount) / 10 ** token_decimal(token), {
     //     index: event.data_decoded.index.toString(),
@@ -862,6 +863,7 @@ typus_dov_single
     ctx.meter.Counter("compoundFee").add(fee_amount, {
       index: event.data_decoded.index.toString(),
       coin_symbol: token,
+      token_address: normalizeStructTag(event.data_decoded.token.name),
     });
 
     // ctx.meter.Counter("totalCompound").add(Number(event.data_decoded.amount) / 10 ** token_decimal(token), {
@@ -911,6 +913,7 @@ typus_dov_single
     ctx.meter.Counter("totalBidderFee").add(bidder_fee + incentive_fee, {
       index: event.data_decoded.index.toString(),
       coin_symbol: b_token,
+      token_address: normalizeStructTag(event.data_decoded.b_token.name),
     });
     ctx.meter
       .Counter("AccumulatedPremium")
@@ -1150,6 +1153,7 @@ typus_dov_single
       ctx.meter.Counter("compoundFee").add(fee_amount, {
         index: index.toString(),
         coin_symbol: token,
+        token_address: normalizeStructTag(event.data_decoded.token.name),
       });
       ctx.eventLogger.emit("Compound", {
         distinctId: event.data_decoded.signer,
@@ -1203,6 +1207,7 @@ typus_dov_single
       ctx.meter.Counter("harvestFee").add(fee_amount, {
         index: index.toString(),
         coin_symbol: b_token,
+        token_address: normalizeStructTag(event.data_decoded.b_token.name),
       });
       ctx.eventLogger.emit("Harvest", {
         distinctId: event.data_decoded.signer,
@@ -1379,11 +1384,13 @@ SuiWrappedObjectProcessor.bind({
       ctx.meter.Gauge("deposit_share").record(deposit_balance, {
         index, // need this for seperating log!
         coin_symbol: deposit_token,
+        token_address: normalizeStructTag(newDepositVault!.deposit_token.name),
       });
 
       ctx.meter.Gauge("premium_share").record(premium_balance, {
         index,
         coin_symbol: bid_token,
+        token_address: normalizeStructTag(newDepositVault!.bid_token.name),
       });
     }
   },
