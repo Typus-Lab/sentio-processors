@@ -1339,6 +1339,7 @@ function token_decimal(token: string): number {
     case "MFUD":
     case "MBLUB":
     case "MLIQ":
+    case "DEEP":
       return 6;
     case "FUD": // actual 5
     case "LIQ": // actual 6
