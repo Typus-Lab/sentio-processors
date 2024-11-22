@@ -1094,6 +1094,12 @@ typus_dov_single
     if (event.data_decoded.u64_padding.at(1)) {
       fixed_incentive_amount = event.data_decoded.u64_padding.at(1)! / BigInt(10 ** 9);
     }
+    let total_deposit_amount;
+    if (event.data_decoded.u64_padding.at(2)) {
+      total_deposit_amount =
+        event.data_decoded.u64_padding.at(2)! / BigInt(10) ** event.data_decoded.d_token_decimal;
+    }
+
     const index = event.data_decoded.index;
     const vaultSnapshot = await ctx.store.get(VaultSnapshot, index.toString());
     ctx.eventLogger.emit("Activate", {
@@ -1108,6 +1114,7 @@ typus_dov_single
       fixed_incentive_amount,
       deposit_balance: vaultSnapshot?.deposit_balance,
       premium_balance: vaultSnapshot?.premium_balance,
+      total_deposit_amount,
     });
   })
   .onEventNewAuctionEvent((event, ctx) => {
@@ -1324,6 +1331,7 @@ function token_decimal(token: string): number {
     case "TURBOS":
     case "SCA":
     case "HIPPO":
+    case "TYPUS":
       return 9;
     case "BTC":
     case "ETH":
