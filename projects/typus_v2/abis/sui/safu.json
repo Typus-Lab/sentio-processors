@@ -371,6 +371,104 @@
           ],
           "return": []
         },
+        "deposit_navi": {
+          "visibility": "Public",
+          "isEntry": false,
+          "typeParameters": [
+            {
+              "abilities": []
+            }
+          ],
+          "parameters": [
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0xa7bedeaa28ff3defa50d012812618178727f530bc5a70af5d03fc6424a984cc7",
+                  "module": "version",
+                  "name": "Version",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xa7bedeaa28ff3defa50d012812618178727f530bc5a70af5d03fc6424a984cc7",
+                  "module": "safu",
+                  "name": "Registry",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64",
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "storage",
+                  "name": "Storage",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "pool",
+                  "name": "Pool",
+                  "typeArguments": [
+                    {
+                      "TypeParameter": 0
+                    }
+                  ]
+                }
+              }
+            },
+            "U8",
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "incentive",
+                  "name": "Incentive",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "incentive_v2",
+                  "name": "Incentive",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "clock",
+                  "name": "Clock",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "tx_context",
+                  "name": "TxContext",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": []
+        },
         "deposit_scallop_basic": {
           "visibility": "Public",
           "isEntry": false,
@@ -1610,6 +1708,108 @@
           ],
           "return": []
         },
+        "reward_navi": {
+          "visibility": "Public",
+          "isEntry": false,
+          "typeParameters": [
+            {
+              "abilities": []
+            }
+          ],
+          "parameters": [
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0xa7bedeaa28ff3defa50d012812618178727f530bc5a70af5d03fc6424a984cc7",
+                  "module": "version",
+                  "name": "Version",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xa7bedeaa28ff3defa50d012812618178727f530bc5a70af5d03fc6424a984cc7",
+                  "module": "safu",
+                  "name": "Registry",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64",
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "storage",
+                  "name": "Storage",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "incentive_v2",
+                  "name": "IncentiveFundsPool",
+                  "typeArguments": [
+                    {
+                      "TypeParameter": 0
+                    }
+                  ]
+                }
+              }
+            },
+            "U8",
+            "U8",
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "incentive_v2",
+                  "name": "Incentive",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "clock",
+                  "name": "Clock",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "tx_context",
+                  "name": "TxContext",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": [
+            {
+              "Struct": {
+                "address": "0x2",
+                "module": "balance",
+                "name": "Balance",
+                "typeArguments": [
+                  {
+                    "TypeParameter": 0
+                  }
+                ]
+              }
+            }
+          ]
+        },
         "reward_suilend": {
           "visibility": "Public",
           "isEntry": false,
@@ -2171,6 +2371,158 @@
                   "name": "UID",
                   "typeArguments": []
                 }
+              }
+            }
+          ]
+        },
+        "withdraw_navi": {
+          "visibility": "Public",
+          "isEntry": false,
+          "typeParameters": [
+            {
+              "abilities": []
+            }
+          ],
+          "parameters": [
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0xa7bedeaa28ff3defa50d012812618178727f530bc5a70af5d03fc6424a984cc7",
+                  "module": "version",
+                  "name": "Version",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xa7bedeaa28ff3defa50d012812618178727f530bc5a70af5d03fc6424a984cc7",
+                  "module": "safu",
+                  "name": "Registry",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64",
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xca441b44943c16be0e6e23c5a955bb971537ea3289ae8016fbf33fffe1fd210f",
+                  "module": "config",
+                  "name": "OracleConfig",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xca441b44943c16be0e6e23c5a955bb971537ea3289ae8016fbf33fffe1fd210f",
+                  "module": "oracle",
+                  "name": "PriceOracle",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x5d8fbbf6f908a4af8c6d072669a462d53e03eb3c1d863bd0359dc818c69ea706",
+                  "module": "SupraSValueFeed",
+                  "name": "OracleHolder",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x8d97f1cd6ac663735be08d1d2b6d02a159e711586461306ce60a2b7a6a565a9e",
+                  "module": "price_info",
+                  "name": "PriceInfoObject",
+                  "typeArguments": []
+                }
+              }
+            },
+            "Address",
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "storage",
+                  "name": "Storage",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "pool",
+                  "name": "Pool",
+                  "typeArguments": [
+                    {
+                      "TypeParameter": 0
+                    }
+                  ]
+                }
+              }
+            },
+            "U8",
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "incentive",
+                  "name": "Incentive",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "incentive_v2",
+                  "name": "Incentive",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "clock",
+                  "name": "Clock",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "tx_context",
+                  "name": "TxContext",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": [
+            {
+              "Struct": {
+                "address": "0x2",
+                "module": "balance",
+                "name": "Balance",
+                "typeArguments": [
+                  {
+                    "TypeParameter": 0
+                  }
+                ]
               }
             }
           ]

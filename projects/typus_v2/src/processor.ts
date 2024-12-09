@@ -35,7 +35,7 @@ safu
         const reader = new BcsReader(new Uint8Array(bcs_padding[0]));
         const tokenType = String.fromCharCode.apply(null, Array.from(reader.readBytes(reader.read8())));
         token = parse_token(tokenType);
-        const index = log[0];
+        var index = log[0];
         const portfolioVaultIndex = log[2];
         ctx.eventLogger.emit("SafuNewVault", {
           distinctId: event.sender,
@@ -99,14 +99,20 @@ safu
         break;
       case "set_incentivise_fixed":
       case "set_incentivise_bp":
-        // WARNING: SUI only
-        token = "SUI";
+        var index = log[0];
+        if ([24, 25, 26, 27].includes(Number(index))) {
+          token = "TYPUS";
+        } else {
+          // WARNING: SUI only
+          token = "SUI";
+        }
         var balance = Number(log[2]) / 10 ** token_decimal(token!);
         ctx.eventLogger.emit("SafuSetIncentivise", {
           distinctId: event.sender,
-          index: log[0],
+          index,
           round: log[1],
           balance,
+          token,
         });
         break;
       case "deposit_scallop_spool":
@@ -684,35 +690,52 @@ tds_authorized_entry
     const index = Number(event.data_decoded.index);
     const round = event.data_decoded.u64_padding.at(-1);
     const u64_padding = event.data_decoded.u64_padding.slice(0, -1);
-    if (u64_padding.at(1)) {
-      try {
-        const price = await getPriceBySymbol("SUI", ctx.timestamp);
-        ctx.meter
-          .Counter("AccumulatedRewardGeneratedUSD")
-          .add((Number(u64_padding.at(1)) / 10 ** 9) * price!, {
-            index: index.toString(),
-            coin_symbol: "SUI",
-          });
-        ctx.meter.Counter("withdrawScallop").add((Number(u64_padding.at(1)) / 10 ** 9) * price!, {
-          index: index.toString(),
-          coin_symbol: "SUI",
-        });
-      } catch (e) {
-        //console log coin symbol and tx hash
-        console.log("coin symbol: SUI, tx hash: ", event.id);
-      }
-    }
-    ctx.eventLogger.emit("WithdrawScallop", {
+    const vaultInfo = await ctx.store.get(VaultInfo, index.toString());
+    const token = vaultInfo?.d_token!;
+
+    const u64_padding_ = u64_padding.map((x) => Number(x) / 10 ** token_decimal(token));
+
+    const price = await getPriceBySymbol(token, ctx.timestamp);
+
+    const reward = u64_padding_.at(1)!;
+    const interest = u64_padding_.at(0)! - u64_padding_.at(2)! - u64_padding_.at(3)!;
+    ctx.meter
+      .Counter("AccumulatedRewardGeneratedUSD")
+      .add(((reward + interest) / 10 ** token_decimal(token)) * price!, {
+        index: index.toString(),
+        coin_symbol: token,
+      });
+    // ctx.meter
+    //   .Counter("withdrawScallop")
+    //   .add((Number(u64_padding_.at(1)) / 10 ** token_decimal(token)) * price, {
+    //     index: index.toString(),
+    //     coin_symbol: token,
+    //   });
+
+    ctx.eventLogger.emit("WithdrawLending", {
       distinctId: event.data_decoded.signer,
       index,
-      balance_value: u64_padding.at(0),
-      reward_value: u64_padding.at(1),
-      active_share_supply: u64_padding.at(2),
-      deactivating_share_supply: u64_padding.at(3),
-      fee_amount: u64_padding.at(4),
-      fee_share_amount: u64_padding.at(5),
+      balance_value: u64_padding_.at(0),
+      reward_value: u64_padding_.at(1),
+      active_share_supply: u64_padding_.at(2),
+      deactivating_share_supply: u64_padding_.at(3),
+      fee_amount: u64_padding_.at(4),
+      // fee_share_amount: u64_padding_.at(5),
+      reward_fee_amount: u64_padding_.at(6),
+      // reward_fee_share_amount: u64_padding_.at(7),
       round,
+      protocol: "scallop_spool",
+      token: vaultInfo?.d_token,
     });
+    // balance_value,
+    // reward_value,
+    // active_share_supply,
+    // deactivating_share_supply,
+    // fee_amount,
+    // fee_share_amount,
+    // reward_fee_amount,
+    // reward_fee_share_amount,
+    // round
   })
   .onEventDepositScallopBasicLending((event, ctx) => {
     ctx.eventLogger.emit("DepositScallopBasicLending", {
@@ -728,33 +751,105 @@ tds_authorized_entry
     const index = Number(event.data_decoded.index);
     const round = event.data_decoded.u64_padding.at(-1);
     const u64_padding = event.data_decoded.u64_padding.slice(0, -1);
-    if (u64_padding.at(1)) {
-      try {
-        //getPrice
-        const price = await getPriceBySymbol("SCA", ctx.timestamp);
-        ctx.meter
-          .Counter("AccumulatedRewardGeneratedUSD")
-          .add((Number(u64_padding.at(1)) / 10 ** 9) * price!, {
-            index: index.toString(),
-            coin_symbol: "SCA",
-          });
-        ctx.meter.Counter("withdrawScallop").add((Number(u64_padding.at(1)) / 10 ** 9) * price!, {
-          index: index.toString(),
-          coin_symbol: "SCA",
-        });
-      } catch (e) {
-        //console log coin symbol and tx hash
-        console.log("coin symbol: SCA, tx hash: ", event.id);
-      }
-    }
-    ctx.eventLogger.emit("WithdrawScallopBasicLending", {
+    const vaultInfo = await ctx.store.get(VaultInfo, index.toString());
+    const token = vaultInfo?.d_token!;
+
+    const u64_padding_ = u64_padding.map((x) => Number(x) / 10 ** token_decimal(token));
+
+    const price = await getPriceBySymbol(token, ctx.timestamp);
+
+    const reward = u64_padding_.at(1)!;
+    const interest = u64_padding_.at(0)! - u64_padding_.at(2)! - u64_padding_.at(3)!;
+    ctx.meter
+      .Counter("AccumulatedRewardGeneratedUSD")
+      .add(((reward + interest) / 10 ** token_decimal(token)) * price!, {
+        index: index.toString(),
+        coin_symbol: token,
+      });
+    // ctx.meter
+    //   .Counter("withdrawScallop")
+    //   .add((Number(u64_padding_.at(1)) / 10 ** token_decimal(token)) * price, {
+    //     index: index.toString(),
+    //     coin_symbol: token,
+    //   });
+
+    ctx.eventLogger.emit("WithdrawLending", {
       distinctId: event.data_decoded.signer,
       index,
-      balance_value: u64_padding.at(0),
-      reward_value: u64_padding.at(1),
-      active_share_supply: u64_padding.at(2),
-      deactivating_share_supply: u64_padding.at(3),
+      balance_value: u64_padding_.at(0),
+      reward_value: u64_padding_.at(1),
+      active_share_supply: u64_padding_.at(2),
+      deactivating_share_supply: u64_padding_.at(3),
+      fee_amount: u64_padding_.at(4),
+      // fee_share_amount: u64_padding_.at(5),
+      reward_fee_amount: u64_padding_.at(6),
+      // reward_fee_share_amount: u64_padding_.at(7),
       round,
+      protocol: "scallop_basic",
+      token: vaultInfo?.d_token,
+    });
+  })
+  .onEventWithdrawSuilend(async (event, ctx) => {
+    const index = Number(event.data_decoded.index);
+    const round = event.data_decoded.u64_padding.at(-1);
+    const u64_padding = event.data_decoded.u64_padding.slice(0, -1);
+    const vaultInfo = await ctx.store.get(VaultInfo, index.toString());
+    const token = vaultInfo?.d_token!;
+
+    const u64_padding_ = u64_padding.map((x) => Number(x) / 10 ** token_decimal(token));
+
+    const price = await getPriceBySymbol(token, ctx.timestamp);
+
+    const reward = u64_padding_.at(1)!;
+    const interest = u64_padding_.at(0)! - u64_padding_.at(2)! - u64_padding_.at(3)!;
+    ctx.meter
+      .Counter("AccumulatedRewardGeneratedUSD")
+      .add(((reward + interest) / 10 ** token_decimal(token)) * price!, {
+        index: index.toString(),
+        coin_symbol: token,
+      });
+
+    ctx.eventLogger.emit("WithdrawLending", {
+      distinctId: event.data_decoded.signer,
+      index,
+      balance_value: u64_padding_.at(0),
+      reward_value: u64_padding_.at(1),
+      active_share_supply: u64_padding_.at(2),
+      deactivating_share_supply: u64_padding_.at(3),
+      fee_amount: u64_padding_.at(4),
+      // fee_share_amount: u64_padding_.at(5),
+      reward_fee_amount: u64_padding_.at(6),
+      // reward_fee_share_amount: u64_padding_.at(7),
+      round,
+      protocol: "suilend",
+      token: vaultInfo?.d_token,
+    });
+  })
+  .onEventRewardSuilend(async (event, ctx) => {
+    const index = Number(event.data_decoded.index);
+    const round = event.data_decoded.u64_padding.at(-1);
+    const u64_padding = event.data_decoded.u64_padding.slice(0, -1);
+    const vaultInfo = await ctx.store.get(VaultInfo, index.toString());
+    const token = vaultInfo?.d_token!;
+    const u64_padding_ = u64_padding.map((x) => Number(x) / 10 ** token_decimal(token));
+    // reward_value,
+    // reward_fee_amount,
+    // reward_fee_share_amount,
+    // round
+    const price = await getPriceBySymbol(token, ctx.timestamp);
+    const reward = u64_padding_.at(0)!;
+    ctx.meter.Counter("AccumulatedRewardGeneratedUSD").add((reward / 10 ** token_decimal(token)) * price!, {
+      index: index.toString(),
+      coin_symbol: token,
+    });
+    ctx.eventLogger.emit("RewardSuilend", {
+      distinctId: event.data_decoded.signer,
+      index,
+      reward_value: u64_padding_.at(0),
+      reward_fee_amount: u64_padding_.at(1),
+      round,
+      protocol: "suilend",
+      token: vaultInfo?.d_token,
     });
   });
 
@@ -942,29 +1037,14 @@ typus_dov_single
 
     const sui_price = await getPriceBySymbol("SUI", ctx.timestamp);
 
-    // SCA and SUI decimal both are 9
-    const depositor_incentive_value = Number(event.data_decoded.depositor_incentive_value) / 10 ** 9;
-
-    if (o_token == "SCA") {
-      const price = await getPriceBySymbol("SCA", ctx.timestamp);
-      ctx.meter.Counter("AccumulatedRewardGeneratedUSD").add(depositor_incentive_value * price!, {
-        index: event.data_decoded.index.toString(),
-        coin_symbol: "SCA",
-      });
-      // ctx.meter.Counter("depositor_incentive_value").add(depositor_incentive_value * price!, {
-      //     index: event.data_decoded.index.toString(),
-      //     coin_symbol: "SCA",
-      // });
-    } else {
-      ctx.meter.Counter("AccumulatedRewardGeneratedUSD").add(depositor_incentive_value * sui_price!, {
-        index: event.data_decoded.index.toString(),
-        coin_symbol: "SUI",
-      });
-      // ctx.meter.Counter("depositor_incentive_value").add(depositor_incentive_value * sui_price!, {
-      //     index: event.data_decoded.index.toString(),
-      //     coin_symbol: "SUI",
-      // });
-    }
+    // bp incentive based on b_token
+    const depositor_incentive_value =
+      Number(event.data_decoded.depositor_incentive_value) / 10 ** token_decimal(b_token);
+    const price = await getPriceBySymbol(b_token, ctx.timestamp);
+    ctx.meter.Counter("AccumulatedRewardGeneratedUSD").add(depositor_incentive_value * price!, {
+      index: event.data_decoded.index.toString(),
+      coin_symbol: b_token,
+    });
 
     const price_b_token = await getPriceBySymbol(b_token, ctx.timestamp);
     try {
