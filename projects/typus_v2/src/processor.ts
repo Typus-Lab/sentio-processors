@@ -1054,52 +1054,39 @@ typus_dov_single
       coin_symbol: o_token,
     });
 
-    const price_o_token = await getPriceBySymbol(o_token, ctx.timestamp);
-    try {
-      //getPrice
-      if (price_o_token) {
-        ctx.meter.Counter("AccumulatedNotionalVolumeUSD").add(delivery_size * price_o_token, {
-          index: event.data_decoded.index.toString(),
-          coin_symbol: o_token,
-        });
-      }
-    } catch (e) {
-      //console log coin symbol and tx hash
-      console.log("coin symbol: ", o_token, ", tx hash: ", event.id);
-    }
+    let price_o_token;
+    let price_b_token;
 
-    const sui_price = await getPriceBySymbol("SUI", ctx.timestamp);
+    try {
+      price_o_token = await getPriceBySymbol(o_token, ctx.timestamp);
+      ctx.meter.Counter("AccumulatedNotionalVolumeUSD").add(delivery_size * price_o_token!, {
+        index: event.data_decoded.index.toString(),
+        coin_symbol: o_token,
+      });
+    } catch (e) {}
 
     // bp incentive based on b_token
     const depositor_incentive_value =
       Number(event.data_decoded.depositor_incentive_value) / 10 ** token_decimal(b_token);
-    const price = await getPriceBySymbol(b_token, ctx.timestamp);
-    ctx.meter.Counter("AccumulatedRewardGeneratedUSD").add(depositor_incentive_value * price!, {
-      index: event.data_decoded.index.toString(),
-      coin_symbol: b_token,
-    });
-
-    const price_b_token = await getPriceBySymbol(b_token, ctx.timestamp);
     try {
-      //getPrice
-      if (price_b_token) {
-        ctx.meter
-          .Counter("AccumulatedPremiumUSD")
-          .add((bidder_bid_value + bidder_fee + incentive_bid_value + incentive_fee) * price_b_token, {
-            index: event.data_decoded.index.toString(),
-            coin_symbol: b_token,
-          });
-        ctx.meter
-          .Counter("AccumulatedRewardGeneratedUSD")
-          .add((bidder_bid_value + incentive_bid_value) * price_b_token, {
-            index: event.data_decoded.index.toString(),
-            coin_symbol: b_token,
-          });
-      }
-    } catch (e) {
-      //console log coin symbol and tx hash
-      console.log("coin symbol: ", b_token, ", tx hash: ", event.id);
-    }
+      price_b_token = await getPriceBySymbol(b_token, ctx.timestamp);
+      ctx.meter.Counter("AccumulatedRewardGeneratedUSD").add(depositor_incentive_value * price_b_token!, {
+        index: event.data_decoded.index.toString(),
+        coin_symbol: b_token,
+      });
+      ctx.meter
+        .Counter("AccumulatedPremiumUSD")
+        .add((bidder_bid_value + bidder_fee + incentive_bid_value + incentive_fee) * price_b_token!, {
+          index: event.data_decoded.index.toString(),
+          coin_symbol: b_token,
+        });
+      ctx.meter
+        .Counter("AccumulatedRewardGeneratedUSD")
+        .add((bidder_bid_value + incentive_bid_value) * price_b_token!, {
+          index: event.data_decoded.index.toString(),
+          coin_symbol: b_token,
+        });
+    } catch (e) {}
 
     var deposit_incentive_bp = 0;
     var bid_incentive_bp = 0;
@@ -1114,6 +1101,7 @@ typus_dov_single
       : undefined;
 
     if (fixed_incentive_amount) {
+      const sui_price = await getPriceBySymbol("SUI", ctx.timestamp);
       ctx.meter.Counter("AccumulatedRewardGeneratedUSD").add(fixed_incentive_amount * sui_price!, {
         index: event.data_decoded.index.toString(),
         coin_symbol: "SUI",
