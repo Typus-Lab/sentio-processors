@@ -219,7 +219,7 @@ safu
               index: log[0],
               round: log[1],
               value: log[2],
-              exp: log[6],
+              exp: log[5],
               token,
             });
           }
@@ -229,7 +229,7 @@ safu
               index: log[0],
               round: log[1],
               value: log[3],
-              exp: log[6],
+              exp: log[5],
               token,
             });
           }
@@ -239,7 +239,7 @@ safu
               index: log[0],
               round: log[1],
               value: log[4],
-              exp: log[6],
+              exp: log[5],
               token,
             });
           }
