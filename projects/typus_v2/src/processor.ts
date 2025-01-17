@@ -68,13 +68,21 @@ safu
       case "post_exercise":
         token = safu_info?.dov_d_token!;
         var balance = Number(log[2]) / 10 ** token_decimal(token!);
+        var fee = Number(log.at(3) ?? 0) / 10 ** token_decimal(token!);
         ctx.eventLogger.emit("SafuPostExercise", {
           distinctId: event.sender,
           index: log[0],
           round: log[1],
           balance,
+          fee,
           token,
         });
+
+        ctx.meter.Counter("SafuFee").add(fee, {
+          index: log[0].toString(),
+          coin_symbol: token,
+        });
+
         var price = await getPriceBySymbol(token, ctx.timestamp);
         ctx.meter.Counter("SafuAccumulatedRewardGeneratedUSD").add(balance * price!, {
           coin_symbol: token,
@@ -92,6 +100,12 @@ safu
           fee,
           token,
         });
+
+        ctx.meter.Counter("SafuFee").add(fee, {
+          index: log[0].toString(),
+          coin_symbol: token,
+        });
+
         var price = await getPriceBySymbol(token, ctx.timestamp);
         ctx.meter.Counter("SafuAccumulatedRewardGeneratedUSD").add(balance * price!, {
           coin_symbol: token,
@@ -220,6 +234,8 @@ safu
               round: log[1],
               value: log[2],
               exp: log[5],
+              fee: log[6],
+              exit_fee_sui: log[7],
               token,
             });
           }
@@ -230,6 +246,8 @@ safu
               round: log[1],
               value: log[3],
               exp: log[5],
+              fee: log[6],
+              exit_fee_sui: log[7],
               token,
             });
           }
@@ -240,7 +258,21 @@ safu
               round: log[1],
               value: log[4],
               exp: log[5],
+              fee: log[6],
+              exit_fee_sui: log[7],
               token,
+            });
+          }
+          if (log[6]) {
+            ctx.meter.Counter("SafuFee").add(Number(log[6]) / 10 ** token_decimal(token), {
+              index: log[0].toString(),
+              coin_symbol: token,
+            });
+          }
+          if (log[7]) {
+            ctx.meter.Counter("SafuFee").add(Number(log[7]) / 10 ** 9, {
+              index: log[0].toString(),
+              coin_symbol: "SUI",
             });
           }
           break;
