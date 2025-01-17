@@ -854,6 +854,8 @@ tds_authorized_entry
       token: vaultInfo?.d_token,
     });
   })
+  // No useful data
+  // .onEventDepositSuilend(async (event, ctx) => {})
   .onEventWithdrawSuilend(async (event, ctx) => {
     const index = Number(event.data_decoded.index);
     const round = event.data_decoded.u64_padding.at(-1);
