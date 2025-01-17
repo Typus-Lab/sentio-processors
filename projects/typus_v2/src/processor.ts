@@ -1531,20 +1531,39 @@ SuiWrappedObjectProcessor.bind({
           Number(share_supply[1]) +
           Number(share_supply[2]) +
           Number(share_supply[3]);
-        const price_deposit_token = await getPriceBySymbol(deposit_token, ctx.timestamp);
-        var tvl = (Number(total_share) / 10 ** token_decimal(deposit_token)) * price_deposit_token!;
+        const tvl = Number(total_share) / 10 ** token_decimal(deposit_token);
+        ctx.meter.Gauge("SafuTvl").record(tvl, {
+          index,
+          coin_symbol: deposit_token,
+          token_address: normalizeStructTag(safuVault.deposit_token.fields.name),
+        });
+
+        // const price_deposit_token = await getPriceBySymbol(deposit_token, ctx.timestamp);
+        // var tvlUSD = tvl * price_deposit_token!;
 
         // reward_tokens
         var n = 0;
         for (const type_name of safuVault.reward_tokens) {
           const reward_token = parse_token("0x" + type_name.fields.name);
-          const price_reward_token = await getPriceBySymbol(reward_token, ctx.timestamp);
-          tvl += (Number(share_supply[n + 5]) / 10 ** token_decimal(reward_token)) * price_reward_token!;
+          var reward = Number(share_supply[n + 5]) / 10 ** token_decimal(reward_token);
+
+          if (reward != 0) {
+            ctx.meter.Gauge("SafuTvl").record(reward, {
+              index,
+              coin_symbol: reward_token,
+              token_address: normalizeStructTag(type_name.fields.name),
+            });
+
+            // const price_reward_token = await getPriceBySymbol(reward_token, ctx.timestamp);
+            // tvlUSD += reward * price_reward_token!;
+          }
+
           n += 1;
         }
-        ctx.meter.Gauge("SafuTvl_USD").record(tvl, {
-          index,
-        });
+
+        // ctx.meter.Gauge("SafuTvl_USD").record(tvlUSD, {
+        //   index,
+        // });
       }
     }
   },
