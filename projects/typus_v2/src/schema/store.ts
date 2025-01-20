@@ -12,6 +12,12 @@ import { DatabaseSchema } from '@sentio/sdk'
 
 
 
+
+interface VaultSnapshotConstructorInput {
+  id: ID;
+  deposit_balance: BigInt;
+  premium_balance: BigInt;
+}
 @Entity("VaultSnapshot")
 export class VaultSnapshot extends AbstractEntity  {
 
@@ -26,9 +32,16 @@ export class VaultSnapshot extends AbstractEntity  {
 	@Required
 	@Column("BigInt")
 	premium_balance: BigInt
-  constructor(data: Partial<VaultSnapshot>) {super()}
+  constructor(data: VaultSnapshotConstructorInput) {super()}
 }
 
+
+interface VaultInfoConstructorInput {
+  id: ID;
+  d_token: String;
+  b_token: String;
+  o_token: String;
+}
 @Entity("VaultInfo")
 export class VaultInfo extends AbstractEntity  {
 
@@ -47,9 +60,16 @@ export class VaultInfo extends AbstractEntity  {
 	@Required
 	@Column("String")
 	o_token: String
-  constructor(data: Partial<VaultInfo>) {super()}
+  constructor(data: VaultInfoConstructorInput) {super()}
 }
 
+
+interface SafuInfoConstructorInput {
+  id: ID;
+  d_token: String;
+  dov_d_token: String;
+  dov_b_token: String;
+}
 @Entity("SafuInfo")
 export class SafuInfo extends AbstractEntity  {
 
@@ -68,9 +88,15 @@ export class SafuInfo extends AbstractEntity  {
 	@Required
 	@Column("String")
 	dov_b_token: String
-  constructor(data: Partial<SafuInfo>) {super()}
+  constructor(data: SafuInfoConstructorInput) {super()}
 }
 
+
+interface TokenMappingConstructorInput {
+  id: ID;
+  decimal: BigInt;
+  address: String;
+}
 @Entity("TokenMapping")
 export class TokenMapping extends AbstractEntity  {
 
@@ -85,7 +111,7 @@ export class TokenMapping extends AbstractEntity  {
 	@Required
 	@Column("String")
 	address: String
-  constructor(data: Partial<TokenMapping>) {super()}
+  constructor(data: TokenMappingConstructorInput) {super()}
 }
 
 
