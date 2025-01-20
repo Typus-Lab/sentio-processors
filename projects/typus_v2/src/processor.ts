@@ -9,7 +9,7 @@ import {
 import { tails_exp, combo_dice } from "./types/sui/dice.js";
 import { safu } from "./types/sui/safu.js";
 import { discount_mint, typus_nft } from "./types/sui/typus_nft.js";
-import { normalizeSuiAddress, normalizeStructTag } from "@mysten/sui.js/utils";
+import { normalizeSuiAddress, normalizeStructTag } from "@mysten/sui/utils";
 import { vault } from "./types/sui/0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274.js";
 import { getPriceBySymbol } from "@sentio/sdk/utils";
 import { tails_staking as tails_staking_v2 } from "./types/sui/typus.js";
@@ -47,8 +47,8 @@ safu
         const new_safu_info = new SafuInfo({
           id: index.toString(),
           d_token: token,
-          dov_b_token: vaultInfo?.b_token,
-          dov_d_token: vaultInfo?.d_token,
+          dov_b_token: vaultInfo?.b_token!,
+          dov_d_token: vaultInfo?.d_token!,
         });
         await ctx.store.upsert(new_safu_info);
         break;
@@ -1502,7 +1502,7 @@ SuiWrappedObjectProcessor.bind({
     // ctx.meter.Gauge("num_of_vaults").record(objects.length);
     for (const object of objects) {
       // console.log("object", JSON.stringify(object))
-      const newDepositVault = await ctx.coder.decodedType(object, vault.DepositVault.type());
+      const newDepositVault = await ctx.coder.decodeType(object, vault.DepositVault.type());
       // console.log("decoded vault", JSON.stringify(newDepositVault));
       // decoded vault {"id":{"id":"0xd0f9ec19081ca68abad17a0c1ae80f167dc08859cd66813e8cf28cda3986ceae"},"deposit_token":{"name":"5d4b302506645c37ff133b98c4b50a5ae14841659738d6d733d59d0d217a93bf::coin::COIN"},"bid_token":{"name":"5d4b302506645c37ff133b98c4b50a5ae14841659738d6d733d59d0d217a93bf::coin::COIN"},"incentive_token":null,"index":"10","fee_bp":"1000","fee_share_bp":"0","shared_fee_pool":null,"active_share_supply":"0","deactivating_share_supply":"0","inactive_share_supply":"0","warmup_share_supply":"0","premium_share_supply":"0","incentive_share_supply":"0","has_next":true,"metadata":"ETH-Daily-Put","u64_padding":[],"bcs_padding":[]}
       const index = newDepositVault!.index.toString();
@@ -1519,7 +1519,7 @@ SuiWrappedObjectProcessor.bind({
       const premium_balance = newDepositVault!.premium_share_supply / BigInt(10 ** token_decimal(bid_token));
 
       const vaultSnapshot = new VaultSnapshot({
-        id: newDepositVault?.index.toString(),
+        id: newDepositVault!.index.toString(),
         deposit_balance,
         premium_balance,
       });
