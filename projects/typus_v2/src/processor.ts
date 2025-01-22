@@ -66,7 +66,7 @@ safu
         });
         break;
       case "post_exercise":
-        token = safu_info?.dov_d_token!;
+        token = log.at(3) ? safu_info?.d_token! : safu_info?.dov_d_token!;
         var balance = Number(log[2]) / 10 ** token_decimal(token!);
         var fee = Number(log.at(3) ?? 0) / 10 ** token_decimal(token!);
         ctx.eventLogger.emit("SafuPostExercise", {
