@@ -1566,7 +1566,7 @@ SuiWrappedObjectProcessor.bind({
           Number(share_supply[2]) +
           Number(share_supply[3]);
         const tvl = Number(total_share) / 10 ** token_decimal(deposit_token);
-        ctx.meter.Gauge("SafuTvl").record(tvl, {
+        ctx.meter.Gauge("SafuDeposit").record(tvl, {
           index,
           coin_symbol: deposit_token,
           token_address: normalizeStructTag(safuVault.deposit_token.fields.name),
@@ -1582,7 +1582,7 @@ SuiWrappedObjectProcessor.bind({
           var reward = Number(share_supply[n + 5]) / 10 ** token_decimal(reward_token);
 
           if (reward != 0) {
-            ctx.meter.Gauge("SafuTvl").record(reward, {
+            ctx.meter.Gauge("SafuReward").record(reward, {
               index,
               coin_symbol: reward_token,
               token_address: normalizeStructTag(type_name.fields.name),
