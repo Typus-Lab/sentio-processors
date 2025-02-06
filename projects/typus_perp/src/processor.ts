@@ -34,10 +34,19 @@ position.bind({ network: SuiNetwork.TEST_NET, startCheckpoint }).onEventOrderFil
   let collateral_decimal = token_decimal(collateral_token);
   let base_token = event.data_decoded.symbol.base_token.name;
   let order_id = event.data_decoded.order_id;
-  let position_id = event.data_decoded.linked_position_id ?? event.data_decoded.new_position_id;
+  let position_id;
+  let order_type;
+
+  if (event.data_decoded.linked_position_id) {
+    position_id = event.data_decoded.linked_position_id;
+    order_type = "Close";
+  } else {
+    position_id = event.data_decoded.new_position_id;
+    order_type = "Open";
+  }
 
   var filled_size = Number(event.data_decoded.filled_size) / 10 ** token_decimal(base_token)!;
-  var filled_price = event.data_decoded.filled_price;
+  var filled_price = Number(event.data_decoded.filled_price) / 10 ** 8;
   var side = event.data_decoded.position_side ? "Long" : "Short";
 
   var realized_trading_fee =
@@ -53,12 +62,13 @@ position.bind({ network: SuiNetwork.TEST_NET, startCheckpoint }).onEventOrderFil
     collateral_token,
     order_id,
     position_id,
+    order_type,
     filled_size,
     filled_price,
     side,
     realized_trading_fee: realized_trading_fee / 10 ** collateral_decimal,
     realized_fee_in_usd,
-    realized_amount: realized_trading_fee / 10 ** collateral_decimal,
+    realized_amount: realized_amount / 10 ** collateral_decimal,
     realized_pnl,
   });
 });
