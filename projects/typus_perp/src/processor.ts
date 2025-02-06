@@ -12,10 +12,10 @@ trading.bind({ network: SuiNetwork.TEST_NET, startCheckpoint }).onEventLiquidate
   let collateral_decimal = token_decimal(collateral_token);
   // let base_token = event.data_decoded.base_token.name;
   let position_id = event.data_decoded.position_id;
-  let collateral_price = event.data_decoded.collateral_price / BigInt(10 ** 9);
-  let trading_price = event.data_decoded.trading_price / BigInt(10 ** 9);
-  let liquidator_fee = event.data_decoded.realized_liquidator_fee / BigInt(10 ** collateral_decimal);
-  let value_for_lp_pool = event.data_decoded.realized_value_for_lp_pool / BigInt(10 ** collateral_decimal);
+  let collateral_price = Number(event.data_decoded.collateral_price) / 10 ** 9;
+  let trading_price = Number(event.data_decoded.trading_price) / 10 ** 9;
+  let liquidator_fee = Number(event.data_decoded.realized_liquidator_fee) / 10 ** collateral_decimal;
+  let value_for_lp_pool = Number(event.data_decoded.realized_value_for_lp_pool) / 10 ** collateral_decimal;
 
   ctx.eventLogger.emit("Liquidate", {
     distinctId: event.data_decoded.user,
