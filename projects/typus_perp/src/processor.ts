@@ -2,8 +2,66 @@ import { SuiNetwork, SuiWrappedObjectProcessor } from "@sentio/sdk/sui";
 import { normalizeSuiAddress, normalizeStructTag } from "@mysten/sui/utils";
 import { getPriceBySymbol } from "@sentio/sdk/utils";
 import { BcsReader } from "@mysten/bcs";
+import { position, trading } from "./types/sui/testnet/typus_perp.js";
 
-const startCheckpoint = BigInt(15970051);
+const startCheckpoint = BigInt(159664608);
+
+trading.bind({ network: SuiNetwork.TEST_NET, startCheckpoint }).onEventLiquidateEvent((event, ctx) => {
+  let collateral_token_name = event.data_decoded.collateral_token.name;
+  let collateral_token = parse_token(collateral_token_name);
+  let collateral_decimal = token_decimal(collateral_token);
+  // let base_token = event.data_decoded.base_token.name;
+  let position_id = event.data_decoded.position_id;
+  let collateral_price = event.data_decoded.collateral_price / BigInt(10 ** 9);
+  let trading_price = event.data_decoded.trading_price / BigInt(10 ** 9);
+  let liquidator_fee = event.data_decoded.realized_liquidator_fee / BigInt(10 ** collateral_decimal);
+  let value_for_lp_pool = event.data_decoded.realized_value_for_lp_pool / BigInt(10 ** collateral_decimal);
+
+  ctx.eventLogger.emit("Liquidate", {
+    distinctId: event.data_decoded.user,
+    position_id,
+    collateral_token,
+    collateral_price,
+    trading_price,
+    liquidator_fee,
+    value_for_lp_pool,
+  });
+});
+
+position.bind({ network: SuiNetwork.TEST_NET, startCheckpoint }).onEventOrderFilledEvent((event, ctx) => {
+  let collateral_token_name = event.data_decoded.collateral_token.name;
+  let collateral_token = parse_token(collateral_token_name);
+  let collateral_decimal = token_decimal(collateral_token);
+  let base_token = event.data_decoded.symbol.base_token.name;
+  let order_id = event.data_decoded.order_id;
+  let position_id = event.data_decoded.linked_position_id ?? event.data_decoded.new_position_id;
+
+  var filled_size = Number(event.data_decoded.filled_size) / 10 ** token_decimal(base_token)!;
+  var filled_price = event.data_decoded.filled_price;
+  var side = event.data_decoded.position_side ? "Long" : "Short";
+
+  var realized_trading_fee =
+    Number(event.data_decoded.realized_trading_fee) + Number(event.data_decoded.realized_borrow_fee);
+  var realized_fee_in_usd = Number(event.data_decoded.realized_fee_in_usd) / 10 ** 9;
+  var realized_amount = event.data_decoded.realized_amount_sign
+    ? Number(event.data_decoded.realized_amount)
+    : -Number(event.data_decoded.realized_amount);
+  var realized_pnl = ((realized_amount - realized_trading_fee) * realized_fee_in_usd) / realized_trading_fee;
+
+  ctx.eventLogger.emit("OrderFilled", {
+    distinctId: event.data_decoded.user,
+    collateral_token,
+    order_id,
+    position_id,
+    filled_size,
+    filled_price,
+    side,
+    realized_trading_fee: realized_trading_fee / 10 ** collateral_decimal,
+    realized_fee_in_usd,
+    realized_amount: realized_trading_fee / 10 ** collateral_decimal,
+    realized_pnl,
+  });
+});
 
 function parse_token(name: string): string {
   let typeArgs = name.split("::");
