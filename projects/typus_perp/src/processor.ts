@@ -10,7 +10,8 @@ trading.bind({ network: SuiNetwork.TEST_NET, startCheckpoint }).onEventLiquidate
   let collateral_token_name = event.data_decoded.collateral_token.name;
   let collateral_token = parse_token(collateral_token_name);
   let collateral_decimal = token_decimal(collateral_token);
-  // let base_token = event.data_decoded.base_token.name;
+  let base_token_name = event.data_decoded.base_token.name;
+  let base_token = parse_token(base_token_name);
   let position_id = event.data_decoded.position_id;
   let collateral_price = Number(event.data_decoded.collateral_price) / 10 ** 9;
   let trading_price = Number(event.data_decoded.trading_price) / 10 ** 9;
@@ -21,6 +22,7 @@ trading.bind({ network: SuiNetwork.TEST_NET, startCheckpoint }).onEventLiquidate
     distinctId: event.data_decoded.user,
     position_id,
     collateral_token,
+    trading_token: base_token,
     collateral_price,
     trading_price,
     liquidator_fee,
@@ -32,7 +34,8 @@ position.bind({ network: SuiNetwork.TEST_NET, startCheckpoint }).onEventOrderFil
   let collateral_token_name = event.data_decoded.collateral_token.name;
   let collateral_token = parse_token(collateral_token_name);
   let collateral_decimal = token_decimal(collateral_token);
-  let base_token = event.data_decoded.symbol.base_token.name;
+  let base_token_name = event.data_decoded.symbol.base_token.name;
+  let base_token = parse_token(base_token_name);
   let order_id = event.data_decoded.order_id;
   let position_id;
   let order_type;
@@ -60,6 +63,7 @@ position.bind({ network: SuiNetwork.TEST_NET, startCheckpoint }).onEventOrderFil
   ctx.eventLogger.emit("OrderFilled", {
     distinctId: event.data_decoded.user,
     collateral_token,
+    trading_token: base_token,
     order_id,
     position_id,
     order_type,
