@@ -169,9 +169,12 @@ SuiObjectProcessor.bind({
   async (object, df, ctx) => {
     const liquidityPool = await ctx.coder.decodeType(object, lp_pool.LiquidityPool.type());
     const tvl_usd = liquidityPool?.pool_info.tvl_usd!;
+    ctx.meter.Gauge("tvl_usd").record(Number(tvl_usd) / 10 ** 9);
     const total_share_supply = liquidityPool?.pool_info.total_share_supply!;
-    const price = tvl_usd / total_share_supply;
-    ctx.meter.Gauge("tlp_price").record(price);
+    if (total_share_supply > 0) {
+      const price = Number(tvl_usd) / Number(total_share_supply);
+      ctx.meter.Gauge("tlp_price").record(price);
+    }
   },
   60,
   60,
