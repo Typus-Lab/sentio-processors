@@ -1,12 +1,14 @@
-import { SuiNetwork, SuiWrappedObjectProcessor } from "@sentio/sdk/sui";
+import { SuiNetwork, SuiObjectContext, SuiObjectProcessor, SuiWrappedObjectProcessor } from "@sentio/sdk/sui";
 import { normalizeSuiAddress, normalizeStructTag } from "@mysten/sui/utils";
 import { getPriceBySymbol } from "@sentio/sdk/utils";
 import { BcsReader } from "@mysten/bcs";
-import { position, trading } from "./types/sui/testnet/typus_perp.js";
+import { position, trading, lp_pool } from "./types/sui/testnet/typus_perp.js";
 
 const startCheckpoint = BigInt(159664608);
 
-trading.bind({ network: SuiNetwork.TEST_NET, startCheckpoint }).onEventLiquidateEvent((event, ctx) => {
+const network = SuiNetwork.TEST_NET;
+
+trading.bind({ network, startCheckpoint }).onEventLiquidateEvent((event, ctx) => {
   let collateral_token_name = event.data_decoded.collateral_token.name;
   let collateral_token = parse_token(collateral_token_name);
   let collateral_decimal = token_decimal(collateral_token);
@@ -158,3 +160,21 @@ function token_decimal(token: string): number {
       return 9;
   }
 }
+
+SuiObjectProcessor.bind({
+  network,
+  startCheckpoint,
+  objectId: "0xc0bf75a16dbd11f0d52b27d933d4e1efaa8bdfbe3cdb89587464465aad1b6606",
+}).onTimeInterval(
+  async (object, df, ctx) => {
+    const liquidityPool = await ctx.coder.decodeType(object, lp_pool.LiquidityPool.type());
+    const tvl_usd = liquidityPool?.pool_info.tvl_usd!;
+    const total_share_supply = liquidityPool?.pool_info.total_share_supply!;
+    const price = tvl_usd / total_share_supply;
+    ctx.meter.Gauge("tlp_price").record(price);
+  },
+  60,
+  60,
+  undefined,
+  undefined
+);
