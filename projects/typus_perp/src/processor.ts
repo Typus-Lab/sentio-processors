@@ -58,7 +58,12 @@ position.bind({ network: SuiNetwork.TEST_NET, startCheckpoint }).onEventOrderFil
   var realized_amount = event.data_decoded.realized_amount_sign
     ? Number(event.data_decoded.realized_amount)
     : -Number(event.data_decoded.realized_amount);
-  var realized_pnl = ((realized_amount - realized_trading_fee) * realized_fee_in_usd) / realized_trading_fee;
+  var realized_pnl;
+  if (realized_trading_fee > 0) {
+    realized_pnl = ((realized_amount - realized_trading_fee) * realized_fee_in_usd) / realized_trading_fee;
+  } else {
+    realized_pnl = 0;
+  }
 
   ctx.eventLogger.emit("OrderFilled", {
     distinctId: event.data_decoded.user,
