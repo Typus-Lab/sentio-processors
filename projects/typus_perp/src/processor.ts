@@ -4,7 +4,7 @@ import { getPriceBySymbol } from "@sentio/sdk/utils";
 import { BcsReader } from "@mysten/bcs";
 import { position, trading, lp_pool } from "./types/sui/testnet/typus_perp.js";
 
-const startCheckpoint = BigInt(159664608);
+const startCheckpoint = BigInt(169893657);
 
 const network = SuiNetwork.TEST_NET;
 
