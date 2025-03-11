@@ -8,6 +8,8 @@ const startCheckpoint = BigInt(169893657);
 
 const network = SuiNetwork.TEST_NET;
 
+const LIQUIDITY_POOL_0 = "0x952fadd71b6ada8fc2e9aacc2e9de2dd3dade9813427af6a3c42a5926e371f04";
+
 trading.bind({ network, startCheckpoint }).onEventLiquidateEvent((event, ctx) => {
   let collateral_token_name = event.data_decoded.collateral_token.name;
   let collateral_token = parse_token(collateral_token_name);
@@ -164,7 +166,7 @@ function token_decimal(token: string): number {
 SuiObjectProcessor.bind({
   network,
   startCheckpoint,
-  objectId: "0xc0bf75a16dbd11f0d52b27d933d4e1efaa8bdfbe3cdb89587464465aad1b6606",
+  objectId: LIQUIDITY_POOL_0,
 }).onTimeInterval(
   async (object, df, ctx) => {
     const liquidityPool = await ctx.coder.decodeType(object, lp_pool.LiquidityPool.type());
