@@ -4,13 +4,13 @@ import { getPriceBySymbol } from "@sentio/sdk/utils";
 import { BcsReader } from "@mysten/bcs";
 import { position, trading, lp_pool } from "./types/sui/testnet/typus_perp.js";
 
-const startCheckpoint = BigInt(169893657);
+// const startCheckpoint = BigInt(169893657);
 
 const network = SuiNetwork.TEST_NET;
 
 const LIQUIDITY_POOL_0 = "0x952fadd71b6ada8fc2e9aacc2e9de2dd3dade9813427af6a3c42a5926e371f04";
 
-trading.bind({ network, startCheckpoint }).onEventLiquidateEvent((event, ctx) => {
+trading.bind({ network }).onEventLiquidateEvent((event, ctx) => {
   let collateral_token_name = event.data_decoded.collateral_token.name;
   let collateral_token = parse_token(collateral_token_name);
   let collateral_decimal = token_decimal(collateral_token);
@@ -34,7 +34,7 @@ trading.bind({ network, startCheckpoint }).onEventLiquidateEvent((event, ctx) =>
   });
 });
 
-position.bind({ network: SuiNetwork.TEST_NET, startCheckpoint }).onEventOrderFilledEvent((event, ctx) => {
+position.bind({ network }).onEventOrderFilledEvent((event, ctx) => {
   let collateral_token_name = event.data_decoded.collateral_token.name;
   let collateral_token = parse_token(collateral_token_name);
   let collateral_decimal = token_decimal(collateral_token);
@@ -165,7 +165,6 @@ function token_decimal(token: string): number {
 
 SuiObjectProcessor.bind({
   network,
-  startCheckpoint,
   objectId: LIQUIDITY_POOL_0,
 }).onTimeInterval(
   async (object, df, ctx) => {
