@@ -11,17 +11,17 @@
   ],
   "type": "module",
   "dependencies": {
-    "@sentio/sdk": "2.55.2",
+    "@sentio/sdk": "2.57.12",
     "node-fetch": "^3.3.1"
   },
   "resolutions": {
     "ethers": "npm:@sentio/ethers@6.12.2"
   },
   "devDependencies": {
+    "@sentio/cli": "2.25.5",
     "@types/chai": "^4.3.16",
-    "@sentio/cli": "2.20.3",
-    "typescript": "^5.4.5",
-    "chai": "^4.4.1"
+    "chai": "^4.4.1",
+    "typescript": "^5.4.5"
   },
   "scripts": {
     "new": "yarn sentio create -p -d projects"
