@@ -17,8 +17,8 @@ trading.bind({ network, startCheckpoint }).onEventLiquidateEvent((event, ctx) =>
   let base_token_name = event.data_decoded.base_token.name;
   let base_token = parse_token(base_token_name);
   let position_id = event.data_decoded.position_id;
-  let collateral_price = Number(event.data_decoded.collateral_price) / 10 ** 9;
-  let trading_price = Number(event.data_decoded.trading_price) / 10 ** 9;
+  let collateral_price = Number(event.data_decoded.collateral_price) / 10 ** 8;
+  let trading_price = Number(event.data_decoded.trading_price) / 10 ** 8;
   let liquidator_fee = Number(event.data_decoded.realized_liquidator_fee) / 10 ** collateral_decimal;
   let value_for_lp_pool = Number(event.data_decoded.realized_value_for_lp_pool) / 10 ** collateral_decimal;
 
