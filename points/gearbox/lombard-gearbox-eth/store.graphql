@@ -1,6 +1,0 @@
-type CreditAccountSnapshot @entity {
-  id: ID!
-  borrower: String!
-  lbtcBalance: BigInt!
-  timestampMilli: BigInt!
-}

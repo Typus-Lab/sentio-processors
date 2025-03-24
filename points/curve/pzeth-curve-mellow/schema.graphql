@@ -1,8 +1,0 @@
-type AccountSnapshot @entity {
-  id: String!
-  timestampMilli: BigInt!
-  lptBalance: String!
-  lptSupply: String!
-  poolEzEthBalance: String!
-  poolPzEthBalance: String!
-}

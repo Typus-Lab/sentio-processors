@@ -1,7 +1,0 @@
-type AccountSnapshot @entity {
-  id: ID!
-  vault: String!
-  account: String!
-  timestampMilli: BigInt!
-  balance: BigInt!
-}

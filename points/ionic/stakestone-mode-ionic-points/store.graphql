@@ -1,7 +1,0 @@
-type AccountSnapshot @entity {
-  id: ID!
-  timestampMilli: BigInt!
-  stoneBalance: BigInt!
-  totalBorrow: BigInt!
-  totalSupply: BigInt!
-}
