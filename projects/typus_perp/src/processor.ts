@@ -1,14 +1,12 @@
-import { SuiNetwork, SuiObjectContext, SuiObjectProcessor, SuiWrappedObjectProcessor } from "@sentio/sdk/sui";
-import { normalizeSuiAddress, normalizeStructTag } from "@mysten/sui/utils";
-import { getPriceBySymbol } from "@sentio/sdk/utils";
-import { BcsReader } from "@mysten/bcs";
-import { position, trading, lp_pool } from "./types/sui/testnet/typus_perp.js";
+import { SuiNetwork, SuiObjectProcessor } from "@sentio/sdk/sui";
+import { normalizeSuiAddress } from "@mysten/sui/utils";
+import { position, trading, lp_pool } from "./types/sui/typus_perp.js";
 
 const startCheckpoint = BigInt(173000000);
 
-const network = SuiNetwork.TEST_NET;
+const network = SuiNetwork.MAIN_NET;
 
-const LIQUIDITY_POOL_0 = "0x952fadd71b6ada8fc2e9aacc2e9de2dd3dade9813427af6a3c42a5926e371f04";
+const LIQUIDITY_POOL_0 = "0x9e1f760bebd2aab8f6e03682917efc28d0d446f3d2d3a4c1d28d385e3f325bda";
 
 trading.bind({ network, startCheckpoint }).onEventLiquidateEvent((event, ctx) => {
   let collateral_token_name = event.data_decoded.collateral_token.name;
