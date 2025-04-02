@@ -1,7 +1,7 @@
 [
 	{
 		"fileFormatVersion": 6,
-		"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+		"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 		"name": "royalty_rule",
 		"friends": [],
 		"structs": {
@@ -172,7 +172,7 @@
 	},
 	{
 		"fileFormatVersion": 6,
-		"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+		"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 		"name": "staking",
 		"friends": [],
 		"structs": {
@@ -250,7 +250,7 @@
 									"Address",
 									{
 										"Struct": {
-											"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+											"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 											"module": "staking",
 											"name": "StakingTails",
 											"typeArguments": []
@@ -264,7 +264,7 @@
 						"name": "nft_manager_cap",
 						"type": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -306,7 +306,7 @@
 						"name": "nft",
 						"type": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "Tails",
 								"typeArguments": []
@@ -333,7 +333,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "staking",
 								"name": "Registry",
 								"typeArguments": []
@@ -343,7 +343,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "staking",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -363,7 +363,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "staking",
 								"name": "Registry",
 								"typeArguments": []
@@ -372,7 +372,7 @@
 					},
 					{
 						"Struct": {
-							"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+							"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 							"module": "typus_nft",
 							"name": "ManagerCap",
 							"typeArguments": []
@@ -399,7 +399,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "staking",
 								"name": "Registry",
 								"typeArguments": []
@@ -427,7 +427,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "staking",
 								"name": "Registry",
 								"typeArguments": []
@@ -455,7 +455,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "staking",
 								"name": "Registry",
 								"typeArguments": []
@@ -483,7 +483,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "staking",
 								"name": "Registry",
 								"typeArguments": []
@@ -521,7 +521,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "staking",
 								"name": "Registry",
 								"typeArguments": []
@@ -587,7 +587,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "staking",
 								"name": "Registry",
 								"typeArguments": []
@@ -635,7 +635,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "staking",
 								"name": "Registry",
 								"typeArguments": []
@@ -645,7 +645,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "staking",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -663,7 +663,7 @@
 	},
 	{
 		"fileFormatVersion": 6,
-		"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+		"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 		"name": "table_vec",
 		"friends": [],
 		"structs": {
@@ -718,7 +718,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "table_vec",
 								"name": "TableVec",
 								"typeArguments": [
@@ -753,7 +753,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "table_vec",
 								"name": "TableVec",
 								"typeArguments": [
@@ -787,7 +787,7 @@
 				"parameters": [
 					{
 						"Struct": {
-							"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+							"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 							"module": "table_vec",
 							"name": "TableVec",
 							"typeArguments": [
@@ -814,7 +814,7 @@
 				"parameters": [
 					{
 						"Struct": {
-							"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+							"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 							"module": "table_vec",
 							"name": "TableVec",
 							"typeArguments": [
@@ -852,7 +852,7 @@
 				"return": [
 					{
 						"Struct": {
-							"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+							"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 							"module": "table_vec",
 							"name": "TableVec",
 							"typeArguments": [
@@ -878,7 +878,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "table_vec",
 								"name": "TableVec",
 								"typeArguments": [
@@ -908,7 +908,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "table_vec",
 								"name": "TableVec",
 								"typeArguments": [
@@ -938,7 +938,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "table_vec",
 								"name": "TableVec",
 								"typeArguments": [
@@ -970,7 +970,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "table_vec",
 								"name": "TableVec",
 								"typeArguments": [
@@ -1015,7 +1015,7 @@
 				"return": [
 					{
 						"Struct": {
-							"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+							"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 							"module": "table_vec",
 							"name": "TableVec",
 							"typeArguments": [
@@ -1041,7 +1041,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "table_vec",
 								"name": "TableVec",
 								"typeArguments": [
@@ -1061,70 +1061,10 @@
 	},
 	{
 		"fileFormatVersion": 6,
-		"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+		"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 		"name": "typus_nft",
 		"friends": [],
 		"structs": {
-			"FirstBidEvent": {
-				"abilities": {
-					"abilities": [
-						"Copy",
-						"Drop"
-					]
-				},
-				"typeParameters": [],
-				"fields": [
-					{
-						"name": "nft_id",
-						"type": {
-							"Struct": {
-								"address": "0x2",
-								"module": "object",
-								"name": "ID",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"name": "number",
-						"type": "U64"
-					},
-					{
-						"name": "exp_earn",
-						"type": "U64"
-					}
-				]
-			},
-			"FirstDepositEvent": {
-				"abilities": {
-					"abilities": [
-						"Copy",
-						"Drop"
-					]
-				},
-				"typeParameters": [],
-				"fields": [
-					{
-						"name": "nft_id",
-						"type": {
-							"Struct": {
-								"address": "0x2",
-								"module": "object",
-								"name": "ID",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"name": "number",
-						"type": "U64"
-					},
-					{
-						"name": "exp_earn",
-						"type": "U64"
-					}
-				]
-			},
 			"LevelUpEvent": {
 				"abilities": {
 					"abilities": [
@@ -1313,13 +1253,13 @@
 						"name": "tails",
 						"type": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "table_vec",
 								"name": "TableVec",
 								"typeArguments": [
 									{
 										"Struct": {
-											"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+											"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 											"module": "typus_nft",
 											"name": "Tails",
 											"typeArguments": []
@@ -1386,7 +1326,7 @@
 								"typeArguments": [
 									{
 										"Struct": {
-											"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+											"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 											"module": "typus_nft",
 											"name": "Tails",
 											"typeArguments": []
@@ -1611,7 +1551,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -1621,7 +1561,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "Pool",
 								"typeArguments": []
@@ -1681,7 +1621,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -1691,7 +1631,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "Tails",
 								"typeArguments": []
@@ -1709,7 +1649,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -1719,7 +1659,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "Tails",
 								"typeArguments": []
@@ -1737,7 +1677,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -1747,7 +1687,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "Tails",
 								"typeArguments": []
@@ -1765,7 +1705,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "Pool",
 								"typeArguments": []
@@ -1773,27 +1713,8 @@
 						}
 					},
 					{
-						"Reference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "transfer_policy",
-								"name": "TransferPolicy",
-								"typeArguments": [
-									{
-										"Struct": {
-											"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
-											"module": "typus_nft",
-											"name": "Tails",
-											"typeArguments": []
-										}
-									}
-								]
-							}
-						}
-					},
-					{
 						"Struct": {
-							"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+							"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 							"module": "typus_nft",
 							"name": "Whitelist",
 							"typeArguments": []
@@ -1830,7 +1751,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "Pool",
 								"typeArguments": []
@@ -1838,27 +1759,8 @@
 						}
 					},
 					{
-						"Reference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "transfer_policy",
-								"name": "TransferPolicy",
-								"typeArguments": [
-									{
-										"Struct": {
-											"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
-											"module": "typus_nft",
-											"name": "Tails",
-											"typeArguments": []
-										}
-									}
-								]
-							}
-						}
-					},
-					{
 						"Struct": {
-							"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+							"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 							"module": "typus_nft",
 							"name": "Whitelist",
 							"typeArguments": []
@@ -1915,7 +1817,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -1925,7 +1827,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "Tails",
 								"typeArguments": []
@@ -1953,7 +1855,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -1963,7 +1865,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "Tails",
 								"typeArguments": []
@@ -1990,7 +1892,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -2000,7 +1902,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "Pool",
 								"typeArguments": []
@@ -2031,7 +1933,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -2041,7 +1943,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "Tails",
 								"typeArguments": []
@@ -2070,7 +1972,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -2098,7 +2000,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -2127,7 +2029,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -2137,7 +2039,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "Tails",
 								"typeArguments": []
@@ -2156,7 +2058,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -2166,7 +2068,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "Pool",
 								"typeArguments": []
@@ -2186,7 +2088,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -2196,7 +2098,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "Tails",
 								"typeArguments": []
@@ -2214,67 +2116,6 @@
 				],
 				"return": []
 			},
-			"resend_nfts_event": {
-				"visibility": "Private",
-				"isEntry": true,
-				"typeParameters": [],
-				"parameters": [
-					{
-						"Reference": {
-							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
-								"module": "typus_nft",
-								"name": "ManagerCap",
-								"typeArguments": []
-							}
-						}
-					},
-					"Address",
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "string",
-							"name": "String",
-							"typeArguments": []
-						}
-					},
-					"U64",
-					{
-						"Vector": "U8"
-					},
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x1",
-								"module": "string",
-								"name": "String",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x1",
-								"module": "string",
-								"name": "String",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "tx_context",
-								"name": "TxContext",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": []
-			},
 			"send_nfts": {
 				"visibility": "Private",
 				"isEntry": true,
@@ -2283,7 +2124,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -2293,29 +2134,10 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "Pool",
 								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Reference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "transfer_policy",
-								"name": "TransferPolicy",
-								"typeArguments": [
-									{
-										"Struct": {
-											"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
-											"module": "typus_nft",
-											"name": "Tails",
-											"typeArguments": []
-										}
-									}
-								]
 							}
 						}
 					},
@@ -2342,7 +2164,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "Tails",
 								"typeArguments": []
@@ -2362,7 +2184,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "Tails",
 								"typeArguments": []
@@ -2382,7 +2204,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "Tails",
 								"typeArguments": []
@@ -2402,7 +2224,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -2412,7 +2234,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "Tails",
 								"typeArguments": []
@@ -2425,53 +2247,6 @@
 				],
 				"return": []
 			},
-			"update_policy_rules": {
-				"visibility": "Private",
-				"isEntry": true,
-				"typeParameters": [],
-				"parameters": [
-					{
-						"Reference": {
-							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
-								"module": "typus_nft",
-								"name": "ManagerCap",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "transfer_policy",
-								"name": "TransferPolicy",
-								"typeArguments": [
-									{
-										"Struct": {
-											"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
-											"module": "typus_nft",
-											"name": "Tails",
-											"typeArguments": []
-										}
-									}
-								]
-							}
-						}
-					},
-					{
-						"Reference": {
-							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
-								"module": "typus_nft",
-								"name": "Royalty",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": []
-			},
 			"update_royalty": {
 				"visibility": "Private",
 				"isEntry": true,
@@ -2480,7 +2255,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -2490,7 +2265,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "Royalty",
 								"typeArguments": []
@@ -2524,7 +2299,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -2534,7 +2309,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "Pool",
 								"typeArguments": []
@@ -2553,7 +2328,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -2563,7 +2338,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "Pool",
 								"typeArguments": []
@@ -2582,7 +2357,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -2592,7 +2367,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "Tails",
 								"typeArguments": []
@@ -2619,7 +2394,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -2629,7 +2404,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+								"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 								"module": "typus_nft",
 								"name": "Royalty",
 								"typeArguments": []
@@ -2645,7 +2420,7 @@
 								"typeArguments": [
 									{
 										"Struct": {
-											"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+											"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 											"module": "typus_nft",
 											"name": "Tails",
 											"typeArguments": []
@@ -2672,11 +2447,11 @@
 	},
 	{
 		"fileFormatVersion": 6,
-		"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+		"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 		"name": "utils",
 		"friends": [
 			{
-				"address": "0x5cfd0819411be98034cba544cbffab192c2c35674a05ff57f4f1c5042875b828",
+				"address": "0xbd147bc7f12f38f175d78947a61364e8e077b9b188b00e7094bc0c3623162196",
 				"name": "typus_nft"
 			}
 		],

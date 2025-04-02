@@ -2,13 +2,13 @@ import { SuiNetwork, SuiObjectContext, SuiObjectProcessor, SuiWrappedObjectProce
 import { normalizeSuiAddress, normalizeStructTag } from "@mysten/sui/utils";
 import { getPriceBySymbol } from "@sentio/sdk/utils";
 import { BcsReader } from "@mysten/bcs";
-import { position, trading, lp_pool } from "./types/sui/testnet/typus_perp.js";
+import { position, trading, lp_pool } from "./types/sui/typus_perp_mainnet.js";
 
-const startCheckpoint = BigInt(173000000);
+const startCheckpoint = BigInt(129298199);
 
-const network = SuiNetwork.TEST_NET;
+const network = SuiNetwork.MAIN_NET;
 
-const LIQUIDITY_POOL_0 = "0x952fadd71b6ada8fc2e9aacc2e9de2dd3dade9813427af6a3c42a5926e371f04";
+const LIQUIDITY_POOL_0 = "0x98110aae0ffaf294259066380a2d35aba74e42860f1e87ee9c201f471eb3ba03";
 
 trading.bind({ network, startCheckpoint }).onEventLiquidateEvent((event, ctx) => {
   let collateral_token_name = event.data_decoded.collateral_token.name;
@@ -56,8 +56,7 @@ position.bind({ network, startCheckpoint }).onEventOrderFilledEvent((event, ctx)
   var filled_price = Number(event.data_decoded.filled_price) / 10 ** 8;
   var side = event.data_decoded.position_side ? "Long" : "Short";
 
-  var realized_trading_fee =
-    Number(event.data_decoded.realized_trading_fee) + Number(event.data_decoded.realized_borrow_fee);
+  var realized_trading_fee = Number(event.data_decoded.realized_trading_fee) + Number(event.data_decoded.realized_borrow_fee);
   var realized_fee_in_usd = Number(event.data_decoded.realized_fee_in_usd) / 10 ** 9;
   var realized_amount = event.data_decoded.realized_amount_sign
     ? Number(event.data_decoded.realized_amount)
@@ -120,6 +119,8 @@ function parse_token(name: string): string {
       return "HIPPO";
     case "0xdba34672e30cb065b1f93e3ab55318768fd6fef66c15942c9f7cb846e2f900e7":
       return "USDC";
+    case "0x3e8e9423d80e1774a7ca128fccd8bf5f1f7753be658c5e645929037f7c819040":
+      return "LBTC";
     default:
       return typeArgs[2];
   }
@@ -145,6 +146,7 @@ function token_decimal(token: string): number {
     case "INJ":
     case "SEI":
     case "JUP":
+    case "LBTC":
       return 8;
     case "USDC":
     case "WUSDC":

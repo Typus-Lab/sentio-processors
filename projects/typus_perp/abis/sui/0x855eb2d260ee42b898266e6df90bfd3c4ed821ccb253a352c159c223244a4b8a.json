@@ -1,7 +1,7 @@
 [
 	{
 		"fileFormatVersion": 6,
-		"address": "0x1d17058789bd1e1e79f1a92424519a88146f191f58a06cc4d9ab23d17d46ab73",
+		"address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
 		"name": "oracle",
 		"friends": [],
 		"structs": {
@@ -195,7 +195,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x1d17058789bd1e1e79f1a92424519a88146f191f58a06cc4d9ab23d17d46ab73",
+								"address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
 								"module": "oracle",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -224,7 +224,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x1d17058789bd1e1e79f1a92424519a88146f191f58a06cc4d9ab23d17d46ab73",
+								"address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
 								"module": "oracle",
 								"name": "Oracle",
 								"typeArguments": []
@@ -247,7 +247,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x1d17058789bd1e1e79f1a92424519a88146f191f58a06cc4d9ab23d17d46ab73",
+								"address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
 								"module": "oracle",
 								"name": "Oracle",
 								"typeArguments": []
@@ -278,7 +278,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x1d17058789bd1e1e79f1a92424519a88146f191f58a06cc4d9ab23d17d46ab73",
+								"address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
 								"module": "oracle",
 								"name": "Oracle",
 								"typeArguments": []
@@ -329,7 +329,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x1d17058789bd1e1e79f1a92424519a88146f191f58a06cc4d9ab23d17d46ab73",
+								"address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
 								"module": "oracle",
 								"name": "Oracle",
 								"typeArguments": []
@@ -367,7 +367,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x1d17058789bd1e1e79f1a92424519a88146f191f58a06cc4d9ab23d17d46ab73",
+								"address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
 								"module": "oracle",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -412,7 +412,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x1d17058789bd1e1e79f1a92424519a88146f191f58a06cc4d9ab23d17d46ab73",
+								"address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
 								"module": "oracle",
 								"name": "Oracle",
 								"typeArguments": []
@@ -422,7 +422,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x1d17058789bd1e1e79f1a92424519a88146f191f58a06cc4d9ab23d17d46ab73",
+								"address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
 								"module": "oracle",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -462,7 +462,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x1d17058789bd1e1e79f1a92424519a88146f191f58a06cc4d9ab23d17d46ab73",
+								"address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
 								"module": "oracle",
 								"name": "Oracle",
 								"typeArguments": []
@@ -472,7 +472,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x1d17058789bd1e1e79f1a92424519a88146f191f58a06cc4d9ab23d17d46ab73",
+								"address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
 								"module": "oracle",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -482,7 +482,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x975e063f398f720af4f33ec06a927f14ea76ca24f7f8dd544aa62ab9d5d15f44",
+								"address": "0xb53b0f4174108627fbee72e2498b58d6a2714cded53fac537034c220d26302",
 								"module": "price_info",
 								"name": "PriceInfoObject",
 								"typeArguments": []
@@ -500,7 +500,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x1d17058789bd1e1e79f1a92424519a88146f191f58a06cc4d9ab23d17d46ab73",
+								"address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
 								"module": "oracle",
 								"name": "Oracle",
 								"typeArguments": []
@@ -510,7 +510,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x1d17058789bd1e1e79f1a92424519a88146f191f58a06cc4d9ab23d17d46ab73",
+								"address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
 								"module": "oracle",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -520,7 +520,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x98670585b87e06628ef2d7f7cb1e7bee8ada65b43b82997935225a7e6e21d18e",
+								"address": "0x8d79f4d920b03d88faca1e421af023a87fbb1e4a6fd200248e6e9998d09e470",
 								"module": "aggregator",
 								"name": "Aggregator",
 								"typeArguments": []
@@ -538,7 +538,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x1d17058789bd1e1e79f1a92424519a88146f191f58a06cc4d9ab23d17d46ab73",
+								"address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
 								"module": "oracle",
 								"name": "Oracle",
 								"typeArguments": []
@@ -548,7 +548,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x1d17058789bd1e1e79f1a92424519a88146f191f58a06cc4d9ab23d17d46ab73",
+								"address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
 								"module": "oracle",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -567,7 +567,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x1d17058789bd1e1e79f1a92424519a88146f191f58a06cc4d9ab23d17d46ab73",
+								"address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
 								"module": "oracle",
 								"name": "Oracle",
 								"typeArguments": []
@@ -577,7 +577,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x1d17058789bd1e1e79f1a92424519a88146f191f58a06cc4d9ab23d17d46ab73",
+								"address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
 								"module": "oracle",
 								"name": "ManagerCap",
 								"typeArguments": []
@@ -611,7 +611,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x1d17058789bd1e1e79f1a92424519a88146f191f58a06cc4d9ab23d17d46ab73",
+								"address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
 								"module": "oracle",
 								"name": "Oracle",
 								"typeArguments": []
@@ -621,7 +621,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x975e063f398f720af4f33ec06a927f14ea76ca24f7f8dd544aa62ab9d5d15f44",
+								"address": "0xb53b0f4174108627fbee72e2498b58d6a2714cded53fac537034c220d26302",
 								"module": "state",
 								"name": "State",
 								"typeArguments": []
@@ -631,7 +631,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x975e063f398f720af4f33ec06a927f14ea76ca24f7f8dd544aa62ab9d5d15f44",
+								"address": "0xb53b0f4174108627fbee72e2498b58d6a2714cded53fac537034c220d26302",
 								"module": "price_info",
 								"name": "PriceInfoObject",
 								"typeArguments": []
@@ -669,7 +669,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x1d17058789bd1e1e79f1a92424519a88146f191f58a06cc4d9ab23d17d46ab73",
+								"address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
 								"module": "oracle",
 								"name": "Oracle",
 								"typeArguments": []
@@ -679,7 +679,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x98670585b87e06628ef2d7f7cb1e7bee8ada65b43b82997935225a7e6e21d18e",
+								"address": "0x8d79f4d920b03d88faca1e421af023a87fbb1e4a6fd200248e6e9998d09e470",
 								"module": "aggregator",
 								"name": "Aggregator",
 								"typeArguments": []
@@ -713,11 +713,11 @@
 	},
 	{
 		"fileFormatVersion": 6,
-		"address": "0x1d17058789bd1e1e79f1a92424519a88146f191f58a06cc4d9ab23d17d46ab73",
+		"address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
 		"name": "pyth_parser",
 		"friends": [
 			{
-				"address": "0x1d17058789bd1e1e79f1a92424519a88146f191f58a06cc4d9ab23d17d46ab73",
+				"address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
 				"name": "oracle"
 			}
 		],
@@ -781,7 +781,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x975e063f398f720af4f33ec06a927f14ea76ca24f7f8dd544aa62ab9d5d15f44",
+								"address": "0xb53b0f4174108627fbee72e2498b58d6a2714cded53fac537034c220d26302",
 								"module": "price_info",
 								"name": "PriceInfoObject",
 								"typeArguments": []
@@ -803,7 +803,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x975e063f398f720af4f33ec06a927f14ea76ca24f7f8dd544aa62ab9d5d15f44",
+								"address": "0xb53b0f4174108627fbee72e2498b58d6a2714cded53fac537034c220d26302",
 								"module": "state",
 								"name": "State",
 								"typeArguments": []
@@ -813,7 +813,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x975e063f398f720af4f33ec06a927f14ea76ca24f7f8dd544aa62ab9d5d15f44",
+								"address": "0xb53b0f4174108627fbee72e2498b58d6a2714cded53fac537034c220d26302",
 								"module": "price_info",
 								"name": "PriceInfoObject",
 								"typeArguments": []
@@ -844,7 +844,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x975e063f398f720af4f33ec06a927f14ea76ca24f7f8dd544aa62ab9d5d15f44",
+								"address": "0xb53b0f4174108627fbee72e2498b58d6a2714cded53fac537034c220d26302",
 								"module": "state",
 								"name": "State",
 								"typeArguments": []
@@ -861,11 +861,11 @@
 	},
 	{
 		"fileFormatVersion": 6,
-		"address": "0x1d17058789bd1e1e79f1a92424519a88146f191f58a06cc4d9ab23d17d46ab73",
+		"address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
 		"name": "switchboard_feed_parser",
 		"friends": [
 			{
-				"address": "0x1d17058789bd1e1e79f1a92424519a88146f191f58a06cc4d9ab23d17d46ab73",
+				"address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
 				"name": "oracle"
 			}
 		],
@@ -911,7 +911,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x98670585b87e06628ef2d7f7cb1e7bee8ada65b43b82997935225a7e6e21d18e",
+								"address": "0x8d79f4d920b03d88faca1e421af023a87fbb1e4a6fd200248e6e9998d09e470",
 								"module": "aggregator",
 								"name": "Aggregator",
 								"typeArguments": []

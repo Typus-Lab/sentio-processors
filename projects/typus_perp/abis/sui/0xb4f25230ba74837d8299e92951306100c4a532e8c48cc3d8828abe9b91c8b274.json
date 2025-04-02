@@ -1,7 +1,7 @@
 [
 	{
 		"fileFormatVersion": 6,
-		"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+		"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 		"name": "authority",
 		"friends": [],
 		"structs": {
@@ -39,7 +39,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "authority",
 								"name": "Authority",
 								"typeArguments": []
@@ -50,32 +50,6 @@
 				],
 				"return": []
 			},
-			"destroy": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [
-					{
-						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-							"module": "authority",
-							"name": "Authority",
-							"typeArguments": []
-						}
-					},
-					{
-						"Reference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "tx_context",
-								"name": "TxContext",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": []
-			},
 			"destroy_empty": {
 				"visibility": "Public",
 				"isEntry": false,
@@ -83,7 +57,7 @@
 				"parameters": [
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "authority",
 							"name": "Authority",
 							"typeArguments": []
@@ -110,7 +84,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "authority",
 								"name": "Authority",
 								"typeArguments": []
@@ -120,7 +94,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "authority",
 								"name": "Authority",
 								"typeArguments": []
@@ -162,7 +136,7 @@
 				"return": [
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "authority",
 							"name": "Authority",
 							"typeArguments": []
@@ -178,7 +152,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "authority",
 								"name": "Authority",
 								"typeArguments": []
@@ -210,7 +184,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "authority",
 								"name": "Authority",
 								"typeArguments": []
@@ -229,7 +203,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "authority",
 								"name": "Authority",
 								"typeArguments": []
@@ -257,7 +231,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "authority",
 								"name": "Authority",
 								"typeArguments": []
@@ -275,7 +249,7 @@
 	},
 	{
 		"fileFormatVersion": 6,
-		"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+		"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 		"name": "balance_pool",
 		"friends": [],
 		"structs": {
@@ -331,7 +305,7 @@
 						"type": {
 							"Vector": {
 								"Struct": {
-									"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+									"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 									"module": "balance_pool",
 									"name": "BalanceInfo",
 									"typeArguments": []
@@ -343,7 +317,7 @@
 						"name": "authority",
 						"type": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "authority",
 								"name": "Authority",
 								"typeArguments": []
@@ -377,7 +351,7 @@
 						"type": {
 							"Vector": {
 								"Struct": {
-									"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+									"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 									"module": "balance_pool",
 									"name": "BalanceInfo",
 									"typeArguments": []
@@ -389,7 +363,7 @@
 						"name": "authority",
 						"type": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "authority",
 								"name": "Authority",
 								"typeArguments": []
@@ -408,7 +382,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "balance_pool",
 								"name": "BalancePool",
 								"typeArguments": []
@@ -427,7 +401,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "balance_pool",
 								"name": "BalancePool",
 								"typeArguments": []
@@ -449,7 +423,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "balance_pool",
 								"name": "BalancePool",
 								"typeArguments": []
@@ -461,7 +435,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "authority",
 								"name": "Authority",
 								"typeArguments": []
@@ -492,7 +466,7 @@
 				"return": [
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "balance_pool",
 							"name": "BalancePool",
 							"typeArguments": []
@@ -508,7 +482,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "balance_pool",
 								"name": "BalancePool",
 								"typeArguments": []
@@ -546,7 +520,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "balance_pool",
 								"name": "BalancePool",
 								"typeArguments": []
@@ -580,7 +554,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "balance_pool",
 								"name": "BalancePool",
 								"typeArguments": []
@@ -613,7 +587,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "balance_pool",
 								"name": "BalancePool",
 								"typeArguments": []
@@ -632,7 +606,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "balance_pool",
 								"name": "BalancePool",
 								"typeArguments": []
@@ -646,99 +620,6 @@
 				],
 				"return": []
 			},
-			"send": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "balance_pool",
-								"name": "BalancePool",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								"U64"
-							]
-						}
-					},
-					"Address",
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "tx_context",
-								"name": "TxContext",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					"U64"
-				]
-			},
-			"send_shared": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "balance_pool",
-								"name": "BalancePool",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Vector": "U8"
-					},
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								"U64"
-							]
-						}
-					},
-					"Address",
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "tx_context",
-								"name": "TxContext",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					"U64"
-				]
-			},
 			"shared_authority": {
 				"visibility": "Public",
 				"isEntry": false,
@@ -747,7 +628,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "balance_pool",
 								"name": "BalancePool",
 								"typeArguments": []
@@ -762,7 +643,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "authority",
 								"name": "Authority",
 								"typeArguments": []
@@ -783,7 +664,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "balance_pool",
 								"name": "BalancePool",
 								"typeArguments": []
@@ -827,7 +708,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "balance_pool",
 								"name": "BalancePool",
 								"typeArguments": []
@@ -866,7 +747,7 @@
 	},
 	{
 		"fileFormatVersion": 6,
-		"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+		"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 		"name": "big_vector",
 		"friends": [],
 		"structs": {
@@ -927,7 +808,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "big_vector",
 								"name": "BigVector",
 								"typeArguments": [
@@ -962,7 +843,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "big_vector",
 								"name": "BigVector",
 								"typeArguments": [
@@ -997,7 +878,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "big_vector",
 								"name": "BigVector",
 								"typeArguments": [
@@ -1034,7 +915,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "big_vector",
 								"name": "BigVector",
 								"typeArguments": [
@@ -1070,7 +951,7 @@
 				"parameters": [
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "big_vector",
 							"name": "BigVector",
 							"typeArguments": [
@@ -1097,7 +978,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "big_vector",
 								"name": "BigVector",
 								"typeArguments": [
@@ -1127,7 +1008,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "big_vector",
 								"name": "BigVector",
 								"typeArguments": [
@@ -1169,7 +1050,7 @@
 				"return": [
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "big_vector",
 							"name": "BigVector",
 							"typeArguments": [
@@ -1195,7 +1076,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "big_vector",
 								"name": "BigVector",
 								"typeArguments": [
@@ -1227,7 +1108,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "big_vector",
 								"name": "BigVector",
 								"typeArguments": [
@@ -1258,7 +1139,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "big_vector",
 								"name": "BigVector",
 								"typeArguments": [
@@ -1291,7 +1172,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "big_vector",
 								"name": "BigVector",
 								"typeArguments": [
@@ -1321,7 +1202,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "big_vector",
 								"name": "BigVector",
 								"typeArguments": [
@@ -1352,7 +1233,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "big_vector",
 								"name": "BigVector",
 								"typeArguments": [
@@ -1382,7 +1263,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "big_vector",
 								"name": "BigVector",
 								"typeArguments": [
@@ -1405,7 +1286,7 @@
 	},
 	{
 		"fileFormatVersion": 6,
-		"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+		"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 		"name": "dutch",
 		"friends": [],
 		"structs": {
@@ -1496,13 +1377,13 @@
 						"name": "bids",
 						"type": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "big_vector",
 								"name": "BigVector",
 								"typeArguments": [
 									{
 										"Struct": {
-											"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+											"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 											"module": "dutch",
 											"name": "Bid",
 											"typeArguments": []
@@ -1879,7 +1760,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "dutch",
 								"name": "Auction",
 								"typeArguments": []
@@ -1899,7 +1780,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "dutch",
 								"name": "Auction",
 								"typeArguments": []
@@ -1911,13 +1792,13 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "big_vector",
 								"name": "BigVector",
 								"typeArguments": [
 									{
 										"Struct": {
-											"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+											"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 											"module": "dutch",
 											"name": "Bid",
 											"typeArguments": []
@@ -1958,7 +1839,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "balance_pool",
 								"name": "BalancePool",
 								"typeArguments": []
@@ -1968,7 +1849,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "RefundVault",
 								"typeArguments": []
@@ -1977,7 +1858,7 @@
 					},
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "dutch",
 							"name": "Auction",
 							"typeArguments": []
@@ -2046,7 +1927,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "dutch",
 								"name": "Auction",
 								"typeArguments": []
@@ -2072,7 +1953,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "dutch",
 								"name": "Auction",
 								"typeArguments": []
@@ -2102,7 +1983,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "dutch",
 								"name": "Auction",
 								"typeArguments": []
@@ -2130,7 +2011,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "dutch",
 								"name": "Auction",
 								"typeArguments": []
@@ -2177,7 +2058,7 @@
 				"return": [
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "dutch",
 							"name": "Auction",
 							"typeArguments": []
@@ -2197,7 +2078,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "dutch",
 								"name": "Auction",
 								"typeArguments": []
@@ -2261,286 +2142,6 @@
 					"U64",
 					"U64",
 					"Address"
-				]
-			},
-			"new_bid_v2": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "RefundVault",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "dutch",
-								"name": "Auction",
-								"typeArguments": []
-							}
-						}
-					},
-					"U64",
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x2",
-								"module": "coin",
-								"name": "Coin",
-								"typeArguments": [
-									{
-										"TypeParameter": 0
-									}
-								]
-							}
-						}
-					},
-					{
-						"Struct": {
-							"address": "0x2",
-							"module": "balance",
-							"name": "Balance",
-							"typeArguments": [
-								{
-									"TypeParameter": 0
-								}
-							]
-						}
-					},
-					"U64",
-					{
-						"Reference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "clock",
-								"name": "Clock",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Reference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "tx_context",
-								"name": "TxContext",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					"U64",
-					"U64",
-					"U64",
-					"U64",
-					"U64",
-					"U64",
-					"Address"
-				]
-			},
-			"public_new_bid": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					"Address",
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "dutch",
-								"name": "Auction",
-								"typeArguments": []
-							}
-						}
-					},
-					"U64",
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x2",
-								"module": "coin",
-								"name": "Coin",
-								"typeArguments": [
-									{
-										"TypeParameter": 0
-									}
-								]
-							}
-						}
-					},
-					{
-						"Struct": {
-							"address": "0x2",
-							"module": "balance",
-							"name": "Balance",
-							"typeArguments": [
-								{
-									"TypeParameter": 0
-								}
-							]
-						}
-					},
-					"U64",
-					{
-						"Reference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "clock",
-								"name": "Clock",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "tx_context",
-								"name": "TxContext",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					"U64",
-					"U64",
-					"U64",
-					"U64",
-					"U64",
-					"U64",
-					"Address",
-					{
-						"Struct": {
-							"address": "0x2",
-							"module": "coin",
-							"name": "Coin",
-							"typeArguments": [
-								{
-									"TypeParameter": 0
-								}
-							]
-						}
-					}
-				]
-			},
-			"public_new_bid_v2": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "RefundVault",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "dutch",
-								"name": "Auction",
-								"typeArguments": []
-							}
-						}
-					},
-					"Address",
-					"U64",
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x2",
-								"module": "coin",
-								"name": "Coin",
-								"typeArguments": [
-									{
-										"TypeParameter": 0
-									}
-								]
-							}
-						}
-					},
-					{
-						"Struct": {
-							"address": "0x2",
-							"module": "balance",
-							"name": "Balance",
-							"typeArguments": [
-								{
-									"TypeParameter": 0
-								}
-							]
-						}
-					},
-					"U64",
-					{
-						"Reference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "clock",
-								"name": "Clock",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "tx_context",
-								"name": "TxContext",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					"U64",
-					"U64",
-					"U64",
-					"U64",
-					"U64",
-					"U64",
-					"Address",
-					{
-						"Struct": {
-							"address": "0x2",
-							"module": "coin",
-							"name": "Coin",
-							"typeArguments": [
-								{
-									"TypeParameter": 0
-								}
-							]
-						}
-					}
 				]
 			},
 			"remove_bid": {
@@ -2555,7 +2156,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "dutch",
 								"name": "Auction",
 								"typeArguments": []
@@ -2607,7 +2208,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "dutch",
 								"name": "Auction",
 								"typeArguments": []
@@ -2630,7 +2231,7 @@
 				"parameters": [
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "dutch",
 							"name": "Auction",
 							"typeArguments": []
@@ -2639,7 +2240,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "RefundVault",
 								"typeArguments": []
@@ -2680,7 +2281,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "dutch",
 								"name": "Auction",
 								"typeArguments": []
@@ -2707,7 +2308,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "dutch",
 								"name": "Auction",
 								"typeArguments": []
@@ -2727,7 +2328,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "dutch",
 								"name": "Auction",
 								"typeArguments": []
@@ -2771,7 +2372,7 @@
 	},
 	{
 		"fileFormatVersion": 6,
-		"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+		"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 		"name": "i64",
 		"friends": [],
 		"structs": {
@@ -2801,7 +2402,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "i64",
 								"name": "I64",
 								"typeArguments": []
@@ -2812,7 +2413,7 @@
 				"return": [
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "i64",
 							"name": "I64",
 							"typeArguments": []
@@ -2828,7 +2429,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "i64",
 								"name": "I64",
 								"typeArguments": []
@@ -2838,7 +2439,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "i64",
 								"name": "I64",
 								"typeArguments": []
@@ -2849,7 +2450,7 @@
 				"return": [
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "i64",
 							"name": "I64",
 							"typeArguments": []
@@ -2865,7 +2466,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "i64",
 								"name": "I64",
 								"typeArguments": []
@@ -2885,7 +2486,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "i64",
 								"name": "I64",
 								"typeArguments": []
@@ -2895,7 +2496,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "i64",
 								"name": "I64",
 								"typeArguments": []
@@ -2915,7 +2516,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "i64",
 								"name": "I64",
 								"typeArguments": []
@@ -2925,7 +2526,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "i64",
 								"name": "I64",
 								"typeArguments": []
@@ -2936,7 +2537,7 @@
 				"return": [
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "i64",
 							"name": "I64",
 							"typeArguments": []
@@ -2954,7 +2555,7 @@
 				"return": [
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "i64",
 							"name": "I64",
 							"typeArguments": []
@@ -2970,7 +2571,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "i64",
 								"name": "I64",
 								"typeArguments": []
@@ -2990,7 +2591,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "i64",
 								"name": "I64",
 								"typeArguments": []
@@ -3010,7 +2611,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "i64",
 								"name": "I64",
 								"typeArguments": []
@@ -3020,7 +2621,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "i64",
 								"name": "I64",
 								"typeArguments": []
@@ -3031,7 +2632,7 @@
 				"return": [
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "i64",
 							"name": "I64",
 							"typeArguments": []
@@ -3047,7 +2648,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "i64",
 								"name": "I64",
 								"typeArguments": []
@@ -3058,7 +2659,7 @@
 				"return": [
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "i64",
 							"name": "I64",
 							"typeArguments": []
@@ -3076,7 +2677,7 @@
 				"return": [
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "i64",
 							"name": "I64",
 							"typeArguments": []
@@ -3092,7 +2693,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "i64",
 								"name": "I64",
 								"typeArguments": []
@@ -3102,7 +2703,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "i64",
 								"name": "I64",
 								"typeArguments": []
@@ -3113,7 +2714,7 @@
 				"return": [
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "i64",
 							"name": "I64",
 							"typeArguments": []
@@ -3129,7 +2730,7 @@
 				"return": [
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "i64",
 							"name": "I64",
 							"typeArguments": []
@@ -3141,7 +2742,7 @@
 	},
 	{
 		"fileFormatVersion": 6,
-		"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+		"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 		"name": "linked_list",
 		"friends": [],
 		"structs": {
@@ -3324,7 +2925,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "linked_list",
 								"name": "LinkedList",
 								"typeArguments": [
@@ -3381,7 +2982,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "linked_list",
 								"name": "LinkedList",
 								"typeArguments": [
@@ -3428,7 +3029,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "linked_list",
 								"name": "LinkedList",
 								"typeArguments": [
@@ -3445,7 +3046,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "linked_list",
 								"name": "LinkedList",
 								"typeArguments": [
@@ -3493,7 +3094,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "linked_list",
 								"name": "LinkedList",
 								"typeArguments": [
@@ -3547,7 +3148,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "linked_list",
 								"name": "LinkedList",
 								"typeArguments": [
@@ -3592,7 +3193,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "linked_list",
 								"name": "LinkedList",
 								"typeArguments": [
@@ -3643,7 +3244,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "linked_list",
 								"name": "LinkedList",
 								"typeArguments": [
@@ -3683,7 +3284,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "linked_list",
 								"name": "LinkedList",
 								"typeArguments": [
@@ -3734,7 +3335,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "linked_list",
 								"name": "LinkedList",
 								"typeArguments": [
@@ -3783,7 +3384,7 @@
 				"return": [
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "linked_list",
 							"name": "LinkedList",
 							"typeArguments": [
@@ -3847,7 +3448,7 @@
 				"return": [
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "linked_list",
 							"name": "Node",
 							"typeArguments": [
@@ -3893,7 +3494,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "linked_list",
 								"name": "LinkedList",
 								"typeArguments": [
@@ -3947,7 +3548,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "linked_list",
 								"name": "Node",
 								"typeArguments": [
@@ -3987,7 +3588,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "linked_list",
 								"name": "Node",
 								"typeArguments": [
@@ -4042,7 +3643,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "linked_list",
 								"name": "LinkedList",
 								"typeArguments": [
@@ -4098,7 +3699,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "linked_list",
 								"name": "LinkedList",
 								"typeArguments": [
@@ -4230,7 +3831,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "linked_list",
 								"name": "LinkedList",
 								"typeArguments": [
@@ -4295,7 +3896,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "linked_list",
 								"name": "LinkedList",
 								"typeArguments": [
@@ -4350,7 +3951,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "linked_list",
 								"name": "LinkedList",
 								"typeArguments": [
@@ -4407,7 +4008,7 @@
 					},
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "linked_list",
 							"name": "Node",
 							"typeArguments": [
@@ -4454,7 +4055,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "linked_list",
 								"name": "LinkedList",
 								"typeArguments": [
@@ -4521,7 +4122,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "linked_list",
 								"name": "LinkedList",
 								"typeArguments": [
@@ -4590,7 +4191,7 @@
 					},
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "linked_list",
 							"name": "Node",
 							"typeArguments": [
@@ -4651,7 +4252,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "linked_list",
 								"name": "LinkedList",
 								"typeArguments": [
@@ -4741,7 +4342,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "linked_list",
 								"name": "LinkedList",
 								"typeArguments": [
@@ -4796,7 +4397,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "linked_list",
 								"name": "LinkedList",
 								"typeArguments": [
@@ -4862,52 +4463,11 @@
 	},
 	{
 		"fileFormatVersion": 6,
-		"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+		"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 		"name": "utils",
 		"friends": [],
 		"structs": {},
 		"exposedFunctions": {
-			"delegate_extract_balance": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					"Address",
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x2",
-								"module": "coin",
-								"name": "Coin",
-								"typeArguments": [
-									{
-										"TypeParameter": 0
-									}
-								]
-							}
-						}
-					},
-					"U64"
-				],
-				"return": [
-					{
-						"Struct": {
-							"address": "0x2",
-							"module": "balance",
-							"name": "Balance",
-							"typeArguments": [
-								{
-									"TypeParameter": 0
-								}
-							]
-						}
-					}
-				]
-			},
 			"extract_balance": {
 				"visibility": "Public",
 				"isEntry": false,
@@ -5029,45 +4589,6 @@
 					"Bool"
 				]
 			},
-			"merge_coins": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x2",
-								"module": "coin",
-								"name": "Coin",
-								"typeArguments": [
-									{
-										"TypeParameter": 0
-									}
-								]
-							}
-						}
-					}
-				],
-				"return": [
-					{
-						"Struct": {
-							"address": "0x2",
-							"module": "coin",
-							"name": "Coin",
-							"typeArguments": [
-								{
-									"TypeParameter": 0
-								}
-							]
-						}
-					}
-				]
-			},
 			"multiplier": {
 				"visibility": "Public",
 				"isEntry": false,
@@ -5077,60 +4598,6 @@
 				],
 				"return": [
 					"U64"
-				]
-			},
-			"public_extract_balance": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x2",
-								"module": "coin",
-								"name": "Coin",
-								"typeArguments": [
-									{
-										"TypeParameter": 0
-									}
-								]
-							}
-						}
-					},
-					"U64"
-				],
-				"return": [
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x2",
-								"module": "coin",
-								"name": "Coin",
-								"typeArguments": [
-									{
-										"TypeParameter": 0
-									}
-								]
-							}
-						}
-					},
-					{
-						"Struct": {
-							"address": "0x2",
-							"module": "balance",
-							"name": "Balance",
-							"typeArguments": [
-								{
-									"TypeParameter": 0
-								}
-							]
-						}
-					}
 				]
 			},
 			"set_u64_padding_value": {
@@ -5145,68 +4612,6 @@
 					},
 					"U64",
 					"U64"
-				],
-				"return": []
-			},
-			"transfer_balance": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"Struct": {
-							"address": "0x2",
-							"module": "balance",
-							"name": "Balance",
-							"typeArguments": [
-								{
-									"TypeParameter": 0
-								}
-							]
-						}
-					},
-					"Address",
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "tx_context",
-								"name": "TxContext",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": []
-			},
-			"transfer_coins": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x2",
-								"module": "coin",
-								"name": "Coin",
-								"typeArguments": [
-									{
-										"TypeParameter": 0
-									}
-								]
-							}
-						}
-					},
-					"Address"
 				],
 				"return": []
 			},
@@ -5228,7 +4633,7 @@
 	},
 	{
 		"fileFormatVersion": 6,
-		"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+		"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 		"name": "vault",
 		"friends": [],
 		"structs": {
@@ -6506,7 +5911,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -6541,7 +5946,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -6561,7 +5966,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -6573,38 +5978,6 @@
 					"U64"
 				]
 			},
-			"active_share_tag": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [],
-				"return": [
-					"U8"
-				]
-			},
-			"adjust_user_share_ratio": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					},
-					"U8"
-				],
-				"return": []
-			},
 			"bid_share_supply": {
 				"visibility": "Public",
 				"isEntry": false,
@@ -6613,7 +5986,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "BidVault",
 								"typeArguments": []
@@ -6637,7 +6010,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "BidVault",
 								"typeArguments": []
@@ -6661,7 +6034,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "BidVault",
 								"typeArguments": []
@@ -6670,55 +6043,6 @@
 					}
 				],
 				"return": [
-					"U64"
-				]
-			},
-			"charge_fee": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "balance_pool",
-								"name": "BalancePool",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Reference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "balance",
-								"name": "Balance",
-								"typeArguments": [
-									{
-										"TypeParameter": 0
-									}
-								]
-							}
-						}
-					}
-				],
-				"return": [
-					"U64",
 					"U64"
 				]
 			},
@@ -6734,7 +6058,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -6744,7 +6068,7 @@
 					{
 						"Vector": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "TypusDepositReceipt",
 								"typeArguments": []
@@ -6765,24 +6089,6 @@
 				"return": [
 					"U64"
 				]
-			},
-			"close": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": []
 			},
 			"compound": {
 				"visibility": "Public",
@@ -6796,7 +6102,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "balance_pool",
 								"name": "BalancePool",
 								"typeArguments": []
@@ -6806,7 +6112,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -6816,7 +6122,7 @@
 					{
 						"Vector": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "TypusDepositReceipt",
 								"typeArguments": []
@@ -6836,74 +6142,6 @@
 				],
 				"return": [
 					"U64"
-				]
-			},
-			"compound_v2": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "balance_pool",
-								"name": "BalancePool",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "TypusDepositReceipt",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "tx_context",
-								"name": "TxContext",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					"U64",
-					"U64",
-					"U64",
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								{
-									"Vector": "U8"
-								}
-							]
-						}
-					}
 				]
 			},
 			"deactivating_balance": {
@@ -6918,7 +6156,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -6938,7 +6176,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -6949,155 +6187,6 @@
 				"return": [
 					"U64"
 				]
-			},
-			"deactivating_share_tag": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [],
-				"return": [
-					"U8"
-				]
-			},
-			"delegate_exercise": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "BidVault",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "TypusBidReceipt",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					"U64",
-					"U64",
-					{
-						"Struct": {
-							"address": "0x2",
-							"module": "balance",
-							"name": "Balance",
-							"typeArguments": [
-								{
-									"TypeParameter": 0
-								}
-							]
-						}
-					}
-				]
-			},
-			"delegate_take_refund": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "RefundVault",
-								"typeArguments": []
-							}
-						}
-					},
-					"Address",
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "tx_context",
-								"name": "TxContext",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					{
-						"Struct": {
-							"address": "0x2",
-							"module": "coin",
-							"name": "Coin",
-							"typeArguments": [
-								{
-									"TypeParameter": 0
-								}
-							]
-						}
-					}
-				]
-			},
-			"delivery": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					},
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "BidVault",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Struct": {
-							"address": "0x2",
-							"module": "balance",
-							"name": "Balance",
-							"typeArguments": [
-								{
-									"TypeParameter": 1
-								}
-							]
-						}
-					}
-				],
-				"return": []
 			},
 			"delivery_b": {
 				"visibility": "Public",
@@ -7114,7 +6203,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -7124,7 +6213,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "BidVault",
 								"typeArguments": []
@@ -7183,7 +6272,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -7193,7 +6282,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "BidVault",
 								"typeArguments": []
@@ -7255,7 +6344,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -7265,7 +6354,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "BidVault",
 								"typeArguments": []
@@ -7321,7 +6410,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -7346,7 +6435,7 @@
 					{
 						"Vector": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "TypusDepositReceipt",
 								"typeArguments": []
@@ -7379,32 +6468,9 @@
 				"parameters": [
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "vault",
 							"name": "BidVault",
-							"typeArguments": []
-						}
-					}
-				],
-				"return": []
-			},
-			"drop_deposit_vault": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					},
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-							"module": "vault",
-							"name": "DepositVault",
 							"typeArguments": []
 						}
 					}
@@ -7423,7 +6489,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "BidVault",
 								"typeArguments": []
@@ -7433,7 +6499,7 @@
 					{
 						"Vector": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "TypusBidReceipt",
 								"typeArguments": []
@@ -7470,7 +6536,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "BidVault",
 								"typeArguments": []
@@ -7480,7 +6546,7 @@
 					{
 						"Vector": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "TypusBidReceipt",
 								"typeArguments": []
@@ -7501,84 +6567,6 @@
 				"return": [
 					"U64",
 					"U64"
-				]
-			},
-			"exercise_v2": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "BidVault",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "TypusBidReceipt",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "tx_context",
-								"name": "TxContext",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					"U64",
-					"U64"
-				]
-			},
-			"extract_bid_shares": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "BidVault",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "TypusBidReceipt",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					"U64",
-					{
-						"Vector": "U64"
-					}
 				]
 			},
 			"fee_bp": {
@@ -7589,7 +6577,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -7609,7 +6597,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -7629,7 +6617,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -7650,7 +6638,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "TypusBidReceipt",
 								"typeArguments": []
@@ -7670,7 +6658,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "TypusBidReceipt",
 								"typeArguments": []
@@ -7701,7 +6689,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "TypusBidReceipt",
 								"typeArguments": []
@@ -7728,7 +6716,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "BidVault",
 								"typeArguments": []
@@ -7749,7 +6737,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "BidVault",
 								"typeArguments": []
@@ -7761,13 +6749,13 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "big_vector",
 								"name": "BigVector",
 								"typeArguments": [
 									{
 										"Struct": {
-											"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+											"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 											"module": "vault",
 											"name": "BidShare",
 											"typeArguments": []
@@ -7791,7 +6779,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "BidVault",
 								"typeArguments": []
@@ -7828,7 +6816,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "BidVault",
 								"typeArguments": []
@@ -7861,7 +6849,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "BidVault",
 								"typeArguments": []
@@ -7896,7 +6884,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "BidVault",
 								"typeArguments": []
@@ -7917,7 +6905,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -7938,7 +6926,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "TypusDepositReceipt",
 								"typeArguments": []
@@ -7958,7 +6946,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "TypusDepositReceipt",
 								"typeArguments": []
@@ -7985,7 +6973,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -7998,7 +6986,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositShare",
 								"typeArguments": []
@@ -8015,7 +7003,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositShare",
 								"typeArguments": []
@@ -8036,7 +7024,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -8048,13 +7036,13 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "big_vector",
 								"name": "BigVector",
 								"typeArguments": [
 									{
 										"Struct": {
-											"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+											"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 											"module": "vault",
 											"name": "DepositShare",
 											"typeArguments": []
@@ -8078,7 +7066,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -8104,27 +7092,6 @@
 					}
 				]
 			},
-			"get_deposit_vault_share_supply": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [
-					{
-						"Reference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					},
-					"U8"
-				],
-				"return": [
-					"U64"
-				]
-			},
 			"get_deposit_vault_token_types": {
 				"visibility": "Public",
 				"isEntry": false,
@@ -8133,7 +7100,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -8168,7 +7135,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -8181,260 +7148,6 @@
 					"U64"
 				]
 			},
-			"get_mut_active_share_supply": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					{
-						"MutableReference": "U64"
-					}
-				]
-			},
-			"get_mut_deactivating_share_supply": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					{
-						"MutableReference": "U64"
-					}
-				]
-			},
-			"get_mut_deposit_share_inner": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositShare",
-								"typeArguments": []
-							}
-						}
-					},
-					"U8"
-				],
-				"return": [
-					{
-						"MutableReference": "U64"
-					}
-				]
-			},
-			"get_mut_deposit_shares": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "big_vector",
-								"name": "BigVector",
-								"typeArguments": [
-									{
-										"Struct": {
-											"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-											"module": "vault",
-											"name": "DepositShare",
-											"typeArguments": []
-										}
-									}
-								]
-							}
-						}
-					}
-				]
-			},
-			"get_mut_deposit_vault_balance": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					},
-					"U8"
-				],
-				"return": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "balance",
-								"name": "Balance",
-								"typeArguments": [
-									{
-										"TypeParameter": 0
-									}
-								]
-							}
-						}
-					}
-				]
-			},
-			"get_mut_deposit_vault_share_supply": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					},
-					"U8"
-				],
-				"return": [
-					{
-						"MutableReference": "U64"
-					}
-				]
-			},
-			"get_mut_inactive_share_supply": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					{
-						"MutableReference": "U64"
-					}
-				]
-			},
-			"get_mut_incentive_share_supply": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					{
-						"MutableReference": "U64"
-					}
-				]
-			},
-			"get_mut_premium_share_supply": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					{
-						"MutableReference": "U64"
-					}
-				]
-			},
-			"get_mut_warmup_share_supply": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					{
-						"MutableReference": "U64"
-					}
-				]
-			},
 			"get_premium_deposit_share": {
 				"visibility": "Public",
 				"isEntry": false,
@@ -8443,7 +7156,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -8464,7 +7177,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "RefundVault",
 								"typeArguments": []
@@ -8485,7 +7198,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "RefundVault",
 								"typeArguments": []
@@ -8497,13 +7210,13 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "big_vector",
 								"name": "BigVector",
 								"typeArguments": [
 									{
 										"Struct": {
-											"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+											"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 											"module": "vault",
 											"name": "RefundShare",
 											"typeArguments": []
@@ -8523,7 +7236,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -8548,7 +7261,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "balance_pool",
 								"name": "BalancePool",
 								"typeArguments": []
@@ -8558,7 +7271,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -8568,7 +7281,7 @@
 					{
 						"Vector": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "TypusDepositReceipt",
 								"typeArguments": []
@@ -8591,74 +7304,6 @@
 					"U64"
 				]
 			},
-			"harvest_v2": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "balance_pool",
-								"name": "BalancePool",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "TypusDepositReceipt",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "tx_context",
-								"name": "TxContext",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					"U64",
-					"U64",
-					"U64",
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								{
-									"Vector": "U8"
-								}
-							]
-						}
-					}
-				]
-			},
 			"has_next": {
 				"visibility": "Public",
 				"isEntry": false,
@@ -8667,7 +7312,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -8691,7 +7336,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -8711,7 +7356,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -8721,48 +7366,6 @@
 				],
 				"return": [
 					"U64"
-				]
-			},
-			"inactive_share_tag": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [],
-				"return": [
-					"U8"
-				]
-			},
-			"incentive_balance": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"Reference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					"U64"
-				]
-			},
-			"incentive_share_tag": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [],
-				"return": [
-					"U8"
 				]
 			},
 			"incentivise_bidder": {
@@ -8777,7 +7380,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "BidVault",
 								"typeArguments": []
@@ -8817,7 +7420,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -8838,7 +7441,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -8859,7 +7462,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -8880,7 +7483,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -8901,7 +7504,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "BidVault",
 								"typeArguments": []
@@ -8957,7 +7560,7 @@
 				"return": [
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "vault",
 							"name": "BidVault",
 							"typeArguments": []
@@ -9001,7 +7604,7 @@
 				"return": [
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "vault",
 							"name": "DepositVault",
 							"typeArguments": []
@@ -9032,7 +7635,7 @@
 				"return": [
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "vault",
 							"name": "RefundVault",
 							"typeArguments": []
@@ -9048,7 +7651,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -9069,7 +7672,7 @@
 				"return": [
 					{
 						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+							"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 							"module": "vault",
 							"name": "TypusDepositReceipt",
 							"typeArguments": []
@@ -9089,7 +7692,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -9109,7 +7712,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -9119,822 +7722,6 @@
 				],
 				"return": [
 					"U64"
-				]
-			},
-			"premium_share_tag": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [],
-				"return": [
-					"U8"
-				]
-			},
-			"public_claim": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "TypusDepositReceipt",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "tx_context",
-								"name": "TxContext",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								{
-									"Struct": {
-										"address": "0x2",
-										"module": "balance",
-										"name": "Balance",
-										"typeArguments": [
-											{
-												"TypeParameter": 0
-											}
-										]
-									}
-								}
-							]
-						}
-					},
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								{
-									"Struct": {
-										"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-										"module": "vault",
-										"name": "TypusDepositReceipt",
-										"typeArguments": []
-									}
-								}
-							]
-						}
-					},
-					{
-						"Vector": "U64"
-					}
-				]
-			},
-			"public_compound": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "balance_pool",
-								"name": "BalancePool",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "TypusDepositReceipt",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "tx_context",
-								"name": "TxContext",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								{
-									"Struct": {
-										"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-										"module": "vault",
-										"name": "TypusDepositReceipt",
-										"typeArguments": []
-									}
-								}
-							]
-						}
-					},
-					{
-						"Vector": "U64"
-					}
-				]
-			},
-			"public_deposit": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x2",
-								"module": "coin",
-								"name": "Coin",
-								"typeArguments": [
-									{
-										"TypeParameter": 0
-									}
-								]
-							}
-						}
-					},
-					"U64",
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "TypusDepositReceipt",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "tx_context",
-								"name": "TxContext",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x2",
-								"module": "coin",
-								"name": "Coin",
-								"typeArguments": [
-									{
-										"TypeParameter": 0
-									}
-								]
-							}
-						}
-					},
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								{
-									"Struct": {
-										"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-										"module": "vault",
-										"name": "TypusDepositReceipt",
-										"typeArguments": []
-									}
-								}
-							]
-						}
-					},
-					{
-						"Vector": "U64"
-					}
-				]
-			},
-			"public_exercise": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "BidVault",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "TypusBidReceipt",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					{
-						"Struct": {
-							"address": "0x2",
-							"module": "balance",
-							"name": "Balance",
-							"typeArguments": [
-								{
-									"TypeParameter": 0
-								}
-							]
-						}
-					},
-					{
-						"Vector": "U64"
-					}
-				]
-			},
-			"public_harvest": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "balance_pool",
-								"name": "BalancePool",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "TypusDepositReceipt",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "tx_context",
-								"name": "TxContext",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								{
-									"Struct": {
-										"address": "0x2",
-										"module": "balance",
-										"name": "Balance",
-										"typeArguments": [
-											{
-												"TypeParameter": 0
-											}
-										]
-									}
-								}
-							]
-						}
-					},
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								{
-									"Struct": {
-										"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-										"module": "vault",
-										"name": "TypusDepositReceipt",
-										"typeArguments": []
-									}
-								}
-							]
-						}
-					},
-					{
-						"Vector": "U64"
-					}
-				]
-			},
-			"public_new_bid": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "BidVault",
-								"typeArguments": []
-							}
-						}
-					},
-					"U64",
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "tx_context",
-								"name": "TxContext",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					{
-						"Struct": {
-							"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-							"module": "vault",
-							"name": "TypusBidReceipt",
-							"typeArguments": []
-						}
-					}
-				]
-			},
-			"public_rebate": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "RefundVault",
-								"typeArguments": []
-							}
-						}
-					},
-					"Address"
-				],
-				"return": [
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								{
-									"Struct": {
-										"address": "0x2",
-										"module": "balance",
-										"name": "Balance",
-										"typeArguments": [
-											{
-												"TypeParameter": 0
-											}
-										]
-									}
-								}
-							]
-						}
-					},
-					{
-						"Vector": "U64"
-					}
-				]
-			},
-			"public_redeem": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "balance_pool",
-								"name": "BalancePool",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "TypusDepositReceipt",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "tx_context",
-								"name": "TxContext",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								{
-									"Struct": {
-										"address": "0x2",
-										"module": "balance",
-										"name": "Balance",
-										"typeArguments": [
-											{
-												"TypeParameter": 0
-											}
-										]
-									}
-								}
-							]
-						}
-					},
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								{
-									"Struct": {
-										"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-										"module": "vault",
-										"name": "TypusDepositReceipt",
-										"typeArguments": []
-									}
-								}
-							]
-						}
-					},
-					{
-						"Vector": "U64"
-					}
-				]
-			},
-			"public_unsubscribe": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "TypusDepositReceipt",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								"U64"
-							]
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "tx_context",
-								"name": "TxContext",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								{
-									"Struct": {
-										"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-										"module": "vault",
-										"name": "TypusDepositReceipt",
-										"typeArguments": []
-									}
-								}
-							]
-						}
-					},
-					{
-						"Vector": "U64"
-					}
-				]
-			},
-			"public_unsubscribe_share": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "TypusDepositReceipt",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								"U64"
-							]
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "tx_context",
-								"name": "TxContext",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								{
-									"Struct": {
-										"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-										"module": "vault",
-										"name": "TypusDepositReceipt",
-										"typeArguments": []
-									}
-								}
-							]
-						}
-					},
-					{
-						"Vector": "U64"
-					}
-				]
-			},
-			"public_withdraw": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "TypusDepositReceipt",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								"U64"
-							]
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "tx_context",
-								"name": "TxContext",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								{
-									"Struct": {
-										"address": "0x2",
-										"module": "balance",
-										"name": "Balance",
-										"typeArguments": [
-											{
-												"TypeParameter": 0
-											}
-										]
-									}
-								}
-							]
-						}
-					},
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								{
-									"Struct": {
-										"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-										"module": "vault",
-										"name": "TypusDepositReceipt",
-										"typeArguments": []
-									}
-								}
-							]
-						}
-					},
-					{
-						"Vector": "U64"
-					}
 				]
 			},
 			"put_refund": {
@@ -9949,7 +7736,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "RefundVault",
 								"typeArguments": []
@@ -9969,46 +7756,6 @@
 						}
 					},
 					"Address"
-				],
-				"return": []
-			},
-			"put_refunds": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "RefundVault",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Struct": {
-							"address": "0x2",
-							"module": "balance",
-							"name": "Balance",
-							"typeArguments": [
-								{
-									"TypeParameter": 0
-								}
-							]
-						}
-					},
-					{
-						"Vector": "U64"
-					},
-					{
-						"Vector": "U64"
-					}
 				],
 				"return": []
 			},
@@ -10024,7 +7771,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -10060,7 +7807,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -10070,7 +7817,7 @@
 					{
 						"Vector": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "TypusDepositReceipt",
 								"typeArguments": []
@@ -10092,74 +7839,6 @@
 					"U64"
 				]
 			},
-			"redeem_v2": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "balance_pool",
-								"name": "BalancePool",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "TypusDepositReceipt",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "tx_context",
-								"name": "TxContext",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					"U64",
-					"U64",
-					"U64",
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								{
-									"Vector": "U8"
-								}
-							]
-						}
-					}
-				]
-			},
 			"refund_vault_balance": {
 				"visibility": "Public",
 				"isEntry": false,
@@ -10172,7 +7851,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "RefundVault",
 								"typeArguments": []
@@ -10192,38 +7871,13 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "RefundVault",
 								"typeArguments": []
 							}
 						}
 					}
-				],
-				"return": [
-					"U64"
-				]
-			},
-			"register_refund": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [
-					{
-						"abilities": []
-					}
-				],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "RefundVault",
-								"typeArguments": []
-							}
-						}
-					},
-					"Address"
 				],
 				"return": [
 					"U64"
@@ -10237,7 +7891,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "BidVault",
 								"typeArguments": []
@@ -10264,7 +7918,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -10274,7 +7928,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "BidVault",
 								"typeArguments": []
@@ -10296,90 +7950,6 @@
 				],
 				"return": []
 			},
-			"split_bid_receipt": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "BidVault",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "TypusBidReceipt",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								"U64"
-							]
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "tx_context",
-								"name": "TxContext",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					"U64",
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								{
-									"Struct": {
-										"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-										"module": "vault",
-										"name": "TypusBidReceipt",
-										"typeArguments": []
-									}
-								}
-							]
-						}
-					},
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								{
-									"Struct": {
-										"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-										"module": "vault",
-										"name": "TypusBidReceipt",
-										"typeArguments": []
-									}
-								}
-							]
-						}
-					}
-				]
-			},
 			"summarize_bid_shares": {
 				"visibility": "Public",
 				"isEntry": false,
@@ -10388,7 +7958,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "BidVault",
 								"typeArguments": []
@@ -10398,7 +7968,7 @@
 					{
 						"Vector": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "TypusBidReceipt",
 								"typeArguments": []
@@ -10418,7 +7988,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -10428,7 +7998,7 @@
 					{
 						"Vector": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "TypusDepositReceipt",
 								"typeArguments": []
@@ -10457,7 +8027,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "RefundVault",
 								"typeArguments": []
@@ -10491,7 +8061,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -10511,58 +8081,6 @@
 				],
 				"return": []
 			},
-			"transfer_bid_receipt": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								{
-									"Struct": {
-										"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-										"module": "vault",
-										"name": "TypusBidReceipt",
-										"typeArguments": []
-									}
-								}
-							]
-						}
-					},
-					"Address"
-				],
-				"return": []
-			},
-			"transfer_deposit_receipt": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								{
-									"Struct": {
-										"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-										"module": "vault",
-										"name": "TypusDepositReceipt",
-										"typeArguments": []
-									}
-								}
-							]
-						}
-					},
-					"Address"
-				],
-				"return": []
-			},
 			"unsubscribe": {
 				"visibility": "Public",
 				"isEntry": false,
@@ -10575,7 +8093,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -10585,7 +8103,7 @@
 					{
 						"Vector": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "TypusDepositReceipt",
 								"typeArguments": []
@@ -10616,82 +8134,6 @@
 				"return": [
 					"U64"
 				]
-			},
-			"unsubscribe_share": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "DepositVault",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Vector": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "TypusDepositReceipt",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "option",
-							"name": "Option",
-							"typeArguments": [
-								"U64"
-							]
-						}
-					},
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x2",
-								"module": "tx_context",
-								"name": "TxContext",
-								"typeArguments": []
-							}
-						}
-					}
-				],
-				"return": [
-					"U64"
-				]
-			},
-			"update_bid_receipt_display": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [
-					{
-						"MutableReference": {
-							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
-								"module": "vault",
-								"name": "BidVault",
-								"typeArguments": []
-							}
-						}
-					},
-					{
-						"Struct": {
-							"address": "0x1",
-							"module": "string",
-							"name": "String",
-							"typeArguments": []
-						}
-					}
-				],
-				"return": []
 			},
 			"update_deposit_receipt_display": {
 				"visibility": "Public",
@@ -10701,7 +8143,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -10731,7 +8173,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -10749,7 +8191,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -10778,7 +8220,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -10823,7 +8265,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -10843,7 +8285,7 @@
 					{
 						"Reference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -10853,15 +8295,6 @@
 				],
 				"return": [
 					"U64"
-				]
-			},
-			"warmup_share_tag": {
-				"visibility": "Public",
-				"isEntry": false,
-				"typeParameters": [],
-				"parameters": [],
-				"return": [
-					"U8"
 				]
 			},
 			"withdraw": {
@@ -10876,7 +8309,7 @@
 					{
 						"MutableReference": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "DepositVault",
 								"typeArguments": []
@@ -10886,7 +8319,7 @@
 					{
 						"Vector": {
 							"Struct": {
-								"address": "0x908a10789a1a6953e0b73a997c10e3552f7ce4e2907afd00a334ed74bd973ded",
+								"address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
 								"module": "vault",
 								"name": "TypusDepositReceipt",
 								"typeArguments": []
