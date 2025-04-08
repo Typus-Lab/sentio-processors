@@ -3,6 +3,7 @@ import { normalizeSuiAddress, normalizeStructTag } from "@mysten/sui/utils";
 import { getPriceBySymbol } from "@sentio/sdk/utils";
 import { BcsReader } from "@mysten/bcs";
 import { position, trading, lp_pool } from "./types/sui/typus_perp_mainnet.js";
+import { stake_pool } from "./types/sui/stake.js";
 
 const startCheckpoint = BigInt(129298199);
 
@@ -10,29 +11,187 @@ const network = SuiNetwork.MAIN_NET;
 
 const LIQUIDITY_POOL_0 = "0x98110aae0ffaf294259066380a2d35aba74e42860f1e87ee9c201f471eb3ba03";
 
-trading.bind({ network, startCheckpoint }).onEventLiquidateEvent((event, ctx) => {
-  let collateral_token_name = event.data_decoded.collateral_token.name;
-  let collateral_token = parse_token(collateral_token_name);
-  let collateral_decimal = token_decimal(collateral_token);
-  let base_token_name = event.data_decoded.base_token.name;
-  let base_token = parse_token(base_token_name);
-  let position_id = event.data_decoded.position_id;
-  let collateral_price = Number(event.data_decoded.collateral_price) / 10 ** 8;
-  let trading_price = Number(event.data_decoded.trading_price) / 10 ** 8;
-  let liquidator_fee = Number(event.data_decoded.realized_liquidator_fee) / 10 ** collateral_decimal;
-  let value_for_lp_pool = Number(event.data_decoded.realized_value_for_lp_pool) / 10 ** collateral_decimal;
+const USD_DECIMAL = 9;
+const PRICE_DECIMAL = 8;
+const TLP_DECIMAL = 9;
 
-  ctx.eventLogger.emit("Liquidate", {
-    distinctId: event.data_decoded.user,
-    position_id,
-    collateral_token,
-    trading_token: base_token,
-    collateral_price,
-    trading_price,
-    liquidator_fee,
-    value_for_lp_pool,
+stake_pool.bind({ network, startCheckpoint }).onEventHarvestPerUserShareEvent((event, ctx) => {
+  let token_name = event.data_decoded.incentive_token_type.name;
+  let token = parse_token(token_name);
+  let decimal = token_decimal(token);
+  let harvest_amount = Number(event.data_decoded.harvest_amount) / 10 ** decimal;
+
+  ctx.eventLogger.emit("HarvestIncentive", {
+    distinctId: event.data_decoded.sender,
+    token,
+    harvest_amount,
   });
 });
+
+lp_pool
+  .bind({ network, startCheckpoint })
+  .onEventMintLpEvent((event, ctx) => {
+    let liquidity_token_name = event.data_decoded.liquidity_token_type.name;
+    let liquidity_token = parse_token(liquidity_token_name);
+    let liquidity_token_decimal = token_decimal(liquidity_token);
+
+    let deposit_amount = Number(event.data_decoded.deposit_amount) / 10 ** liquidity_token_decimal;
+    let deposit_amount_usd = Number(event.data_decoded.deposit_amount_usd) / 10 ** USD_DECIMAL;
+    let mint_fee_usd = Number(event.data_decoded.mint_fee_usd) / 10 ** USD_DECIMAL;
+    let minted_lp_amount = Number(event.data_decoded.minted_lp_amount) / 10 ** TLP_DECIMAL;
+
+    ctx.meter.Counter("protocol_fee_usd").add(mint_fee_usd);
+
+    ctx.eventLogger.emit("MintLp", {
+      distinctId: event.data_decoded.sender,
+      liquidity_token,
+      deposit_amount,
+      deposit_amount_usd,
+      mint_fee_usd,
+      minted_lp_amount,
+    });
+  })
+  .onEventBurnLpEvent((event, ctx) => {
+    let liquidity_token_name = event.data_decoded.liquidity_token_type.name;
+    let liquidity_token = parse_token(liquidity_token_name);
+    let liquidity_token_decimal = token_decimal(liquidity_token);
+
+    let withdraw_token_amount =
+      Number(event.data_decoded.withdraw_token_amount) / 10 ** liquidity_token_decimal;
+    let burn_amount_usd = Number(event.data_decoded.burn_amount_usd) / 10 ** USD_DECIMAL;
+    let burn_fee_usd = Number(event.data_decoded.burn_fee_usd) / 10 ** USD_DECIMAL;
+    let burn_lp_amount = Number(event.data_decoded.burn_lp_amount) / 10 ** TLP_DECIMAL;
+
+    ctx.meter.Counter("protocol_fee_usd").add(burn_fee_usd);
+
+    ctx.eventLogger.emit("BurnLp", {
+      distinctId: event.data_decoded.sender,
+      liquidity_token,
+      burn_lp_amount,
+      burn_amount_usd,
+      burn_fee_usd,
+      withdraw_token_amount,
+    });
+  })
+  .onEventSwapEvent((event, ctx) => {
+    let from_token_name = event.data_decoded.from_token_type.name;
+    let from_token = parse_token(from_token_name);
+    let from_token_decimal = token_decimal(from_token);
+
+    let to_token_name = event.data_decoded.to_token_type.name;
+    let to_token = parse_token(to_token_name);
+    let to_token_decimal = token_decimal(to_token);
+
+    let from_amount = Number(event.data_decoded.from_amount) / 10 ** from_token_decimal;
+    let to_amount = Number(event.data_decoded.actual_to_amount) / 10 ** to_token_decimal;
+    let fee_amount = Number(event.data_decoded.fee_amount) / 10 ** from_token_decimal;
+    let fee_amount_usd = Number(event.data_decoded.fee_amount_usd) / 10 ** USD_DECIMAL;
+
+    ctx.meter.Counter("protocol_fee_usd").add(fee_amount_usd * 0.3);
+    ctx.meter.Counter("tlp_fee_usd").add(fee_amount_usd * 0.7);
+
+    ctx.eventLogger.emit("Swap", {
+      distinctId: event.data_decoded.sender,
+      from_token,
+      to_token,
+      from_amount,
+      to_amount,
+      fee_amount,
+      fee_amount_usd,
+    });
+  });
+
+trading
+  .bind({ network, startCheckpoint })
+  .onEventLiquidateEvent((event, ctx) => {
+    let collateral_token_name = event.data_decoded.collateral_token.name;
+    let collateral_token = parse_token(collateral_token_name);
+    let collateral_decimal = token_decimal(collateral_token);
+    let base_token_name = event.data_decoded.base_token.name;
+    let base_token = parse_token(base_token_name);
+    let position_id = event.data_decoded.position_id;
+    let collateral_price = Number(event.data_decoded.collateral_price) / 10 ** PRICE_DECIMAL;
+    let trading_price = Number(event.data_decoded.trading_price) / 10 ** PRICE_DECIMAL;
+    let liquidator_fee = Number(event.data_decoded.realized_liquidator_fee) / 10 ** collateral_decimal;
+    let value_for_lp_pool = Number(event.data_decoded.realized_value_for_lp_pool) / 10 ** collateral_decimal;
+
+    ctx.meter.Counter("protocol_fee_usd").add(liquidator_fee);
+    ctx.meter.Counter("tlp_fee_usd").add(value_for_lp_pool);
+
+    ctx.eventLogger.emit("Liquidate", {
+      distinctId: event.data_decoded.user,
+      position_id,
+      collateral_token,
+      trading_token: base_token,
+      collateral_price,
+      trading_price,
+      liquidator_fee,
+      value_for_lp_pool,
+    });
+  })
+  .onEventCreateTradingOrderEvent((event, ctx) => {
+    var base_token = parse_token(event.data_decoded.base_token.name);
+    var collateral_token = parse_token(event.data_decoded.collateral_token.name);
+
+    var size = Number(event.data_decoded.size) / 10 ** token_decimal(base_token)!;
+    var collateral = Number(event.data_decoded.collateral_amount) / 10 ** token_decimal(collateral_token)!;
+    // Number(event.data_decoded.collateral_in_deposit_token) / 10 ** token_decimal(collateral_token)!;
+
+    var order_type = "Limit";
+    var price = event.data_decoded.trigger_price;
+    if (event.data_decoded.filled) {
+      order_type = "Market";
+      price = event.data_decoded.filled_price!;
+    } else if (event.data_decoded.reduce_only && !event.data_decoded.is_stop_order) {
+      order_type = "TP";
+    } else if (event.data_decoded.reduce_only && event.data_decoded.is_stop_order) {
+      order_type = "SL";
+    }
+
+    ctx.eventLogger.emit("PlaceOrder", {
+      distinctId: event.data_decoded.user,
+      typeName: name,
+      order_id: event.data_decoded.order_id,
+      position_id: event.data_decoded.linked_position_id,
+      base_token,
+      side: event.data_decoded.is_long ? "Long" : "Short",
+      order_type,
+      status: event.data_decoded.filled ? "Filled" : "Open",
+      size,
+      collateral,
+      collateral_token,
+      price: Number(price) / 10 ** PRICE_DECIMAL, // WARNING: fixed decimal
+    });
+  })
+  .onEventCreateTradingOrderWithBidReceiptsEvent((event, ctx) => {
+    var base_token = parse_token(event.data_decoded.base_token.name);
+    var collateral_token = parse_token(event.data_decoded.collateral_token.name);
+
+    var size = Number(event.data_decoded.size) / 10 ** token_decimal(base_token)!;
+    var collateral =
+      Number(event.data_decoded.collateral_in_deposit_token) / 10 ** token_decimal(collateral_token)!;
+
+    var order_type = "Limit";
+    var price = event.data_decoded.trigger_price;
+    if (event.data_decoded.filled) {
+      order_type = "Market";
+      price = event.data_decoded.filled_price!;
+    }
+
+    ctx.eventLogger.emit("PlaceOrderWithBidReceipt", {
+      distinctId: event.data_decoded.user,
+      typeName: name,
+      order_id: event.data_decoded.order_id,
+      base_token,
+      side: event.data_decoded.is_long ? "Long" : "Short",
+      order_type,
+      status: event.data_decoded.filled ? "Filled" : "Open",
+      size,
+      collateral,
+      collateral_token,
+      price: Number(price) / 10 ** PRICE_DECIMAL, // WARNING: fixed decimal
+    });
+  });
 
 position.bind({ network, startCheckpoint }).onEventOrderFilledEvent((event, ctx) => {
   let collateral_token_name = event.data_decoded.collateral_token.name;
@@ -53,11 +212,12 @@ position.bind({ network, startCheckpoint }).onEventOrderFilledEvent((event, ctx)
   }
 
   var filled_size = Number(event.data_decoded.filled_size) / 10 ** token_decimal(base_token)!;
-  var filled_price = Number(event.data_decoded.filled_price) / 10 ** 8;
+  var filled_price = Number(event.data_decoded.filled_price) / 10 ** PRICE_DECIMAL;
   var side = event.data_decoded.position_side ? "Long" : "Short";
 
-  var realized_trading_fee = Number(event.data_decoded.realized_trading_fee) + Number(event.data_decoded.realized_borrow_fee);
-  var realized_fee_in_usd = Number(event.data_decoded.realized_fee_in_usd) / 10 ** 9;
+  var realized_trading_fee =
+    Number(event.data_decoded.realized_trading_fee) + Number(event.data_decoded.realized_borrow_fee);
+  var realized_fee_in_usd = Number(event.data_decoded.realized_fee_in_usd) / 10 ** USD_DECIMAL;
   var realized_amount = event.data_decoded.realized_amount_sign
     ? Number(event.data_decoded.realized_amount)
     : -Number(event.data_decoded.realized_amount);
@@ -173,7 +333,7 @@ SuiObjectProcessor.bind({
   async (object, df, ctx) => {
     const liquidityPool = await ctx.coder.decodeType(object, lp_pool.LiquidityPool.type());
     const tvl_usd = liquidityPool?.pool_info.tvl_usd!;
-    ctx.meter.Gauge("tvl_usd").record(Number(tvl_usd) / 10 ** 9);
+    ctx.meter.Gauge("tvl_usd").record(Number(tvl_usd) / 10 ** USD_DECIMAL);
     const total_share_supply = liquidityPool?.pool_info.total_share_supply!;
     if (total_share_supply > 0) {
       const price = Number(tvl_usd) / Number(total_share_supply);
