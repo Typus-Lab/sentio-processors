@@ -14,6 +14,8 @@ const LIQUIDITY_POOL_0 = "0x98110aae0ffaf294259066380a2d35aba74e42860f1e87ee9c20
 const USD_DECIMAL = 9;
 const PRICE_DECIMAL = 8;
 const TLP_DECIMAL = 9;
+const PROTOCOL_FEE_SHARE = 0.3;
+const TLP_FEE_SHARE = 0.7;
 
 stake_pool.bind({ network, startCheckpoint }).onEventHarvestPerUserShareEvent((event, ctx) => {
   let token_name = event.data_decoded.incentive_token_type.name;
@@ -87,8 +89,8 @@ lp_pool
     let fee_amount = Number(event.data_decoded.fee_amount) / 10 ** from_token_decimal;
     let fee_amount_usd = Number(event.data_decoded.fee_amount_usd) / 10 ** USD_DECIMAL;
 
-    ctx.meter.Counter("protocol_fee_usd").add(fee_amount_usd * 0.3);
-    ctx.meter.Counter("tlp_fee_usd").add(fee_amount_usd * 0.7);
+    ctx.meter.Counter("protocol_fee_usd").add(fee_amount_usd * PROTOCOL_FEE_SHARE);
+    ctx.meter.Counter("tlp_fee_usd").add(fee_amount_usd * TLP_FEE_SHARE);
 
     ctx.eventLogger.emit("Swap", {
       distinctId: event.data_decoded.sender,
@@ -193,57 +195,92 @@ trading
     });
   });
 
-position.bind({ network, startCheckpoint }).onEventOrderFilledEvent((event, ctx) => {
-  let collateral_token_name = event.data_decoded.collateral_token.name;
-  let collateral_token = parse_token(collateral_token_name);
-  let collateral_decimal = token_decimal(collateral_token);
-  let base_token_name = event.data_decoded.symbol.base_token.name;
-  let base_token = parse_token(base_token_name);
-  let order_id = event.data_decoded.order_id;
-  let position_id;
-  let order_type;
+position
+  .bind({ network, startCheckpoint })
+  .onEventOrderFilledEvent((event, ctx) => {
+    let collateral_token_name = event.data_decoded.collateral_token.name;
+    let collateral_token = parse_token(collateral_token_name);
+    let collateral_decimal = token_decimal(collateral_token);
+    let base_token_name = event.data_decoded.symbol.base_token.name;
+    let base_token = parse_token(base_token_name);
+    let order_id = event.data_decoded.order_id;
+    let position_id;
+    let order_type;
 
-  if (event.data_decoded.linked_position_id) {
-    position_id = event.data_decoded.linked_position_id;
-    order_type = "Close";
-  } else {
-    position_id = event.data_decoded.new_position_id;
-    order_type = "Open";
-  }
+    if (event.data_decoded.linked_position_id) {
+      position_id = event.data_decoded.linked_position_id;
+      order_type = "Close";
+    } else {
+      position_id = event.data_decoded.new_position_id;
+      order_type = "Open";
+    }
 
-  var filled_size = Number(event.data_decoded.filled_size) / 10 ** token_decimal(base_token)!;
-  var filled_price = Number(event.data_decoded.filled_price) / 10 ** PRICE_DECIMAL;
-  var side = event.data_decoded.position_side ? "Long" : "Short";
+    var filled_size = Number(event.data_decoded.filled_size) / 10 ** token_decimal(base_token)!;
+    var filled_price = Number(event.data_decoded.filled_price) / 10 ** PRICE_DECIMAL;
+    var side = event.data_decoded.position_side ? "Long" : "Short";
 
-  var realized_trading_fee =
-    Number(event.data_decoded.realized_trading_fee) + Number(event.data_decoded.realized_borrow_fee);
-  var realized_fee_in_usd = Number(event.data_decoded.realized_fee_in_usd) / 10 ** USD_DECIMAL;
-  var realized_amount = event.data_decoded.realized_amount_sign
-    ? Number(event.data_decoded.realized_amount)
-    : -Number(event.data_decoded.realized_amount);
-  var realized_pnl;
-  if (realized_trading_fee > 0) {
-    realized_pnl = ((realized_amount - realized_trading_fee) * realized_fee_in_usd) / realized_trading_fee;
-  } else {
-    realized_pnl = 0;
-  }
+    var realized_trading_fee =
+      Number(event.data_decoded.realized_trading_fee) + Number(event.data_decoded.realized_borrow_fee);
+    var realized_fee_in_usd = Number(event.data_decoded.realized_fee_in_usd) / 10 ** USD_DECIMAL;
+    var realized_amount = event.data_decoded.realized_amount_sign
+      ? Number(event.data_decoded.realized_amount)
+      : -Number(event.data_decoded.realized_amount);
 
-  ctx.eventLogger.emit("OrderFilled", {
-    distinctId: event.data_decoded.user,
-    collateral_token,
-    trading_token: base_token,
-    order_id,
-    position_id,
-    order_type,
-    filled_size,
-    filled_price,
-    side,
-    realized_trading_fee: realized_trading_fee / 10 ** collateral_decimal,
-    realized_fee_in_usd,
-    realized_amount: realized_amount / 10 ** collateral_decimal,
-    realized_pnl,
+    var realized_pnl;
+    if (realized_trading_fee > 0) {
+      realized_pnl = ((realized_amount - realized_trading_fee) * realized_fee_in_usd) / realized_trading_fee;
+    } else {
+      realized_pnl = 0;
+    }
+
+    realized_trading_fee = realized_trading_fee / 10 ** collateral_decimal;
+    realized_amount = realized_amount / 10 ** collateral_decimal;
+
+    ctx.meter.Counter("protocol_fee_usd").add(realized_fee_in_usd * PROTOCOL_FEE_SHARE);
+    ctx.meter.Counter("tlp_fee_usd").add(realized_fee_in_usd * TLP_FEE_SHARE);
+
+    ctx.eventLogger.emit("OrderFilled", {
+      distinctId: event.data_decoded.user,
+      collateral_token,
+      trading_token: base_token,
+      order_id,
+      position_id,
+      order_type,
+      filled_size,
+      filled_price,
+      side,
+      realized_trading_fee,
+      realized_fee_in_usd,
+      realized_amount,
+      realized_pnl,
+    });
+  })
+  .onEventRealizeFundingEvent((event, ctx) => {
+    let collateral_token_name = event.data_decoded.collateral_token.name;
+    let collateral_token = parse_token(collateral_token_name);
+    let collateral_decimal = token_decimal(collateral_token);
+
+    let base_token_name = event.data_decoded.symbol.base_token.name;
+    let base_token = parse_token(base_token_name);
+
+    let realized_funding_fee = event.data_decoded.realized_funding_sign
+      ? Number(event.data_decoded.realized_funding_fee) / 10 ** collateral_decimal
+      : -Number(event.data_decoded.realized_funding_fee) / 10 ** collateral_decimal;
+
+    let realized_funding_fee_usd = event.data_decoded.realized_funding_sign
+      ? Number(event.data_decoded.realized_funding_fee_usd) / 10 ** USD_DECIMAL
+      : -Number(event.data_decoded.realized_funding_fee_usd) / 10 ** USD_DECIMAL;
+
+    ctx.meter.Counter("tlp_fee_usd").add(realized_funding_fee_usd);
+
+    ctx.eventLogger.emit("RealizeFunding", {
+      distinctId: event.data_decoded.user,
+      collateral_token,
+      base_token,
+      realized_funding_fee,
+      realized_funding_fee_usd,
+    });
   });
-});
 
 function parse_token(name: string): string {
   let typeArgs = name.split("::");
