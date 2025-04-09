@@ -183,6 +183,8 @@ trading
       price = event.data_decoded.filled_price!;
     }
 
+    // var dov_index = event.data_decoded.dov_index;
+
     ctx.eventLogger.emit("PlaceOrderWithBidReceipt", {
       distinctId: event.data_decoded.user,
       order_id: event.data_decoded.order_id,
@@ -194,6 +196,7 @@ trading
       collateral,
       collateral_token,
       price: Number(price) / 10 ** PRICE_DECIMAL, // WARNING: fixed decimal
+      // dov_index,
     });
   })
   .onEventRealizeOptionPositionEvent((event, ctx) => {
