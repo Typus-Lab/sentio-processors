@@ -193,6 +193,41 @@ trading
       collateral_token,
       price: Number(price) / 10 ** PRICE_DECIMAL, // WARNING: fixed decimal
     });
+  })
+  .onEventRealizeOptionPositionEvent((event, ctx) => {
+    var base_token = parse_token(event.data_decoded.trading_symbol.name);
+    var collateral_token = parse_token(event.data_decoded.realize_balance_token_type.name);
+
+    var exercise_balance_value =
+      Number(event.data_decoded.exercise_balance_value) / 10 ** token_decimal(collateral_token)!;
+    // borrow, trading fee
+    var fee_value = Number(event.data_decoded.fee_value) / 10 ** token_decimal(collateral_token)!;
+
+    var user_remaining_value =
+      Number(event.data_decoded.user_remaining_value) / 10 ** token_decimal(collateral_token)!;
+    var user_remaining_in_usd = Number(event.data_decoded.user_remaining_in_usd) / 10 ** USD_DECIMAL;
+
+    var realized_loss_value =
+      Number(event.data_decoded.realized_loss_value) / 10 ** token_decimal(collateral_token)!;
+
+    var fee_usd = (fee_value * user_remaining_in_usd) / user_remaining_value;
+
+    ctx.meter.Counter("protocol_fee_usd").add(fee_usd * PROTOCOL_FEE_SHARE);
+    ctx.meter.Counter("tlp_fee_usd").add(fee_usd * TLP_FEE_SHARE);
+
+    ctx.eventLogger.emit("RealizeOption", {
+      distinctId: event.data_decoded.position_user,
+      typeName: name,
+      position_id: event.data_decoded.position_id,
+      base_token,
+      collateral_token,
+      exercise_balance_value,
+      fee_value,
+      fee_usd,
+      realized_loss_value,
+      user_remaining_value,
+      user_remaining_in_usd,
+    });
   });
 
 position
