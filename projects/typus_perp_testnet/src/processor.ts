@@ -115,6 +115,11 @@ trading
     let liquidator_fee = Number(event.data_decoded.realized_liquidator_fee) / 10 ** collateral_decimal;
     let value_for_lp_pool = Number(event.data_decoded.realized_value_for_lp_pool) / 10 ** collateral_decimal;
 
+    var position_size = undefined;
+    if (event.data_decoded.u64_padding.length > 0) {
+      position_size = Number(event.data_decoded.u64_padding[0]) / 10 ** token_decimal(base_token)!;
+    }
+
     ctx.meter.Counter("protocol_fee_usd").add(liquidator_fee);
     ctx.meter.Counter("tlp_fee_usd").add(value_for_lp_pool);
 
@@ -127,6 +132,7 @@ trading
       trading_price,
       liquidator_fee,
       value_for_lp_pool,
+      position_size,
     });
   })
   .onEventCreateTradingOrderEvent((event, ctx) => {
