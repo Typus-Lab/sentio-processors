@@ -208,7 +208,7 @@ trading
     var realized_loss_value =
       Number(event.data_decoded.realized_loss_value) / 10 ** token_decimal(collateral_token)!;
 
-    var fee_usd = (fee_value * user_remaining_in_usd) / user_remaining_value;
+    var fee_usd = user_remaining_value > 0 ? (fee_value * user_remaining_in_usd) / user_remaining_value : 0;
 
     ctx.meter.Counter("protocol_fee_usd").add(fee_usd * PROTOCOL_FEE_SHARE);
     ctx.meter.Counter("tlp_fee_usd").add(fee_usd * TLP_FEE_SHARE);
@@ -306,12 +306,10 @@ position
       ? Number(event.data_decoded.realized_amount)
       : -Number(event.data_decoded.realized_amount);
 
-    var realized_pnl;
-    if (realized_trading_fee > 0) {
-      realized_pnl = ((realized_amount - realized_trading_fee) * realized_fee_in_usd) / realized_trading_fee;
-    } else {
-      realized_pnl = 0;
-    }
+    var realized_pnl =
+      realized_trading_fee > 0
+        ? ((realized_amount - realized_trading_fee) * realized_fee_in_usd) / realized_trading_fee
+        : 0;
 
     realized_trading_fee = realized_trading_fee / 10 ** collateral_decimal;
     realized_amount = realized_amount / 10 ** collateral_decimal;
