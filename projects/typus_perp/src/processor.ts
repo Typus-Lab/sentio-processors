@@ -152,7 +152,6 @@ trading
 
     ctx.eventLogger.emit("PlaceOrder", {
       distinctId: event.data_decoded.user,
-      typeName: name,
       order_id: event.data_decoded.order_id,
       position_id: event.data_decoded.linked_position_id,
       base_token,
@@ -182,7 +181,6 @@ trading
 
     ctx.eventLogger.emit("PlaceOrderWithBidReceipt", {
       distinctId: event.data_decoded.user,
-      typeName: name,
       order_id: event.data_decoded.order_id,
       base_token,
       side: event.data_decoded.is_long ? "Long" : "Short",
@@ -217,7 +215,6 @@ trading
 
     ctx.eventLogger.emit("RealizeOption", {
       distinctId: event.data_decoded.position_user,
-      typeName: name,
       position_id: event.data_decoded.position_id,
       base_token,
       collateral_token,
@@ -227,6 +224,54 @@ trading
       realized_loss_value,
       user_remaining_value,
       user_remaining_in_usd,
+    });
+  })
+  .onEventCancelTradingOrderEvent((event, ctx) => {
+    var base_token = parse_token(event.data_decoded.base_token.name);
+    var collateral_token = parse_token(event.data_decoded.collateral_token.name);
+    var released_collateral_amount =
+      Number(event.data_decoded.released_collateral_amount) / 10 ** token_decimal(collateral_token)!;
+
+    ctx.eventLogger.emit("CancelOrder", {
+      distinctId: event.data_decoded.user,
+      order_id: event.data_decoded.order_id,
+      base_token,
+      collateral_token,
+      released_collateral_amount,
+    });
+  })
+  .onEventReleaseCollateralEvent((event, ctx) => {
+    var base_token = parse_token(event.data_decoded.base_token.name);
+    var collateral_token = parse_token(event.data_decoded.collateral_token.name);
+    var released_collateral_amount =
+      Number(event.data_decoded.released_collateral_amount) / 10 ** token_decimal(collateral_token)!;
+    var remaining_collateral_amount =
+      Number(event.data_decoded.remaining_collateral_amount) / 10 ** token_decimal(collateral_token)!;
+
+    ctx.eventLogger.emit("ReleaseCollateral", {
+      distinctId: event.data_decoded.user,
+      position_id: event.data_decoded.position_id,
+      base_token,
+      collateral_token,
+      released_collateral_amount,
+      remaining_collateral_amount,
+    });
+  })
+  .onEventIncreaseCollateralEvent((event, ctx) => {
+    var base_token = parse_token(event.data_decoded.base_token.name);
+    var collateral_token = parse_token(event.data_decoded.collateral_token.name);
+    var increased_collateral_amount =
+      Number(event.data_decoded.increased_collateral_amount) / 10 ** token_decimal(collateral_token)!;
+    var remaining_collateral_amount =
+      Number(event.data_decoded.remaining_collateral_amount) / 10 ** token_decimal(collateral_token)!;
+
+    ctx.eventLogger.emit("IncreaseCollateral", {
+      distinctId: event.data_decoded.user,
+      position_id: event.data_decoded.position_id,
+      base_token,
+      collateral_token,
+      increased_collateral_amount,
+      remaining_collateral_amount,
     });
   });
 
