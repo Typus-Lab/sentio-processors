@@ -294,12 +294,12 @@ position
     let position_id;
     let order_type;
 
-    if (event.data_decoded.linked_position_id) {
-      position_id = event.data_decoded.linked_position_id;
-      order_type = "Close";
-    } else {
+    if (event.data_decoded.linked_position_id == undefined) {
       position_id = event.data_decoded.new_position_id;
       order_type = "Open";
+    } else {
+      position_id = event.data_decoded.linked_position_id;
+      order_type = "Close";
     }
 
     var filled_size = Number(event.data_decoded.filled_size) / 10 ** token_decimal(base_token)!;
@@ -420,6 +420,12 @@ function token_decimal(token: string): number {
     case "SCA":
     case "HIPPO":
     case "TYPUS":
+    case "SPSUI":
+    case "NAVX":
+    case "BLUE":
+    case "sSCA":
+    case "STSUI":
+    case "WAL":
       return 9;
     case "BTC":
     case "ETH":
@@ -437,6 +443,7 @@ function token_decimal(token: string): number {
     case "MBLUB":
     case "MLIQ":
     case "DEEP":
+    case "NS":
       return 6;
     case "FUD": // actual 5
     case "LIQ": // actual 6
@@ -461,9 +468,17 @@ SuiObjectProcessor.bind({
       const price = Number(tvl_usd) / Number(total_share_supply);
       ctx.meter.Gauge("tlp_price").record(price);
     }
+    let balances = df as any;
+    for (let balance of balances) {
+      if (balance.type.includes("Balance")) {
+        let token = parse_token("0x" + balance.fields.name.fields.name);
+        let value = Number(balance.fields.value) / 10 ** token_decimal(token);
+        ctx.meter.Gauge("tvl").record(value, { coin_symbol: token });
+      }
+    }
   },
   60,
   60,
   undefined,
-  undefined
+  { owned: true }
 );
