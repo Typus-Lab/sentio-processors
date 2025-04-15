@@ -122,8 +122,8 @@ trading
       position_size = Number(event.data_decoded.u64_padding[0]) / 10 ** token_decimal(base_token)!;
     }
 
-    ctx.meter.Counter("protocol_fee_usd").add(liquidator_fee);
-    ctx.meter.Counter("tlp_fee_usd").add(value_for_lp_pool);
+    ctx.meter.Counter("protocol_fee_usd").add(liquidator_fee * collateral_price);
+    ctx.meter.Counter("tlp_fee_usd").add(value_for_lp_pool * collateral_price);
 
     ctx.eventLogger.emit("Liquidate", {
       distinctId: event.data_decoded.user,
