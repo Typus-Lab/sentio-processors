@@ -231,7 +231,7 @@ trading
       position_id: event.data_decoded.position_id,
       base_token,
       collateral_token,
-      exercise_balance_value,
+      exercise_balance_value, // from option exercise profit
       fee_value,
       fee_usd,
       realized_loss_value,
@@ -323,6 +323,8 @@ position
       realized_trading_fee > 0
         ? ((realized_amount - realized_trading_fee) * realized_fee_in_usd) / realized_trading_fee
         : 0;
+    // no need to calculate realized_amount w/o fee, usually happended when option is exercised ITM
+    // the realized_amount is actually unrealized and it will be calculated in RealizeOption
 
     realized_trading_fee = realized_trading_fee / 10 ** collateral_decimal;
     realized_amount = realized_amount / 10 ** collateral_decimal;
