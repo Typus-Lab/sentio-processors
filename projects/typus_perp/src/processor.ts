@@ -129,7 +129,7 @@ trading
       distinctId: event.data_decoded.user,
       position_id,
       collateral_token,
-      trading_token: base_token,
+      base_token,
       collateral_price,
       trading_price,
       liquidator_fee,
@@ -329,7 +329,7 @@ position
     ctx.eventLogger.emit("OrderFilled", {
       distinctId: event.data_decoded.user,
       collateral_token,
-      trading_token: base_token,
+      base_token,
       order_id,
       position_id,
       order_type,
