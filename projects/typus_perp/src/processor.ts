@@ -312,25 +312,23 @@ position
     var filled_price = Number(event.data_decoded.filled_price) / 10 ** PRICE_DECIMAL;
     var side = event.data_decoded.position_side ? "Long" : "Short";
 
-    var realized_trading_fee =
-      Number(event.data_decoded.realized_trading_fee) + Number(event.data_decoded.realized_borrow_fee);
+    var realized_trading_fee = Number(event.data_decoded.realized_trading_fee) / 10 ** collateral_decimal;
+    var realized_borrow_fee = Number(event.data_decoded.realized_borrow_fee) / 10 ** collateral_decimal;
+    var realized_fee = realized_trading_fee + realized_borrow_fee;
     var realized_fee_in_usd = Number(event.data_decoded.realized_fee_in_usd) / 10 ** USD_DECIMAL;
+
     var realized_amount = event.data_decoded.realized_amount_sign
-      ? Number(event.data_decoded.realized_amount)
-      : -Number(event.data_decoded.realized_amount);
+      ? Number(event.data_decoded.realized_amount) / 10 ** collateral_decimal
+      : -Number(event.data_decoded.realized_amount) / 10 ** collateral_decimal;
 
     var realized_pnl =
-      realized_trading_fee > 0
-        ? ((realized_amount - realized_trading_fee) * realized_fee_in_usd) / realized_trading_fee
-        : 0;
+      realized_fee > 0 ? ((realized_amount - realized_fee) * realized_fee_in_usd) / realized_fee : 0;
     // no need to calculate realized_amount w/o fee, usually happended when option is exercised ITM
     // the realized_amount is actually unrealized and it will be calculated in RealizeOption
 
-    realized_trading_fee = realized_trading_fee / 10 ** collateral_decimal;
-    realized_amount = realized_amount / 10 ** collateral_decimal;
-
     ctx.meter.Counter("protocol_fee_usd").add(realized_fee_in_usd * PROTOCOL_FEE_SHARE);
     ctx.meter.Counter("tlp_fee_usd").add(realized_fee_in_usd * TLP_FEE_SHARE);
+    ctx.meter.Counter("trading_volume_usd").add(filled_size * filled_price, { side, base_token });
 
     ctx.eventLogger.emit("OrderFilled", {
       distinctId: event.data_decoded.user,
@@ -343,6 +341,8 @@ position
       filled_price,
       side,
       realized_trading_fee,
+      realized_borrow_fee,
+      realized_fee,
       realized_fee_in_usd,
       realized_amount,
       realized_pnl,
