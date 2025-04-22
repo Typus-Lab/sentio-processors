@@ -127,6 +127,12 @@ trading
     let value_for_lp_pool_usd = value_for_lp_pool * collateral_price;
     ctx.meter.Counter("tlp_fee_usd").add(value_for_lp_pool_usd);
 
+    if (position_size) {
+      ctx.meter
+        .Counter("trading_volume_usd")
+        .add(position_size * trading_price, { side: "Liquidate", base_token });
+    }
+
     ctx.eventLogger.emit("Liquidate", {
       distinctId: event.data_decoded.user,
       position_id,
