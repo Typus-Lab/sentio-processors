@@ -1404,6 +1404,14 @@ typus_dov_single
     const vaultInfo = await ctx.store.get(VaultInfo, event.data_decoded.index.toString());
     const coin_symbol = vaultInfo?.b_token;
 
+    if (coin_symbol) {
+      const price_b_token = await getPriceBySymbol(coin_symbol, ctx.timestamp);
+      ctx.meter.Counter("AccumulatedPremiumUSD").add((bidder_bid_value + bidder_fee) * price_b_token!, {
+        index: event.data_decoded.index.toString(),
+        coin_symbol,
+      });
+    }
+
     ctx.eventLogger.emit("SafuOtc", {
       distinctId: event.data_decoded.signer,
       index: event.data_decoded.index,
