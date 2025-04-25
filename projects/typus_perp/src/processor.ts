@@ -175,6 +175,7 @@ trading
       order_type,
       status: event.data_decoded.filled ? "Filled" : "Open",
       size,
+      size_usd: (size * Number(price)) / 10 ** PRICE_DECIMAL,
       collateral,
       collateral_token,
       price: Number(price) / 10 ** PRICE_DECIMAL, // WARNING: fixed decimal
