@@ -42,6 +42,9 @@ lp_pool
     let mint_fee_usd = Number(event.data_decoded.mint_fee_usd) / 10 ** USD_DECIMAL;
     let minted_lp_amount = Number(event.data_decoded.minted_lp_amount) / 10 ** TLP_DECIMAL;
 
+    ctx.meter
+      .Counter("protocol_fee")
+      .add((mint_fee_usd * deposit_amount) / deposit_amount_usd, { coin_symbol: liquidity_token });
     ctx.meter.Counter("protocol_fee_usd").add(mint_fee_usd);
 
     ctx.eventLogger.emit("MintLp", {
@@ -64,6 +67,9 @@ lp_pool
     let burn_fee_usd = Number(event.data_decoded.burn_fee_usd) / 10 ** USD_DECIMAL;
     let burn_lp_amount = Number(event.data_decoded.burn_lp_amount) / 10 ** TLP_DECIMAL;
 
+    ctx.meter
+      .Counter("protocol_fee")
+      .add((burn_fee_usd * burn_lp_amount) / burn_amount_usd, { coin_symbol: liquidity_token });
     ctx.meter.Counter("protocol_fee_usd").add(burn_fee_usd);
 
     ctx.eventLogger.emit("BurnLp", {
@@ -89,6 +95,7 @@ lp_pool
     let fee_amount = Number(event.data_decoded.fee_amount) / 10 ** from_token_decimal;
     let fee_amount_usd = Number(event.data_decoded.fee_amount_usd) / 10 ** USD_DECIMAL;
 
+    ctx.meter.Counter("protocol_fee").add(fee_amount * PROTOCOL_FEE_SHARE, { coin_symbol: from_token });
     ctx.meter.Counter("protocol_fee_usd").add(fee_amount_usd * PROTOCOL_FEE_SHARE);
     ctx.meter.Counter("tlp_fee_usd").add(fee_amount_usd * TLP_FEE_SHARE);
 
@@ -123,6 +130,7 @@ trading
     }
 
     let liquidator_fee_usd = liquidator_fee * collateral_price;
+    ctx.meter.Counter("protocol_fee").add(liquidator_fee, { coin_symbol: collateral_token });
     ctx.meter.Counter("protocol_fee_usd").add(liquidator_fee_usd);
     let value_for_lp_pool_usd = value_for_lp_pool * collateral_price;
     ctx.meter.Counter("tlp_fee_usd").add(value_for_lp_pool_usd);
@@ -230,6 +238,7 @@ trading
 
     var fee_usd = user_remaining_value > 0 ? (fee_value * user_remaining_in_usd) / user_remaining_value : 0;
 
+    ctx.meter.Counter("protocol_fee").add(fee_value * PROTOCOL_FEE_SHARE, { coin_symbol: collateral_token });
     ctx.meter.Counter("protocol_fee_usd").add(fee_usd * PROTOCOL_FEE_SHARE);
     ctx.meter.Counter("tlp_fee_usd").add(fee_usd * TLP_FEE_SHARE);
 
@@ -333,6 +342,9 @@ position
     // no need to calculate realized_amount w/o fee, usually happended when option is exercised ITM
     // the realized_amount is actually unrealized and it will be calculated in RealizeOption
 
+    ctx.meter
+      .Counter("protocol_fee")
+      .add(realized_fee * PROTOCOL_FEE_SHARE, { coin_symbol: collateral_token });
     ctx.meter.Counter("protocol_fee_usd").add(realized_fee_in_usd * PROTOCOL_FEE_SHARE);
     ctx.meter.Counter("tlp_fee_usd").add(realized_fee_in_usd * TLP_FEE_SHARE);
     ctx.meter.Counter("trading_volume_usd").add(filled_size * filled_price, { side, base_token });
