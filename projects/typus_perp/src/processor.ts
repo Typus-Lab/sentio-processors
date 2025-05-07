@@ -67,9 +67,13 @@ lp_pool
     let burn_fee_usd = Number(event.data_decoded.burn_fee_usd) / 10 ** USD_DECIMAL;
     let burn_lp_amount = Number(event.data_decoded.burn_lp_amount) / 10 ** TLP_DECIMAL;
 
+    // (burn_amount_usd - burn_fee_usd) / withdraw_token_amount = burn_fee_usd / burn_fee_amount
+    // burn_fee_amount = burn_fee_usd * withdraw_token_amount / (burn_amount_usd - burn_fee_usd)
     ctx.meter
       .Counter("protocol_fee")
-      .add((burn_fee_usd * burn_lp_amount) / burn_amount_usd, { coin_symbol: liquidity_token });
+      .add((burn_fee_usd * withdraw_token_amount) / (burn_amount_usd - burn_fee_usd), {
+        coin_symbol: liquidity_token,
+      });
     ctx.meter.Counter("protocol_fee_usd").add(burn_fee_usd);
 
     ctx.eventLogger.emit("BurnLp", {
@@ -495,14 +499,21 @@ SuiObjectProcessor.bind({
       const price = Number(tvl_usd) / Number(total_share_supply);
       ctx.meter.Gauge("tlp_price").record(price);
     }
-    let balances = df as any;
-    for (let balance of balances) {
-      if (balance.type.includes("Balance")) {
-        let token = parse_token("0x" + balance.fields.name.fields.name);
-        let value = Number(balance.fields.value) / 10 ** token_decimal(token);
+    if (liquidityPool?.token_pools) {
+      for (let token_pool of liquidityPool?.token_pools) {
+        let token = parse_token("0x" + token_pool.token_type.name);
+        let value = Number(token_pool.state.liquidity_amount) / 10 ** token_decimal(token);
         ctx.meter.Gauge("tvl").record(value, { coin_symbol: token });
       }
     }
+    // let balances = df as any;
+    // for (let balance of balances) {
+    //   if (balance.type.includes("Balance")) {
+    //     let token = parse_token("0x" + balance.fields.name.fields.name);
+    //     let value = Number(balance.fields.value) / 10 ** token_decimal(token);
+    //     ctx.meter.Gauge("tvl").record(value, { coin_symbol: token });
+    //   }
+    // }
   },
   60,
   60,
