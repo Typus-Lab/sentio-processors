@@ -112,6 +112,39 @@ lp_pool
       fee_amount,
       fee_amount_usd,
     });
+  })
+  .onEventWithdrawLendingEvent(async (event, ctx) => {
+    let c_token_name = event.data_decoded.c_token_type.name;
+    let c_token = parse_token(c_token_name);
+    let c_token_decimal = token_decimal(c_token);
+    const price_c_token = (await getPriceBySymbol(c_token, ctx.timestamp)) || 0;
+
+    let r_token_name = event.data_decoded.r_token_type.name;
+    let r_token = parse_token(r_token_name);
+    let r_token_decimal = token_decimal(r_token);
+    const price_r_token = (await getPriceBySymbol(r_token, ctx.timestamp)) || 0;
+
+    let lending_interest = Number(event.data_decoded.lending_interest) / 10 ** c_token_decimal;
+    let protocol_share = Number(event.data_decoded.protocol_share) / 10 ** c_token_decimal;
+
+    let lending_reward = Number(event.data_decoded.lending_reward) / 10 ** r_token_decimal;
+    let reward_protocol_share = Number(event.data_decoded.reward_protocol_share) / 10 ** r_token_decimal;
+
+    ctx.meter.Counter("protocol_fee").add(protocol_share, { coin_symbol: c_token });
+    ctx.meter.Counter("protocol_fee").add(reward_protocol_share, { coin_symbol: r_token });
+
+    ctx.meter
+      .Counter("protocol_fee_usd")
+      .add(protocol_share * price_c_token + reward_protocol_share * price_r_token);
+
+    ctx.eventLogger.emit("WithdrawLending", {
+      c_token,
+      r_token,
+      lending_interest,
+      protocol_share,
+      lending_reward,
+      reward_protocol_share,
+    });
   });
 
 trading
