@@ -134,7 +134,7 @@ trading
     }
 
     let liquidator_fee_usd = liquidator_fee * collateral_price;
-    ctx.meter.Counter("protocol_fee").add(liquidator_fee, { coin_symbol: collateral_token });
+    ctx.meter.Counter("insurance_fee").add(liquidator_fee, { coin_symbol: collateral_token });
     ctx.meter.Counter("protocol_fee_usd").add(liquidator_fee_usd);
     let value_for_lp_pool_usd = value_for_lp_pool * collateral_price;
     ctx.meter.Counter("tlp_fee_usd").add(value_for_lp_pool_usd);
