@@ -133,9 +133,8 @@ lp_pool
     ctx.meter.Counter("protocol_fee").add(protocol_share, { coin_symbol: c_token });
     ctx.meter.Counter("protocol_fee").add(reward_protocol_share, { coin_symbol: r_token });
 
-    ctx.meter
-      .Counter("protocol_fee_usd")
-      .add(protocol_share * price_c_token + reward_protocol_share * price_r_token);
+    let protocol_fee_usd = protocol_share * price_c_token + reward_protocol_share * price_r_token;
+    ctx.meter.Counter("protocol_fee_usd").add(protocol_fee_usd);
 
     ctx.eventLogger.emit("WithdrawLending", {
       c_token,
@@ -144,6 +143,7 @@ lp_pool
       protocol_share,
       lending_reward,
       reward_protocol_share,
+      protocol_fee_usd,
     });
   });
 
