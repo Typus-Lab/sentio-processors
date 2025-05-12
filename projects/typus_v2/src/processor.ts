@@ -191,7 +191,7 @@ safu
         break;
     }
   })
-  .onEventUserEvent((event, ctx) => {
+  .onEventUserEvent(async (event, ctx) => {
     const action = event.data_decoded.action;
     const log = event.data_decoded.log;
     const bcs_padding = event.data_decoded.bcs_padding;
@@ -240,11 +240,14 @@ safu
             });
           }
           if (Number(log[3]) > 0) {
+            let amount = Number(log[3]) / 10 ** token_decimal(token);
+            const price = await getPriceBySymbol(token, ctx.timestamp);
             ctx.eventLogger.emit("SafuUnsubscribe", {
               distinctId: event.sender,
               index: log[0],
               round: log[1],
-              value: log[3],
+              amount,
+              amount_usd: amount * (price ?? 0),
               exp: log[5],
               fee: log[6],
               exit_fee_sui: log[7],
@@ -952,9 +955,10 @@ typus_dov_single
       amount: amount,
     });
   })
-  .onEventUnsubscribeEvent((event, ctx) => {
+  .onEventUnsubscribeEvent(async (event, ctx) => {
     let token = parse_token(event.data_decoded.token.name);
     let amount = Number(event.data_decoded.amount) / 10 ** token_decimal(token);
+    const price = await getPriceBySymbol(token, ctx.timestamp);
 
     // ctx.meter.Counter("totalUnsubscribe").add(amount, {
     //     index: event.data_decoded.index.toString(),
@@ -965,6 +969,7 @@ typus_dov_single
       index: event.data_decoded.index,
       coin_symbol: token,
       amount: amount,
+      amount_usd: amount * (price ?? 0),
     });
   })
   .onEventClaimEvent((event, ctx) => {
@@ -1325,11 +1330,14 @@ typus_dov_single
     if (event.data_decoded.log[5] > 0) {
       // unsubscribe
       let amount = Number(event.data_decoded.log[5]) / 10 ** token_decimal(d_token)!;
+      const price = await getPriceBySymbol(d_token, ctx.timestamp);
+
       ctx.eventLogger.emit("Unsubscribe", {
         distinctId: event.data_decoded.signer,
         index,
         coin_symbol: d_token,
         amount: amount,
+        amount_usd: amount * (price ?? 0),
       });
     }
     if (event.data_decoded.log[9] > 0) {
