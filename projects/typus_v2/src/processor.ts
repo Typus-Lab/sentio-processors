@@ -1440,6 +1440,8 @@ function parse_token(name: string): string {
     return "BLUB";
   } else if (typeArgs[2] == "MLIQ") {
     return "LIQ";
+  } else if (typeArgs[2] == "SCALLOP_SCA") {
+    return "sSCA";
   }
   switch (normalizeSuiAddress(typeArgs[0])) {
     case "0x027792d9fed7f9844eb4839566001bb6f6cb4804f66aa2da6fe1ee242d896881":
