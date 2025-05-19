@@ -347,6 +347,26 @@ trading
       increased_collateral_amount,
       remaining_collateral_amount,
     });
+  })
+  .onEventUpdateFundingRateEvent((event, ctx) => {
+    var base_token = parse_token(event.data_decoded.base_token.name);
+    var new_funding_ts_ms = event.data_decoded.new_funding_ts_ms;
+    var intervals_count = event.data_decoded.intervals_count;
+    var previous_cumulative_funding_rate_index = event.data_decoded
+      .previous_cumulative_funding_rate_index_sign
+      ? event.data_decoded.previous_cumulative_funding_rate_index
+      : -event.data_decoded.previous_cumulative_funding_rate_index;
+    var cumulative_funding_rate_index = event.data_decoded.cumulative_funding_rate_index_sign
+      ? event.data_decoded.cumulative_funding_rate_index
+      : -event.data_decoded.cumulative_funding_rate_index;
+
+    ctx.eventLogger.emit("UpdateFundingRate", {
+      base_token,
+      new_funding_ts_ms,
+      intervals_count,
+      previous_cumulative_funding_rate_index,
+      cumulative_funding_rate_index,
+    });
   });
 
 position

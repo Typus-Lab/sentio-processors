@@ -15,6 +15,7 @@ import { getPriceBySymbol } from "@sentio/sdk/utils";
 import { tails_staking as tails_staking_v2 } from "./types/sui/typus.js";
 import { BcsReader } from "@mysten/bcs";
 import { VaultSnapshot, VaultInfo, SafuInfo, TokenMapping } from "./schema/store.js";
+import { BigDecimal } from "@sentio/sdk";
 
 const startCheckpoint = BigInt(15970051);
 
@@ -1155,6 +1156,11 @@ typus_dov_single
       ? Number(event.data_decoded.u64_padding.at(1)) / 10 ** token_decimal(o_token)
       : undefined;
 
+    // console.log(
+    //   `Delivery: ${event.data_decoded.u64_padding.at(1)} / 10 ** ${token_decimal(o_token)} ${o_token} = ${max_size}
+    //       ${bidder_bid_value} = ${Number(event.data_decoded.bidder_bid_value)} / 10 ** ${token_decimal(b_token)} ${b_token};`
+    // );
+
     ctx.eventLogger.emit("Delivery", {
       index: event.data_decoded.index,
       b_token,
@@ -1163,13 +1169,13 @@ typus_dov_single
       round: event.data_decoded.round,
       delivery_price,
       delivery_size,
-      bidder_bid_value,
+      bidder_bid_value: BigDecimal(bidder_bid_value),
       bidder_fee,
       incentive_bid_value,
       incentive_fee,
       depositor_incentive_value,
       fixed_incentive_amount,
-      max_size,
+      max_size: BigDecimal(max_size ?? 0),
       deposit_incentive_bp,
       bid_incentive_bp,
       price_o_token,
