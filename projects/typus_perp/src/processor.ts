@@ -174,6 +174,11 @@ trading
       position_size = Number(event.data_decoded.u64_padding[0]) / 10 ** token_decimal(base_token)!;
     }
 
+    var estimated_liquidation_price = undefined;
+    if (event.data_decoded.u64_padding.length > 1) {
+      estimated_liquidation_price = Number(event.data_decoded.u64_padding[1]) / 10 ** PRICE_DECIMAL;
+    }
+
     let liquidator_fee_usd = liquidator_fee * collateral_price;
     ctx.meter.Counter("insurance_fee").add(liquidator_fee, { coin_symbol: collateral_token });
     ctx.meter.Counter("protocol_fee_usd").add(liquidator_fee_usd);
@@ -198,6 +203,7 @@ trading
       value_for_lp_pool,
       value_for_lp_pool_usd,
       position_size,
+      estimated_liquidation_price,
     });
   })
   .onEventCreateTradingOrderEvent((event, ctx) => {
