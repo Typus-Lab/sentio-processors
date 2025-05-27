@@ -524,6 +524,8 @@ function token_decimal(token: string): number {
     case "sSCA":
     case "STSUI":
     case "WAL":
+    case "JPY":
+    case "XAU":
       return 9;
     case "BTC":
     case "ETH":
@@ -568,9 +570,12 @@ SuiObjectProcessor.bind({
     }
     if (liquidityPool?.token_pools) {
       for (let token_pool of liquidityPool?.token_pools) {
+        // token_pool.config.spot_config.target_weight_bp;
         let token = parse_token("0x" + token_pool.token_type.name);
-        let value = Number(token_pool.state.liquidity_amount) / 10 ** token_decimal(token);
+        var value = Number(token_pool.state.liquidity_amount) / 10 ** token_decimal(token);
         ctx.meter.Gauge("tvl").record(value, { coin_symbol: token });
+        var value = Number(token_pool.state.reserved_amount) / 10 ** token_decimal(token);
+        ctx.meter.Gauge("reserved_amount").record(value, { coin_symbol: token });
       }
     }
     // let balances = df as any;
