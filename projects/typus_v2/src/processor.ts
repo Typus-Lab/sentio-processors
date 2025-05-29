@@ -913,13 +913,76 @@ tds_authorized_entry
       index: index.toString(),
       coin_symbol: token,
     });
-    ctx.eventLogger.emit("RewardSuilend", {
+    ctx.eventLogger.emit("RewardLending", {
       distinctId: event.data_decoded.signer,
       index,
       reward_value: u64_padding_.at(0),
       reward_fee_amount: u64_padding_.at(1),
       round,
       protocol: "suilend",
+      token: vaultInfo?.d_token,
+    });
+  })
+  .onEventWithdrawNavi(async (event, ctx) => {
+    const index = Number(event.data_decoded.index);
+    const round = event.data_decoded.u64_padding.at(-1);
+    const u64_padding = event.data_decoded.u64_padding.slice(0, -1);
+    const vaultInfo = await ctx.store.get(VaultInfo, index.toString());
+    const token = vaultInfo?.d_token!;
+
+    const u64_padding_ = u64_padding.map((x) => Number(x) / 10 ** token_decimal(token));
+
+    const price = await getPriceBySymbol(token, ctx.timestamp);
+
+    const reward = u64_padding_.at(1)!;
+    const interest = u64_padding_.at(0)! - u64_padding_.at(2)! - u64_padding_.at(3)!;
+    ctx.meter
+      .Counter("AccumulatedRewardGeneratedUSD")
+      .add(((reward + interest) / 10 ** token_decimal(token)) * price!, {
+        index: index.toString(),
+        coin_symbol: token,
+      });
+
+    ctx.eventLogger.emit("WithdrawLending", {
+      distinctId: event.data_decoded.signer,
+      index,
+      balance_value: u64_padding_.at(0),
+      reward_value: u64_padding_.at(1),
+      active_share_supply: u64_padding_.at(2),
+      deactivating_share_supply: u64_padding_.at(3),
+      fee_amount: u64_padding_.at(4),
+      fee_share_amount: u64_padding_.at(5),
+      reward_fee_amount: u64_padding_.at(6),
+      reward_fee_share_amount: u64_padding_.at(7),
+      round,
+      protocol: "navi",
+      token: vaultInfo?.d_token,
+    });
+  })
+  .onEventRewardNavi(async (event, ctx) => {
+    const index = Number(event.data_decoded.index);
+    const round = event.data_decoded.u64_padding.at(-1);
+    const u64_padding = event.data_decoded.u64_padding.slice(0, -1);
+    const vaultInfo = await ctx.store.get(VaultInfo, index.toString());
+    const token = vaultInfo?.d_token!;
+    const u64_padding_ = u64_padding.map((x) => Number(x) / 10 ** token_decimal(token));
+    // reward_value,
+    // reward_fee_amount,
+    // reward_fee_share_amount,
+    // round
+    const price = await getPriceBySymbol(token, ctx.timestamp);
+    const reward = u64_padding_.at(0)!;
+    ctx.meter.Counter("AccumulatedRewardGeneratedUSD").add((reward / 10 ** token_decimal(token)) * price!, {
+      index: index.toString(),
+      coin_symbol: token,
+    });
+    ctx.eventLogger.emit("RewardLending", {
+      distinctId: event.data_decoded.signer,
+      index,
+      reward_value: u64_padding_.at(0),
+      reward_fee_amount: u64_padding_.at(1),
+      round,
+      protocol: "navi",
       token: vaultInfo?.d_token,
     });
   });

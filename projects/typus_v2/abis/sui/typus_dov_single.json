@@ -1,5 +1,6 @@
 {
   "jsonrpc": "2.0",
+  "id": 1,
   "result": {
     "auto_bid": {
       "fileFormatVersion": 6,
@@ -3611,6 +3612,26 @@
             }
           ]
         },
+        "CreateNaviAccountCap": {
+          "abilities": {
+            "abilities": ["Copy", "Drop"]
+          },
+          "typeParameters": [],
+          "fields": [
+            {
+              "name": "signer",
+              "type": "Address"
+            },
+            {
+              "name": "index",
+              "type": "U64"
+            },
+            {
+              "name": "account_cap_id",
+              "type": "Address"
+            }
+          ]
+        },
         "CreateScallopSpoolAccount": {
           "abilities": {
             "abilities": ["Copy", "Drop"]
@@ -3660,6 +3681,28 @@
           ]
         },
         "DepositAdditionalLending": {
+          "abilities": {
+            "abilities": ["Copy", "Drop"]
+          },
+          "typeParameters": [],
+          "fields": [
+            {
+              "name": "signer",
+              "type": "Address"
+            },
+            {
+              "name": "index",
+              "type": "U64"
+            },
+            {
+              "name": "u64_padding",
+              "type": {
+                "Vector": "U64"
+              }
+            }
+          ]
+        },
+        "DepositNavi": {
           "abilities": {
             "abilities": ["Copy", "Drop"]
           },
@@ -3928,6 +3971,28 @@
             }
           ]
         },
+        "RewardNavi": {
+          "abilities": {
+            "abilities": ["Copy", "Drop"]
+          },
+          "typeParameters": [],
+          "fields": [
+            {
+              "name": "signer",
+              "type": "Address"
+            },
+            {
+              "name": "index",
+              "type": "U64"
+            },
+            {
+              "name": "u64_padding",
+              "type": {
+                "Vector": "U64"
+              }
+            }
+          ]
+        },
         "RewardSuilend": {
           "abilities": {
             "abilities": ["Copy", "Drop"]
@@ -3947,6 +4012,26 @@
               "type": {
                 "Vector": "U64"
               }
+            }
+          ]
+        },
+        "SetLendingProtocolFlag": {
+          "abilities": {
+            "abilities": ["Copy", "Drop"]
+          },
+          "typeParameters": [],
+          "fields": [
+            {
+              "name": "signer",
+              "type": "Address"
+            },
+            {
+              "name": "index",
+              "type": "U64"
+            },
+            {
+              "name": "lending_protocol",
+              "type": "U64"
             }
           ]
         },
@@ -4204,6 +4289,28 @@
             }
           ]
         },
+        "WithdrawNavi": {
+          "abilities": {
+            "abilities": ["Copy", "Drop"]
+          },
+          "typeParameters": [],
+          "fields": [
+            {
+              "name": "signer",
+              "type": "Address"
+            },
+            {
+              "name": "index",
+              "type": "U64"
+            },
+            {
+              "name": "u64_padding",
+              "type": {
+                "Vector": "U64"
+              }
+            }
+          ]
+        },
         "WithdrawScallop": {
           "abilities": {
             "abilities": ["Copy", "Drop"]
@@ -4298,6 +4405,16 @@
               }
             },
             "U64",
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
+                  "module": "oracle",
+                  "name": "Oracle",
+                  "typeArguments": []
+                }
+              }
+            },
             {
               "Reference": {
                 "Struct": {
@@ -4480,6 +4597,35 @@
           ],
           "return": []
         },
+        "create_navi_account_cap": {
+          "visibility": "Friend",
+          "isEntry": true,
+          "typeParameters": [],
+          "parameters": [
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
+                  "module": "typus_dov_single",
+                  "name": "Registry",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64",
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "tx_context",
+                  "name": "TxContext",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": []
+        },
         "create_scallop_spool_account": {
           "visibility": "Friend",
           "isEntry": true,
@@ -4618,6 +4764,97 @@
             },
             "U64",
             "Bool",
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "clock",
+                  "name": "Clock",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "tx_context",
+                  "name": "TxContext",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": []
+        },
+        "deposit_navi": {
+          "visibility": "Friend",
+          "isEntry": true,
+          "typeParameters": [
+            {
+              "abilities": []
+            },
+            {
+              "abilities": []
+            }
+          ],
+          "parameters": [
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
+                  "module": "typus_dov_single",
+                  "name": "Registry",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64",
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "storage",
+                  "name": "Storage",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "pool",
+                  "name": "Pool",
+                  "typeArguments": [
+                    {
+                      "TypeParameter": 0
+                    }
+                  ]
+                }
+              }
+            },
+            "U8",
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "incentive",
+                  "name": "Incentive",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "incentive_v2",
+                  "name": "Incentive",
+                  "typeArguments": []
+                }
+              }
+            },
             {
               "Reference": {
                 "Struct": {
@@ -5506,6 +5743,91 @@
           ],
           "return": []
         },
+        "reward_navi": {
+          "visibility": "Friend",
+          "isEntry": true,
+          "typeParameters": [
+            {
+              "abilities": []
+            },
+            {
+              "abilities": []
+            },
+            {
+              "abilities": []
+            }
+          ],
+          "parameters": [
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
+                  "module": "typus_dov_single",
+                  "name": "Registry",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64",
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "storage",
+                  "name": "Storage",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "incentive_v2",
+                  "name": "IncentiveFundsPool",
+                  "typeArguments": [
+                    {
+                      "TypeParameter": 2
+                    }
+                  ]
+                }
+              }
+            },
+            "U8",
+            "U8",
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "incentive_v2",
+                  "name": "Incentive",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "clock",
+                  "name": "Clock",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "tx_context",
+                  "name": "TxContext",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": []
+        },
         "reward_suilend": {
           "visibility": "Friend",
           "isEntry": true,
@@ -5748,6 +6070,36 @@
             }
           ]
         },
+        "set_lending_protocol_flag": {
+          "visibility": "Private",
+          "isEntry": true,
+          "typeParameters": [],
+          "parameters": [
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
+                  "module": "typus_dov_single",
+                  "name": "Registry",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64",
+            "U64",
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "tx_context",
+                  "name": "TxContext",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": []
+        },
         "settle": {
           "visibility": "Friend",
           "isEntry": true,
@@ -5771,6 +6123,16 @@
               }
             },
             "U64",
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
+                  "module": "oracle",
+                  "name": "Oracle",
+                  "typeArguments": []
+                }
+              }
+            },
             {
               "Reference": {
                 "Struct": {
@@ -5862,39 +6224,6 @@
                 }
               }
             },
-            "U64",
-            {
-              "Reference": {
-                "Struct": {
-                  "address": "0x2",
-                  "module": "tx_context",
-                  "name": "TxContext",
-                  "typeArguments": []
-                }
-              }
-            }
-          ],
-          "return": []
-        },
-        "update_active_vault_config": {
-          "visibility": "Private",
-          "isEntry": true,
-          "typeParameters": [],
-          "parameters": [
-            {
-              "MutableReference": {
-                "Struct": {
-                  "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
-                  "module": "typus_dov_single",
-                  "name": "Registry",
-                  "typeArguments": []
-                }
-              }
-            },
-            "U64",
-            "U64",
-            "U64",
-            "U64",
             "U64",
             {
               "Reference": {
@@ -6160,6 +6489,45 @@
           ],
           "return": []
         },
+        "update_oracle": {
+          "visibility": "Private",
+          "isEntry": true,
+          "typeParameters": [],
+          "parameters": [
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
+                  "module": "typus_dov_single",
+                  "name": "Registry",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64",
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
+                  "module": "oracle",
+                  "name": "Oracle",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "tx_context",
+                  "name": "TxContext",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": []
+        },
         "update_strike": {
           "visibility": "Friend",
           "isEntry": true,
@@ -6281,6 +6649,138 @@
             },
             {
               "MutableReference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "tx_context",
+                  "name": "TxContext",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": []
+        },
+        "withdraw_navi": {
+          "visibility": "Friend",
+          "isEntry": true,
+          "typeParameters": [
+            {
+              "abilities": []
+            },
+            {
+              "abilities": []
+            }
+          ],
+          "parameters": [
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
+                  "module": "typus_dov_single",
+                  "name": "Registry",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64",
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xca441b44943c16be0e6e23c5a955bb971537ea3289ae8016fbf33fffe1fd210f",
+                  "module": "config",
+                  "name": "OracleConfig",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xca441b44943c16be0e6e23c5a955bb971537ea3289ae8016fbf33fffe1fd210f",
+                  "module": "oracle",
+                  "name": "PriceOracle",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x5d8fbbf6f908a4af8c6d072669a462d53e03eb3c1d863bd0359dc818c69ea706",
+                  "module": "SupraSValueFeed",
+                  "name": "OracleHolder",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x8d97f1cd6ac663735be08d1d2b6d02a159e711586461306ce60a2b7a6a565a9e",
+                  "module": "price_info",
+                  "name": "PriceInfoObject",
+                  "typeArguments": []
+                }
+              }
+            },
+            "Address",
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "storage",
+                  "name": "Storage",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "pool",
+                  "name": "Pool",
+                  "typeArguments": [
+                    {
+                      "TypeParameter": 0
+                    }
+                  ]
+                }
+              }
+            },
+            "U8",
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "incentive",
+                  "name": "Incentive",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "incentive_v2",
+                  "name": "Incentive",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "clock",
+                  "name": "Clock",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
                 "Struct": {
                   "address": "0x2",
                   "module": "tx_context",
@@ -6980,6 +7480,29 @@
             }
           ]
         },
+        "AddWitnessEvent": {
+          "abilities": {
+            "abilities": ["Copy", "Drop"]
+          },
+          "typeParameters": [],
+          "fields": [
+            {
+              "name": "signer",
+              "type": "Address"
+            },
+            {
+              "name": "witness",
+              "type": {
+                "Struct": {
+                  "address": "0x1",
+                  "module": "type_name",
+                  "name": "TypeName",
+                  "typeArguments": []
+                }
+              }
+            }
+          ]
+        },
         "IncentiviseEvent": {
           "abilities": {
             "abilities": ["Copy", "Drop"]
@@ -7059,6 +7582,29 @@
               "name": "users",
               "type": {
                 "Vector": "Address"
+              }
+            }
+          ]
+        },
+        "RemoveWitnessEvent": {
+          "abilities": {
+            "abilities": ["Copy", "Drop"]
+          },
+          "typeParameters": [],
+          "fields": [
+            {
+              "name": "signer",
+              "type": "Address"
+            },
+            {
+              "name": "witness",
+              "type": {
+                "Struct": {
+                  "address": "0x1",
+                  "module": "type_name",
+                  "name": "TypeName",
+                  "typeArguments": []
+                }
               }
             }
           ]
@@ -7180,6 +7726,38 @@
             },
             {
               "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "tx_context",
+                  "name": "TxContext",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": []
+        },
+        "add_witness": {
+          "visibility": "Friend",
+          "isEntry": true,
+          "typeParameters": [
+            {
+              "abilities": ["Drop"]
+            }
+          ],
+          "parameters": [
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
+                  "module": "typus_dov_single",
+                  "name": "Registry",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
                 "Struct": {
                   "address": "0x2",
                   "module": "tx_context",
@@ -7347,6 +7925,38 @@
             },
             {
               "Vector": "Address"
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "tx_context",
+                  "name": "TxContext",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": []
+        },
+        "remove_witness": {
+          "visibility": "Friend",
+          "isEntry": true,
+          "typeParameters": [
+            {
+              "abilities": ["Drop"]
+            }
+          ],
+          "parameters": [
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
+                  "module": "typus_dov_single",
+                  "name": "Registry",
+                  "typeArguments": []
+                }
+              }
             },
             {
               "Reference": {
@@ -9260,6 +9870,127 @@
         }
       }
     },
+    "tds_witness_entry": {
+      "fileFormatVersion": 6,
+      "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
+      "name": "tds_witness_entry",
+      "friends": [],
+      "structs": {},
+      "exposedFunctions": {
+        "otc": {
+          "visibility": "Public",
+          "isEntry": false,
+          "typeParameters": [
+            {
+              "abilities": ["Drop"]
+            },
+            {
+              "abilities": []
+            },
+            {
+              "abilities": []
+            }
+          ],
+          "parameters": [
+            {
+              "TypeParameter": 0
+            },
+            {
+              "Vector": "U8"
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
+                  "module": "typus_dov_single",
+                  "name": "Registry",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64",
+            "U64",
+            "U64",
+            {
+              "Struct": {
+                "address": "0x2",
+                "module": "balance",
+                "name": "Balance",
+                "typeArguments": [
+                  {
+                    "TypeParameter": 2
+                  }
+                ]
+              }
+            },
+            "U64",
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "clock",
+                  "name": "Clock",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "tx_context",
+                  "name": "TxContext",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": [
+            {
+              "Struct": {
+                "address": "0x1",
+                "module": "option",
+                "name": "Option",
+                "typeArguments": [
+                  {
+                    "Struct": {
+                      "address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
+                      "module": "vault",
+                      "name": "TypusBidReceipt",
+                      "typeArguments": []
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Struct": {
+                "address": "0x1",
+                "module": "option",
+                "name": "Option",
+                "typeArguments": [
+                  {
+                    "Struct": {
+                      "address": "0x2",
+                      "module": "balance",
+                      "name": "Balance",
+                      "typeArguments": [
+                        {
+                          "TypeParameter": 2
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Vector": "U64"
+            }
+          ]
+        }
+      }
+    },
     "typus_dov_single": {
       "fileFormatVersion": 6,
       "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
@@ -9288,6 +10019,10 @@
         {
           "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
           "name": "tds_view_function"
+        },
+        {
+          "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
+          "name": "tds_witness_entry"
         }
       ],
       "structs": {
@@ -11285,6 +12020,67 @@
               }
             }
           ]
+        },
+        "WitnessOtcEvent": {
+          "abilities": {
+            "abilities": ["Copy", "Drop"]
+          },
+          "typeParameters": [],
+          "fields": [
+            {
+              "name": "witness",
+              "type": {
+                "Struct": {
+                  "address": "0x1",
+                  "module": "type_name",
+                  "name": "TypeName",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "name": "signer",
+              "type": "Address"
+            },
+            {
+              "name": "index",
+              "type": "U64"
+            },
+            {
+              "name": "round",
+              "type": "U64"
+            },
+            {
+              "name": "delivery_price",
+              "type": "U64"
+            },
+            {
+              "name": "delivery_size",
+              "type": "U64"
+            },
+            {
+              "name": "o_token_decimal",
+              "type": "U64"
+            },
+            {
+              "name": "bidder_bid_value",
+              "type": "U64"
+            },
+            {
+              "name": "bidder_fee",
+              "type": "U64"
+            },
+            {
+              "name": "b_token_decimal",
+              "type": "U64"
+            },
+            {
+              "name": "u64_padding",
+              "type": {
+                "Vector": "U64"
+              }
+            }
+          ]
         }
       },
       "exposedFunctions": {
@@ -11314,6 +12110,16 @@
               }
             },
             "U64",
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
+                  "module": "oracle",
+                  "name": "Oracle",
+                  "typeArguments": []
+                }
+              }
+            },
             {
               "Reference": {
                 "Struct": {
@@ -12143,6 +12949,35 @@
           ],
           "return": []
         },
+        "create_navi_account_cap_": {
+          "visibility": "Friend",
+          "isEntry": false,
+          "typeParameters": [],
+          "parameters": [
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
+                  "module": "typus_dov_single",
+                  "name": "Registry",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64",
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "tx_context",
+                  "name": "TxContext",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": ["Address"]
+        },
         "create_payoff_configs": {
           "visibility": "Friend",
           "isEntry": false,
@@ -12300,6 +13135,98 @@
             },
             "U64",
             "Bool",
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "clock",
+                  "name": "Clock",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "tx_context",
+                  "name": "TxContext",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": [
+            {
+              "Vector": "U64"
+            }
+          ]
+        },
+        "deposit_navi_": {
+          "visibility": "Friend",
+          "isEntry": false,
+          "typeParameters": [
+            {
+              "abilities": []
+            }
+          ],
+          "parameters": [
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
+                  "module": "typus_dov_single",
+                  "name": "Registry",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64",
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "storage",
+                  "name": "Storage",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "pool",
+                  "name": "Pool",
+                  "typeArguments": [
+                    {
+                      "TypeParameter": 0
+                    }
+                  ]
+                }
+              }
+            },
+            "U8",
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "incentive",
+                  "name": "Incentive",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "incentive_v2",
+                  "name": "Incentive",
+                  "typeArguments": []
+                }
+              }
+            },
             {
               "Reference": {
                 "Struct": {
@@ -12793,18 +13720,17 @@
           "isEntry": false,
           "typeParameters": [],
           "parameters": [
+            "U64",
+            "U64",
+            "U64",
             {
-              "Reference": {
-                "Struct": {
-                  "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
-                  "module": "typus_dov_single",
-                  "name": "PortfolioVault",
-                  "typeArguments": []
-                }
+              "Struct": {
+                "address": "0x1",
+                "module": "type_name",
+                "name": "TypeName",
+                "typeArguments": []
               }
             },
-            "U64",
-            "U64",
             {
               "Struct": {
                 "address": "0x1",
@@ -13393,6 +14319,47 @@
           ],
           "return": []
         },
+        "emit_witness_otc_event": {
+          "visibility": "Friend",
+          "isEntry": false,
+          "typeParameters": [],
+          "parameters": [
+            {
+              "Struct": {
+                "address": "0x1",
+                "module": "type_name",
+                "name": "TypeName",
+                "typeArguments": []
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
+                  "module": "typus_dov_single",
+                  "name": "Registry",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64",
+            "U64",
+            "U64",
+            "U64",
+            "U64",
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "tx_context",
+                  "name": "TxContext",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": []
+        },
         "fixed_incentivise_": {
           "visibility": "Friend",
           "isEntry": false,
@@ -13539,6 +14506,25 @@
           ],
           "return": ["U64", "U64"]
         },
+        "get_bid_fee_bp": {
+          "visibility": "Friend",
+          "isEntry": false,
+          "typeParameters": [],
+          "parameters": [
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "object",
+                  "name": "UID",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64"
+          ],
+          "return": ["U64"]
+        },
         "get_bid_receipt_intrinsic_value": {
           "visibility": "Public",
           "isEntry": false,
@@ -13554,6 +14540,68 @@
                   "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
                   "module": "typus_dov_single",
                   "name": "Registry",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
+                  "module": "oracle",
+                  "name": "Oracle",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
+                  "module": "vault",
+                  "name": "TypusBidReceipt",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "clock",
+                  "name": "Clock",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": ["U64"]
+        },
+        "get_bid_receipt_intrinsic_value_v2": {
+          "visibility": "Public",
+          "isEntry": false,
+          "typeParameters": [
+            {
+              "abilities": []
+            }
+          ],
+          "parameters": [
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
+                  "module": "typus_dov_single",
+                  "name": "Registry",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
+                  "module": "oracle",
+                  "name": "Oracle",
                   "typeArguments": []
                 }
               }
@@ -14836,6 +15884,35 @@
           ],
           "return": ["U64"]
         },
+        "migrate_lending_protocol_flag": {
+          "visibility": "Private",
+          "isEntry": true,
+          "typeParameters": [],
+          "parameters": [
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
+                  "module": "typus_dov_single",
+                  "name": "Registry",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64",
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "tx_context",
+                  "name": "TxContext",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": []
+        },
         "new_auction_": {
           "visibility": "Friend",
           "isEntry": false,
@@ -15217,98 +16294,6 @@
           ],
           "return": []
         },
-        "public_safu_otc_": {
-          "visibility": "Friend",
-          "isEntry": false,
-          "typeParameters": [
-            {
-              "abilities": []
-            },
-            {
-              "abilities": []
-            }
-          ],
-          "parameters": [
-            {
-              "MutableReference": {
-                "Struct": {
-                  "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
-                  "module": "typus_dov_single",
-                  "name": "Registry",
-                  "typeArguments": []
-                }
-              }
-            },
-            "U64",
-            "U64",
-            {
-              "Struct": {
-                "address": "0x2",
-                "module": "balance",
-                "name": "Balance",
-                "typeArguments": [
-                  {
-                    "TypeParameter": 1
-                  }
-                ]
-              }
-            },
-            {
-              "Reference": {
-                "Struct": {
-                  "address": "0x2",
-                  "module": "clock",
-                  "name": "Clock",
-                  "typeArguments": []
-                }
-              }
-            },
-            {
-              "MutableReference": {
-                "Struct": {
-                  "address": "0x2",
-                  "module": "tx_context",
-                  "name": "TxContext",
-                  "typeArguments": []
-                }
-              }
-            }
-          ],
-          "return": [
-            {
-              "Struct": {
-                "address": "0x1",
-                "module": "option",
-                "name": "Option",
-                "typeArguments": [
-                  {
-                    "Struct": {
-                      "address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
-                      "module": "vault",
-                      "name": "TypusBidReceipt",
-                      "typeArguments": []
-                    }
-                  }
-                ]
-              }
-            },
-            {
-              "Struct": {
-                "address": "0x2",
-                "module": "balance",
-                "name": "Balance",
-                "typeArguments": [
-                  {
-                    "TypeParameter": 1
-                  }
-                ]
-              }
-            },
-            {
-              "Vector": "U64"
-            }
-          ]
-        },
         "public_safu_otc_v2_": {
           "visibility": "Friend",
           "isEntry": false,
@@ -15573,6 +16558,79 @@
           ],
           "return": []
         },
+        "reward_navi_": {
+          "visibility": "Friend",
+          "isEntry": false,
+          "typeParameters": [
+            {
+              "abilities": []
+            }
+          ],
+          "parameters": [
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
+                  "module": "typus_dov_single",
+                  "name": "Registry",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64",
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "storage",
+                  "name": "Storage",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "incentive_v2",
+                  "name": "IncentiveFundsPool",
+                  "typeArguments": [
+                    {
+                      "TypeParameter": 0
+                    }
+                  ]
+                }
+              }
+            },
+            "U8",
+            "U8",
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "incentive_v2",
+                  "name": "Incentive",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "clock",
+                  "name": "Clock",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": [
+            {
+              "Vector": "U64"
+            }
+          ]
+        },
         "reward_suilend_": {
           "visibility": "Friend",
           "isEntry": false,
@@ -15770,6 +16828,26 @@
           ],
           "return": []
         },
+        "set_lending_protocol_flag_": {
+          "visibility": "Friend",
+          "isEntry": false,
+          "typeParameters": [],
+          "parameters": [
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
+                  "module": "typus_dov_single",
+                  "name": "Registry",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64",
+            "U64"
+          ],
+          "return": []
+        },
         "settle_": {
           "visibility": "Friend",
           "isEntry": false,
@@ -15793,6 +16871,16 @@
               }
             },
             "U64",
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
+                  "module": "oracle",
+                  "name": "Oracle",
+                  "typeArguments": []
+                }
+              }
+            },
             {
               "Reference": {
                 "Struct": {
@@ -15913,46 +17001,6 @@
             }
           ],
           "return": []
-        },
-        "update_active_vault_config_": {
-          "visibility": "Friend",
-          "isEntry": false,
-          "typeParameters": [],
-          "parameters": [
-            {
-              "MutableReference": {
-                "Struct": {
-                  "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
-                  "module": "typus_dov_single",
-                  "name": "Registry",
-                  "typeArguments": []
-                }
-              }
-            },
-            "U64",
-            "U64",
-            "U64",
-            "U64",
-            "U64"
-          ],
-          "return": [
-            {
-              "Struct": {
-                "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
-                "module": "typus_dov_single",
-                "name": "VaultConfig",
-                "typeArguments": []
-              }
-            },
-            {
-              "Struct": {
-                "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
-                "module": "typus_dov_single",
-                "name": "VaultConfig",
-                "typeArguments": []
-              }
-            }
-          ]
         },
         "update_auction_config_": {
           "visibility": "Friend",
@@ -16364,6 +17412,35 @@
           ],
           "return": []
         },
+        "update_oracle_": {
+          "visibility": "Friend",
+          "isEntry": false,
+          "typeParameters": [],
+          "parameters": [
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
+                  "module": "typus_dov_single",
+                  "name": "Registry",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64",
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
+                  "module": "oracle",
+                  "name": "Oracle",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": []
+        },
         "update_strike_": {
           "visibility": "Friend",
           "isEntry": false,
@@ -16667,6 +17744,32 @@
           ],
           "return": []
         },
+        "validate_witness": {
+          "visibility": "Friend",
+          "isEntry": false,
+          "typeParameters": [
+            {
+              "abilities": ["Drop"]
+            }
+          ],
+          "parameters": [
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
+                  "module": "typus_dov_single",
+                  "name": "Registry",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "TypeParameter": 0
+            },
+            "U64"
+          ],
+          "return": []
+        },
         "verify_bid_receipt_collateral_trading_order": {
           "visibility": "Public",
           "isEntry": false,
@@ -16685,6 +17788,76 @@
                   "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
                   "module": "typus_dov_single",
                   "name": "Registry",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
+                  "module": "oracle",
+                  "name": "Oracle",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
+                  "module": "vault",
+                  "name": "TypusBidReceipt",
+                  "typeArguments": []
+                }
+              }
+            },
+            "Bool",
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "clock",
+                  "name": "Clock",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": [
+            {
+              "Vector": "U8"
+            }
+          ]
+        },
+        "verify_bid_receipt_collateral_trading_order_v2": {
+          "visibility": "Public",
+          "isEntry": false,
+          "typeParameters": [
+            {
+              "abilities": []
+            },
+            {
+              "abilities": []
+            }
+          ],
+          "parameters": [
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
+                  "module": "typus_dov_single",
+                  "name": "Registry",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x855eb2d260ee42b898266e6df90bfd3c4ed821ccb253a352c159c223244a4b8a",
+                  "module": "oracle",
+                  "name": "Oracle",
                   "typeArguments": []
                 }
               }
@@ -16849,6 +18022,129 @@
                   }
                 ]
               }
+            }
+          ]
+        },
+        "withdraw_navi_": {
+          "visibility": "Friend",
+          "isEntry": false,
+          "typeParameters": [
+            {
+              "abilities": []
+            }
+          ],
+          "parameters": [
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
+                  "module": "typus_dov_single",
+                  "name": "Registry",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64",
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xca441b44943c16be0e6e23c5a955bb971537ea3289ae8016fbf33fffe1fd210f",
+                  "module": "config",
+                  "name": "OracleConfig",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xca441b44943c16be0e6e23c5a955bb971537ea3289ae8016fbf33fffe1fd210f",
+                  "module": "oracle",
+                  "name": "PriceOracle",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x5d8fbbf6f908a4af8c6d072669a462d53e03eb3c1d863bd0359dc818c69ea706",
+                  "module": "SupraSValueFeed",
+                  "name": "OracleHolder",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x8d97f1cd6ac663735be08d1d2b6d02a159e711586461306ce60a2b7a6a565a9e",
+                  "module": "price_info",
+                  "name": "PriceInfoObject",
+                  "typeArguments": []
+                }
+              }
+            },
+            "Address",
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "storage",
+                  "name": "Storage",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "pool",
+                  "name": "Pool",
+                  "typeArguments": [
+                    {
+                      "TypeParameter": 0
+                    }
+                  ]
+                }
+              }
+            },
+            "U8",
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "incentive",
+                  "name": "Incentive",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0xd899cf7d2b5db716bd2cf55599fb0d5ee38a3061e7b6bb6eebf73fa5bc4c81ca",
+                  "module": "incentive_v2",
+                  "name": "Incentive",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "clock",
+                  "name": "Clock",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": [
+            {
+              "Vector": "U64"
             }
           ]
         },
@@ -17090,9 +18386,122 @@
               "Vector": "U64"
             }
           ]
+        },
+        "witness_otc_": {
+          "visibility": "Friend",
+          "isEntry": false,
+          "typeParameters": [
+            {
+              "abilities": []
+            },
+            {
+              "abilities": []
+            }
+          ],
+          "parameters": [
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x321848bf1ae327a9e022ccb3701940191e02fa193ab160d9c0e49cd3c003de3a",
+                  "module": "typus_dov_single",
+                  "name": "Registry",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64",
+            "U64",
+            "U64",
+            {
+              "Struct": {
+                "address": "0x2",
+                "module": "balance",
+                "name": "Balance",
+                "typeArguments": [
+                  {
+                    "TypeParameter": 1
+                  }
+                ]
+              }
+            },
+            {
+              "Struct": {
+                "address": "0x2",
+                "module": "balance",
+                "name": "Balance",
+                "typeArguments": [
+                  {
+                    "TypeParameter": 1
+                  }
+                ]
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "clock",
+                  "name": "Clock",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "tx_context",
+                  "name": "TxContext",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": [
+            {
+              "Struct": {
+                "address": "0x1",
+                "module": "option",
+                "name": "Option",
+                "typeArguments": [
+                  {
+                    "Struct": {
+                      "address": "0xb4f25230ba74837d8299e92951306100c4a532e8c48cc3d8828abe9b91c8b274",
+                      "module": "vault",
+                      "name": "TypusBidReceipt",
+                      "typeArguments": []
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Struct": {
+                "address": "0x1",
+                "module": "option",
+                "name": "Option",
+                "typeArguments": [
+                  {
+                    "Struct": {
+                      "address": "0x2",
+                      "module": "balance",
+                      "name": "Balance",
+                      "typeArguments": [
+                        {
+                          "TypeParameter": 1
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Vector": "U64"
+            }
+          ]
         }
       }
     }
-  },
-  "id": 1
+  }
 }
