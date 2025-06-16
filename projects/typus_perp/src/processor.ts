@@ -473,6 +473,7 @@ position
     let collateral_token_name = event.data_decoded.collateral_token.name;
     let collateral_token = parse_token(collateral_token_name);
     let collateral_decimal = token_decimal(collateral_token);
+    let position_id = event.data_decoded.position_id;
 
     let base_token_name = event.data_decoded.symbol.base_token.name;
     let base_token = parse_token(base_token_name);
@@ -493,6 +494,7 @@ position
       base_token,
       realized_funding_fee,
       realized_funding_fee_usd,
+      position_id,
     });
   });
 
