@@ -88,6 +88,13 @@ lp_pool
       minted_lp_amount,
     });
   })
+  .onEventRedeemEvent((event, ctx) => {
+    let share = Number(event.data_decoded.share) / 10 ** 9;
+    ctx.eventLogger.emit("RedeemLp", {
+      distinctId: event.data_decoded.sender,
+      share,
+    });
+  })
   .onEventBurnLpEvent((event, ctx) => {
     let liquidity_token_name = event.data_decoded.liquidity_token_type.name;
     let liquidity_token = parse_token(liquidity_token_name);
