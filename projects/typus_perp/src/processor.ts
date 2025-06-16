@@ -25,18 +25,42 @@ leaderboard.bind({ network: SuiNetwork.MAIN_NET, startCheckpoint }).onEventScore
   });
 });
 
-stake_pool.bind({ network, startCheckpoint }).onEventHarvestPerUserShareEvent((event, ctx) => {
-  let token_name = event.data_decoded.incentive_token_type.name;
-  let token = parse_token(token_name);
-  let decimal = token_decimal(token);
-  let harvest_amount = Number(event.data_decoded.harvest_amount) / 10 ** decimal;
+stake_pool
+  .bind({ network, startCheckpoint })
+  .onEventHarvestPerUserShareEvent((event, ctx) => {
+    let token_name = event.data_decoded.incentive_token_type.name;
+    let token = parse_token(token_name);
+    let decimal = token_decimal(token);
+    let harvest_amount = Number(event.data_decoded.harvest_amount) / 10 ** decimal;
 
-  ctx.eventLogger.emit("HarvestIncentive", {
-    distinctId: event.data_decoded.sender,
-    token,
-    harvest_amount,
+    ctx.eventLogger.emit("HarvestIncentive", {
+      distinctId: event.data_decoded.sender,
+      token,
+      harvest_amount,
+    });
+  })
+  .onEventStakeEvent((event, ctx) => {
+    let index = event.data_decoded.index;
+    let lp_token_type = event.data_decoded.lp_token_type.name;
+    let stake_amount = Number(event.data_decoded.stake_amount) / 10 ** 9;
+    ctx.eventLogger.emit("Stake", {
+      distinctId: event.data_decoded.sender,
+      stake_amount,
+      index,
+      lp_token_type,
+    });
+  })
+  .onEventUnstakeEvent((event, ctx) => {
+    let index = event.data_decoded.index;
+    let lp_token_type = event.data_decoded.lp_token_type.name;
+    let unstake_amount = Number(event.data_decoded.unstake_amount) / 10 ** 9;
+    ctx.eventLogger.emit("Unstake", {
+      distinctId: event.data_decoded.sender,
+      unstake_amount,
+      index,
+      lp_token_type,
+    });
   });
-});
 
 lp_pool
   .bind({ network, startCheckpoint })
@@ -592,3 +616,40 @@ SuiObjectProcessor.bind({
   undefined,
   { owned: true }
 );
+
+// SuiObjectProcessor.bind({
+//   network,
+//   startCheckpoint,
+//   objectId: "0x622309553dce4c4b19ef186fefc35bda5e2b4755f27c76b63f2a1d7df881e7e8",
+// }).onTimeInterval(
+//   async (object, df, ctx) => {
+//     console.log("object ", object);
+//     console.log("df ", df);
+//   },
+//   60,
+//   60,
+//   undefined,
+//   { owned: true }
+// );
+
+// SuiWrappedObjectProcessor.bind({
+//   network: SuiNetwork.MAIN_NET,
+//   startCheckpoint,
+//   objectId: "0x622309553dce4c4b19ef186fefc35bda5e2b4755f27c76b63f2a1d7df881e7e8",
+// }).onTimeInterval(
+//   async (objects, ctx) => {
+//     for (const object of objects) {
+//       console.log(object.type);
+//       console.log("SymbolMarket", JSON.stringify(object));
+//       // SymbolMarket {"dataType":"moveObject","type":"0x2::dynamic_field::Field<0x2::dynamic_object_field::Wrapper<0x1::type_name::TypeName>, 0x2::object::ID>","hasPublicTransfer":false,
+//       // "fields":{"id":{"id":"0x182d865332e5926a74b09a3da047ac1e83af98d2b60dc66a4313d4e24611725f"},
+//       // "name":{"type":"0x2::dynamic_object_field::Wrapper<0x1::type_name::TypeName>",
+//       // "fields":{"name":{"type":"0x1::type_name::TypeName","fields":{"name":"b7844e289a8410e50fb3ca48d69eb9cf29e27d223ef90353fe1bd8e27ff8f3f8::coin::COIN"}}}},
+//       // "value":"0x37b7d5707a038d2d0841bb996991572029f469a907d00b2223dfc33d9660a224"}}
+//     }
+//   },
+//   60,
+//   60,
+//   undefined,
+//   { owned: true }
+// );
