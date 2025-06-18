@@ -568,6 +568,10 @@ function token_decimal(token: string): number {
     case "SEI":
     case "JUP":
     case "LBTC":
+    case "XBTC":
+    case "HYPE":
+    case "DOGE":
+    case "XRP":
       return 8;
     case "USDC":
     case "WUSDC":
