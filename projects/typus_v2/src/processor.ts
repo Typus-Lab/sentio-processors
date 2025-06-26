@@ -1554,6 +1554,14 @@ function token_decimal(token: string): number {
     case "SCA":
     case "HIPPO":
     case "TYPUS":
+    case "SPSUI":
+    case "NAVX":
+    case "BLUE":
+    case "sSCA":
+    case "STSUI":
+    case "WAL":
+    case "JPY":
+    case "XAU":
       return 9;
     case "BTC":
     case "ETH":
@@ -1562,6 +1570,11 @@ function token_decimal(token: string): number {
     case "INJ":
     case "SEI":
     case "JUP":
+    case "LBTC":
+    case "XBTC":
+    case "HYPE":
+    case "DOGE":
+    case "XRP":
       return 8;
     case "USDC":
     case "WUSDC":
@@ -1570,6 +1583,7 @@ function token_decimal(token: string): number {
     case "MBLUB":
     case "MLIQ":
     case "DEEP":
+    case "NS":
       return 6;
     case "FUD": // actual 5
     case "LIQ": // actual 6
