@@ -496,6 +496,20 @@ position
       realized_funding_fee_usd,
       position_id,
     });
+  })
+  .onEventRemovePositionEvent((event, ctx) => {
+    let collateral_token_name = event.data_decoded.collateral_token.name;
+    let collateral_token = parse_token(collateral_token_name);
+    let collateral_decimal = token_decimal(collateral_token);
+
+    let remaining_collateral_amount =
+      Number(event.data_decoded.remaining_collateral_amount) / 10 ** collateral_decimal;
+
+    ctx.eventLogger.emit("RemovePosition", {
+      distinctId: event.data_decoded.user,
+      collateral_token,
+      remaining_collateral_amount,
+    });
   });
 
 function parse_token(name: string): string {
