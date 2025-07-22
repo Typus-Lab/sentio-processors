@@ -1488,6 +1488,18 @@ typus_dov_single
         coin_symbol,
       });
     }
+    const o_token = vaultInfo?.o_token;
+    if (o_token) {
+      const price_o_token = await getPriceBySymbol(o_token, ctx.timestamp);
+      ctx.meter.Counter("AccumulatedNotionalVolumeUSD").add(delivery_size * price_o_token!, {
+        index: event.data_decoded.index.toString(),
+        coin_symbol: o_token,
+      });
+      ctx.meter.Counter("AccumulatedDeliverySize").add(delivery_size, {
+        index: event.data_decoded.index.toString(),
+        coin_symbol: o_token,
+      });
+    }
 
     ctx.eventLogger.emit("SafuOtc", {
       distinctId: event.data_decoded.signer,
