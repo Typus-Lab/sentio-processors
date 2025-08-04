@@ -1586,6 +1586,7 @@ function token_decimal(token: string): number {
     case "XBTC":
     case "HYPE":
     case "DOGE":
+    case "TBTC":
     case "XRP":
       return 8;
     case "USDC":
