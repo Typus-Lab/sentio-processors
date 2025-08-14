@@ -85,7 +85,9 @@ safu
         });
 
         var price = await getPriceBySymbol(token, ctx.timestamp);
-        ctx.meter.Counter("SafuFeeUSD").add(fee * price!);
+        if (price) {
+          ctx.meter.Counter("SafuFeeUSD").add(fee * price);
+        }
         ctx.meter.Counter("SafuAccumulatedRewardGeneratedUSD").add(balance * price!, {
           coin_symbol: token,
         });
@@ -276,7 +278,9 @@ safu
               coin_symbol: token,
             });
             var price = await getPriceBySymbol(token, ctx.timestamp);
-            ctx.meter.Counter("SafuFeeUSD").add(fee * price!);
+            if (price) {
+              ctx.meter.Counter("SafuFeeUSD").add(fee * price);
+            }
           }
           if (log[7]) {
             var fee = Number(log[7]) / 10 ** 9;
@@ -285,7 +289,9 @@ safu
               coin_symbol: "SUI",
             });
             var price = await getPriceBySymbol("SUI", ctx.timestamp);
-            ctx.meter.Counter("SafuFeeUSD").add(fee * price!);
+            if (price) {
+              ctx.meter.Counter("SafuFeeUSD").add(fee * price);
+            }
           }
           break;
         case "claim_reward":
@@ -1070,7 +1076,9 @@ typus_dov_single
       token_address: normalizeStructTag(event.data_decoded.token.name),
     });
     const price = await getPriceBySymbol(token, ctx.timestamp);
-    ctx.meter.Counter("AccumulatedFeeUSD").add(fee_amount * price!);
+    if (price) {
+      ctx.meter.Counter("AccumulatedFeeUSD").add(fee_amount * price);
+    }
 
     // ctx.meter.Counter("totalHarvest").add(Number(event.data_decoded.amount) / 10 ** token_decimal(token), {
     //     index: event.data_decoded.index.toString(),
@@ -1108,7 +1116,9 @@ typus_dov_single
       token_address: normalizeStructTag(event.data_decoded.token.name),
     });
     const price = await getPriceBySymbol(token, ctx.timestamp);
-    ctx.meter.Counter("AccumulatedFeeUSD").add(fee_amount * price!);
+    if (price) {
+      ctx.meter.Counter("AccumulatedFeeUSD").add(fee_amount * price);
+    }
 
     // ctx.meter.Counter("totalCompound").add(Number(event.data_decoded.amount) / 10 ** token_decimal(token), {
     //     index: event.data_decoded.index.toString(),
@@ -1126,7 +1136,9 @@ typus_dov_single
     let token = parse_token(event.data_decoded.token.name);
     let amount = Number(event.data_decoded.amount) / 10 ** token_decimal(token);
     const price = await getPriceBySymbol(token, ctx.timestamp);
-    ctx.meter.Counter("AccumulatedExerciseUSD").add(amount * price!);
+    if (price) {
+      ctx.meter.Counter("AccumulatedExerciseUSD").add(amount * price);
+    }
 
     ctx.eventLogger.emit("Exercise", {
       distinctId: event.data_decoded.signer,
@@ -1163,7 +1175,9 @@ typus_dov_single
       token_address: normalizeStructTag(event.data_decoded.b_token.name),
     });
     const price = await getPriceBySymbol(b_token, ctx.timestamp);
-    ctx.meter.Counter("AccumulatedFeeUSD").add((bidder_fee + incentive_fee) * price!);
+    if (price) {
+      ctx.meter.Counter("AccumulatedFeeUSD").add((bidder_fee + incentive_fee) * price);
+    }
 
     ctx.meter
       .Counter("AccumulatedPremium")
@@ -1391,7 +1405,9 @@ typus_dov_single
         token_address: normalizeStructTag(event.data_decoded.token.name),
       });
       const price = await getPriceBySymbol(token, ctx.timestamp);
-      ctx.meter.Counter("AccumulatedFeeUSD").add(fee_amount * price!);
+      if (price) {
+        ctx.meter.Counter("AccumulatedFeeUSD").add(fee_amount * price!);
+      }
 
       ctx.eventLogger.emit("Compound", {
         distinctId: event.data_decoded.signer,
@@ -1451,7 +1467,9 @@ typus_dov_single
         token_address: normalizeStructTag(event.data_decoded.b_token.name),
       });
       const price = await getPriceBySymbol(b_token, ctx.timestamp);
-      ctx.meter.Counter("AccumulatedFeeUSD").add(fee_amount * price!);
+      if (price) {
+        ctx.meter.Counter("AccumulatedFeeUSD").add(fee_amount * price!);
+      }
 
       ctx.eventLogger.emit("Harvest", {
         distinctId: event.data_decoded.signer,
