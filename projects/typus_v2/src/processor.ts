@@ -1122,14 +1122,17 @@ typus_dov_single
       fee_amount,
     });
   })
-  .onEventExerciseEvent((event, ctx) => {
+  .onEventExerciseEvent(async (event, ctx) => {
     let token = parse_token(event.data_decoded.token.name);
+    let amount = Number(event.data_decoded.amount) / 10 ** token_decimal(token);
+    const price = await getPriceBySymbol(token, ctx.timestamp);
+    ctx.meter.Counter("AccumulatedExerciseUSD").add(amount * price!);
 
     ctx.eventLogger.emit("Exercise", {
       distinctId: event.data_decoded.signer,
       index: event.data_decoded.index,
       coin_symbol: token,
-      amount: Number(event.data_decoded.amount) / 10 ** token_decimal(token),
+      amount,
       raw_share: event.data_decoded.u64_padding.pop(),
       is_autobid: event.data_decoded.signer != event.sender,
     });
