@@ -345,6 +345,7 @@ trading
 
     ctx.eventLogger.emit("CancelOrder", {
       distinctId: event.data_decoded.user,
+      is_cranker: event.sender != event.data_decoded.user,
       order_id: event.data_decoded.order_id,
       base_token,
       collateral_token,
@@ -453,6 +454,7 @@ position
 
     ctx.eventLogger.emit("OrderFilled", {
       distinctId: event.data_decoded.user,
+      is_cranker: event.sender != event.data_decoded.user,
       collateral_token,
       base_token,
       order_id,
