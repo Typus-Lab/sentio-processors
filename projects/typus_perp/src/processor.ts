@@ -454,6 +454,7 @@ position
 
     ctx.eventLogger.emit("OrderFilled", {
       distinctId: event.data_decoded.user,
+      sender: event.sender,
       is_cranker: event.sender != event.data_decoded.user,
       collateral_token,
       base_token,
