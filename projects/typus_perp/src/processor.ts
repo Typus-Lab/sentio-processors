@@ -2,9 +2,11 @@ import { SuiNetwork, SuiObjectContext, SuiObjectProcessor, SuiWrappedObjectProce
 import { normalizeSuiAddress, normalizeStructTag } from "@mysten/sui/utils";
 import { getPriceBySymbol } from "@sentio/sdk/utils";
 import { BcsReader } from "@mysten/bcs";
+
 import { position, trading, lp_pool } from "./types/sui/typus_perp_mainnet.js";
 import { stake_pool } from "./types/sui/stake.js";
 import { leaderboard } from "./types/sui/0x4b0f4ee1a40ce37ec81c987cc4e76a665419e74b863319492fc7d26f708b835a.js";
+import { GaugeNew } from "@sentio/sdk";
 
 const startCheckpoint = BigInt(129298199);
 
@@ -17,6 +19,8 @@ const PRICE_DECIMAL = 8;
 const TLP_DECIMAL = 9;
 const PROTOCOL_FEE_SHARE = 0.3;
 const TLP_FEE_SHARE = 0.7;
+
+const tlp_price = GaugeNew.register("tlp_price");
 
 leaderboard.bind({ network: SuiNetwork.MAIN_NET, startCheckpoint }).onEventScoreEvent(async (event, ctx) => {
   ctx.eventLogger.emit("Score", {
@@ -620,7 +624,8 @@ SuiObjectProcessor.bind({
     const total_share_supply = liquidityPool?.pool_info.total_share_supply!;
     if (total_share_supply > 0) {
       const price = Number(tvl_usd) / Number(total_share_supply);
-      ctx.meter.Gauge("tlp_price").record(price);
+      // ctx.meter.Gauge("tlp_price").record(price);
+      tlp_price.record(ctx, price);
     }
     if (liquidityPool?.token_pools) {
       for (let token_pool of liquidityPool?.token_pools) {

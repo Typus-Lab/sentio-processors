@@ -3,7 +3,7 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { String, Int, BigInt, Float, ID, Bytes, Timestamp, Boolean, Int8 } from '@sentio/sdk/store'
-import { Entity, Required, One, Many, Column, ListColumn, AbstractEntity } from '@sentio/sdk/store'
+import { Entity, Required, One, Many, Column, ListColumn, AbstractEntity, getStore, UpdateValues } from '@sentio/sdk/store'
 import { BigDecimal } from '@sentio/bigdecimal'
 import { DatabaseSchema } from '@sentio/sdk'
 
@@ -34,6 +34,10 @@ export class VaultSnapshot extends AbstractEntity  {
 	premium_balance: BigInt
   constructor(data: VaultSnapshotConstructorInput) {super()}
   
+  
+  static update(values: UpdateValues<VaultSnapshotConstructorInput>): Promise<void> {
+    return getStore().update(VaultSnapshot, values)
+  }
 }
 
 
@@ -63,6 +67,10 @@ export class VaultInfo extends AbstractEntity  {
 	o_token: String
   constructor(data: VaultInfoConstructorInput) {super()}
   
+  
+  static update(values: UpdateValues<VaultInfoConstructorInput>): Promise<void> {
+    return getStore().update(VaultInfo, values)
+  }
 }
 
 
@@ -92,6 +100,10 @@ export class SafuInfo extends AbstractEntity  {
 	dov_b_token: String
   constructor(data: SafuInfoConstructorInput) {super()}
   
+  
+  static update(values: UpdateValues<SafuInfoConstructorInput>): Promise<void> {
+    return getStore().update(SafuInfo, values)
+  }
 }
 
 
@@ -116,6 +128,10 @@ export class TokenMapping extends AbstractEntity  {
 	address: String
   constructor(data: TokenMappingConstructorInput) {super()}
   
+  
+  static update(values: UpdateValues<TokenMappingConstructorInput>): Promise<void> {
+    return getStore().update(TokenMapping, values)
+  }
 }
 
 
