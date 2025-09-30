@@ -11,7 +11,7 @@
   ],
   "type": "module",
   "dependencies": {
-    "@sentio/sdk": "2.62.1",
+    "@sentio/sdk": "3.0.0-rc-next.3",
     "node-fetch": "^3.3.1"
   },
   "resolutions": {
