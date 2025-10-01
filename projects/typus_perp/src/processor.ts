@@ -353,7 +353,7 @@ trading
       10 ** token_decimal(collateral_token)!
     );
 
-    var fee_usd = user_remaining_value.isPositive()
+    var fee_usd = user_remaining_value.isGreaterThan(0)
       ? fee_value.multipliedBy(user_remaining_in_usd).div(user_remaining_value)
       : BigDecimal(0);
 
@@ -494,7 +494,7 @@ position
           .negated()
           .div(10 ** collateral_decimal);
 
-    var realized_pnl = realized_fee.isPositive()
+    var realized_pnl = realized_fee.isGreaterThan(0)
       ? realized_amount.minus(realized_fee).multipliedBy(realized_fee_in_usd).div(realized_fee)
       : 0;
     // no need to calculate realized_amount w/o fee, usually happended when option is exercised ITM
