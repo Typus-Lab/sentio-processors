@@ -496,7 +496,7 @@ position
 
     var realized_pnl = realized_fee.isGreaterThan(0)
       ? realized_amount.minus(realized_fee).multipliedBy(realized_fee_in_usd).div(realized_fee)
-      : 0;
+      : BigDecimal(0);
     // no need to calculate realized_amount w/o fee, usually happended when option is exercised ITM
     // the realized_amount is actually unrealized and it will be calculated in RealizeOption
 
