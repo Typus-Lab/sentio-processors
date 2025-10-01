@@ -33,7 +33,7 @@ stake_pool
     let token_name = event.data_decoded.incentive_token_type.name;
     let token = parse_token(token_name);
     let decimal = token_decimal(token);
-    let harvest_amount = Number(event.data_decoded.harvest_amount) / 10 ** decimal;
+    let harvest_amount = BigDecimal(event.data_decoded.harvest_amount.toString()).div(10 ** decimal);
 
     ctx.eventLogger.emit("HarvestIncentive", {
       distinctId: event.data_decoded.sender,
@@ -44,7 +44,7 @@ stake_pool
   .onEventStakeEvent((event, ctx) => {
     let index = event.data_decoded.index;
     let lp_token_type = event.data_decoded.lp_token_type.name;
-    let stake_amount = Number(event.data_decoded.stake_amount) / 10 ** 9;
+    let stake_amount = BigDecimal(event.data_decoded.stake_amount.toString()).div(10 ** 9);
     ctx.eventLogger.emit("Stake", {
       distinctId: event.data_decoded.sender,
       stake_amount,
@@ -55,7 +55,7 @@ stake_pool
   .onEventUnstakeEvent((event, ctx) => {
     let index = event.data_decoded.index;
     let lp_token_type = event.data_decoded.lp_token_type.name;
-    let unstake_amount = Number(event.data_decoded.unstake_amount) / 10 ** 9;
+    let unstake_amount = BigDecimal(event.data_decoded.unstake_amount.toString()).div(10 ** 9);
     ctx.eventLogger.emit("Unstake", {
       distinctId: event.data_decoded.sender,
       unstake_amount,
@@ -71,27 +71,31 @@ lp_pool
     let liquidity_token = parse_token(liquidity_token_name);
     let liquidity_token_decimal = token_decimal(liquidity_token);
 
-    let deposit_amount = Number(event.data_decoded.deposit_amount) / 10 ** liquidity_token_decimal;
-    let deposit_amount_usd = Number(event.data_decoded.deposit_amount_usd) / 10 ** USD_DECIMAL;
-    let mint_fee_usd = Number(event.data_decoded.mint_fee_usd) / 10 ** USD_DECIMAL;
-    let minted_lp_amount = Number(event.data_decoded.minted_lp_amount) / 10 ** TLP_DECIMAL;
+    let deposit_amount = BigDecimal(event.data_decoded.deposit_amount.toString()).div(
+      10 ** liquidity_token_decimal
+    );
+    let deposit_amount_usd = BigDecimal(event.data_decoded.deposit_amount_usd.toString()).div(
+      10 ** USD_DECIMAL
+    );
+    let mint_fee_usd = BigDecimal(event.data_decoded.mint_fee_usd.toString()).div(10 ** USD_DECIMAL);
+    let minted_lp_amount = BigDecimal(event.data_decoded.minted_lp_amount.toString()).div(10 ** TLP_DECIMAL);
 
-    ctx.meter
-      .Counter("protocol_fee")
-      .add((mint_fee_usd * deposit_amount) / deposit_amount_usd, { coin_symbol: liquidity_token });
+    ctx.meter.Counter("protocol_fee").add(mint_fee_usd.multipliedBy(deposit_amount).div(deposit_amount_usd), {
+      coin_symbol: liquidity_token,
+    });
     ctx.meter.Counter("protocol_fee_usd").add(mint_fee_usd);
 
     ctx.eventLogger.emit("MintLp", {
       distinctId: event.data_decoded.sender,
       liquidity_token,
-      deposit_amount: BigDecimal(deposit_amount),
-      deposit_amount_usd: BigDecimal(deposit_amount_usd),
+      deposit_amount,
+      deposit_amount_usd,
       mint_fee_usd,
       minted_lp_amount,
     });
   })
   .onEventRedeemEvent((event, ctx) => {
-    let share = Number(event.data_decoded.share) / 10 ** 9;
+    let share = BigDecimal(event.data_decoded.share.toString()).div(10 ** 9);
     ctx.eventLogger.emit("RedeemLp", {
       distinctId: event.data_decoded.sender,
       share,
@@ -102,17 +106,18 @@ lp_pool
     let liquidity_token = parse_token(liquidity_token_name);
     let liquidity_token_decimal = token_decimal(liquidity_token);
 
-    let withdraw_token_amount =
-      Number(event.data_decoded.withdraw_token_amount) / 10 ** liquidity_token_decimal;
-    let burn_amount_usd = Number(event.data_decoded.burn_amount_usd) / 10 ** USD_DECIMAL;
-    let burn_fee_usd = Number(event.data_decoded.burn_fee_usd) / 10 ** USD_DECIMAL;
-    let burn_lp_amount = Number(event.data_decoded.burn_lp_amount) / 10 ** TLP_DECIMAL;
+    let withdraw_token_amount = BigDecimal(event.data_decoded.withdraw_token_amount.toString()).div(
+      10 ** liquidity_token_decimal
+    );
+    let burn_amount_usd = BigDecimal(event.data_decoded.burn_amount_usd.toString()).div(10 ** USD_DECIMAL);
+    let burn_fee_usd = BigDecimal(event.data_decoded.burn_fee_usd.toString()).div(10 ** USD_DECIMAL);
+    let burn_lp_amount = BigDecimal(event.data_decoded.burn_lp_amount.toString()).div(10 ** TLP_DECIMAL);
 
     // (burn_amount_usd - burn_fee_usd) / withdraw_token_amount = burn_fee_usd / burn_fee_amount
     // burn_fee_amount = burn_fee_usd * withdraw_token_amount / (burn_amount_usd - burn_fee_usd)
     ctx.meter
       .Counter("protocol_fee")
-      .add((burn_fee_usd * withdraw_token_amount) / (burn_amount_usd - burn_fee_usd), {
+      .add(burn_fee_usd.multipliedBy(withdraw_token_amount).div(burn_amount_usd.minus(burn_fee_usd)), {
         coin_symbol: liquidity_token,
       });
     ctx.meter.Counter("protocol_fee_usd").add(burn_fee_usd);
@@ -135,14 +140,16 @@ lp_pool
     let to_token = parse_token(to_token_name);
     let to_token_decimal = token_decimal(to_token);
 
-    let from_amount = Number(event.data_decoded.from_amount) / 10 ** from_token_decimal;
-    let to_amount = Number(event.data_decoded.actual_to_amount) / 10 ** to_token_decimal;
-    let fee_amount = Number(event.data_decoded.fee_amount) / 10 ** from_token_decimal;
-    let fee_amount_usd = Number(event.data_decoded.fee_amount_usd) / 10 ** USD_DECIMAL;
+    let from_amount = BigDecimal(event.data_decoded.from_amount.toString()).div(10 ** from_token_decimal);
+    let to_amount = BigDecimal(event.data_decoded.actual_to_amount.toString()).div(10 ** to_token_decimal);
+    let fee_amount = BigDecimal(event.data_decoded.fee_amount.toString()).div(10 ** from_token_decimal);
+    let fee_amount_usd = BigDecimal(event.data_decoded.fee_amount_usd.toString()).div(10 ** USD_DECIMAL);
 
-    ctx.meter.Counter("protocol_fee").add(fee_amount * PROTOCOL_FEE_SHARE, { coin_symbol: from_token });
-    ctx.meter.Counter("protocol_fee_usd").add(fee_amount_usd * PROTOCOL_FEE_SHARE);
-    ctx.meter.Counter("tlp_fee_usd").add(fee_amount_usd * TLP_FEE_SHARE);
+    ctx.meter
+      .Counter("protocol_fee")
+      .add(fee_amount.multipliedBy(PROTOCOL_FEE_SHARE), { coin_symbol: from_token });
+    ctx.meter.Counter("protocol_fee_usd").add(fee_amount_usd.multipliedBy(PROTOCOL_FEE_SHARE));
+    ctx.meter.Counter("tlp_fee_usd").add(fee_amount_usd.multipliedBy(TLP_FEE_SHARE));
 
     ctx.eventLogger.emit("Swap", {
       distinctId: event.data_decoded.sender,
@@ -165,16 +172,22 @@ lp_pool
     let r_token_decimal = token_decimal(r_token);
     const price_r_token = (await getPriceBySymbol(r_token, ctx.timestamp)) || 0;
 
-    let lending_interest = Number(event.data_decoded.lending_interest) / 10 ** c_token_decimal;
-    let protocol_share = Number(event.data_decoded.protocol_share) / 10 ** c_token_decimal;
+    let lending_interest = BigDecimal(event.data_decoded.lending_interest.toString()).div(
+      10 ** c_token_decimal
+    );
+    let protocol_share = BigDecimal(event.data_decoded.protocol_share.toString()).div(10 ** c_token_decimal);
 
-    let lending_reward = Number(event.data_decoded.lending_reward) / 10 ** r_token_decimal;
-    let reward_protocol_share = Number(event.data_decoded.reward_protocol_share) / 10 ** r_token_decimal;
+    let lending_reward = BigDecimal(event.data_decoded.lending_reward.toString()).div(10 ** r_token_decimal);
+    let reward_protocol_share = BigDecimal(event.data_decoded.reward_protocol_share.toString()).div(
+      10 ** r_token_decimal
+    );
 
     ctx.meter.Counter("protocol_fee").add(protocol_share, { coin_symbol: c_token });
     ctx.meter.Counter("protocol_fee").add(reward_protocol_share, { coin_symbol: r_token });
 
-    let protocol_fee_usd = protocol_share * price_c_token + reward_protocol_share * price_r_token;
+    let protocol_fee_usd = protocol_share
+      .multipliedBy(price_c_token)
+      .plus(reward_protocol_share.multipliedBy(price_r_token));
     ctx.meter.Counter("protocol_fee_usd").add(protocol_fee_usd);
 
     ctx.eventLogger.emit("WithdrawLending", {
@@ -197,31 +210,41 @@ trading
     let base_token_name = event.data_decoded.base_token.name;
     let base_token = parse_token(base_token_name);
     let position_id = event.data_decoded.position_id;
-    let collateral_price = Number(event.data_decoded.collateral_price) / 10 ** PRICE_DECIMAL;
-    let trading_price = Number(event.data_decoded.trading_price) / 10 ** PRICE_DECIMAL;
-    let liquidator_fee = Number(event.data_decoded.realized_liquidator_fee) / 10 ** collateral_decimal;
-    let value_for_lp_pool = Number(event.data_decoded.realized_value_for_lp_pool) / 10 ** collateral_decimal;
+    let collateral_price = BigDecimal(event.data_decoded.collateral_price.toString()).div(
+      10 ** PRICE_DECIMAL
+    );
+    let trading_price = BigDecimal(event.data_decoded.trading_price.toString()).div(10 ** PRICE_DECIMAL);
+    let liquidator_fee = BigDecimal(event.data_decoded.realized_liquidator_fee.toString()).div(
+      10 ** collateral_decimal
+    );
+    let value_for_lp_pool = BigDecimal(event.data_decoded.realized_value_for_lp_pool.toString()).div(
+      10 ** collateral_decimal
+    );
 
     var position_size = undefined;
     if (event.data_decoded.u64_padding.length > 0) {
-      position_size = Number(event.data_decoded.u64_padding[0]) / 10 ** token_decimal(base_token)!;
+      position_size = BigDecimal(event.data_decoded.u64_padding[0].toString()).div(
+        10 ** token_decimal(base_token)!
+      );
     }
 
     var estimated_liquidation_price = undefined;
     if (event.data_decoded.u64_padding.length > 1) {
-      estimated_liquidation_price = Number(event.data_decoded.u64_padding[1]) / 10 ** PRICE_DECIMAL;
+      estimated_liquidation_price = BigDecimal(event.data_decoded.u64_padding[1].toString()).div(
+        10 ** PRICE_DECIMAL
+      );
     }
 
-    let liquidator_fee_usd = liquidator_fee * collateral_price;
+    let liquidator_fee_usd = liquidator_fee.multipliedBy(collateral_price);
     ctx.meter.Counter("insurance_fee").add(liquidator_fee, { coin_symbol: collateral_token });
     ctx.meter.Counter("protocol_fee_usd").add(liquidator_fee_usd);
-    let value_for_lp_pool_usd = value_for_lp_pool * collateral_price;
+    let value_for_lp_pool_usd = value_for_lp_pool.multipliedBy(collateral_price);
     ctx.meter.Counter("tlp_fee_usd").add(value_for_lp_pool_usd);
 
     if (position_size) {
       ctx.meter
         .Counter("trading_volume_usd")
-        .add(position_size * trading_price, { side: "Liquidate", base_token });
+        .add(position_size.multipliedBy(trading_price), { side: "Liquidate", base_token });
     }
 
     ctx.eventLogger.emit("Liquidate", {
@@ -243,9 +266,11 @@ trading
     var base_token = parse_token(event.data_decoded.base_token.name);
     var collateral_token = parse_token(event.data_decoded.collateral_token.name);
 
-    var size = Number(event.data_decoded.size) / 10 ** token_decimal(base_token)!;
-    var collateral = Number(event.data_decoded.collateral_amount) / 10 ** token_decimal(collateral_token)!;
-    // Number(event.data_decoded.collateral_in_deposit_token) / 10 ** token_decimal(collateral_token)!;
+    var size = BigDecimal(event.data_decoded.size.toString()).div(10 ** token_decimal(base_token)!);
+    var collateral = BigDecimal(event.data_decoded.collateral_amount.toString()).div(
+      10 ** token_decimal(collateral_token)!
+    );
+    // BigDecimal(event.data_decoded.collateral_in_deposit_token.toString()).div( 10 ** token_decimal(collateral_token)!);
 
     var order_type = "Limit";
     var price = event.data_decoded.trigger_price;
@@ -267,19 +292,20 @@ trading
       order_type,
       status: event.data_decoded.filled ? "Filled" : "Open",
       size,
-      size_usd: (size * Number(price)) / 10 ** PRICE_DECIMAL,
+      size_usd: size.multipliedBy(price.toString()).div(10 ** PRICE_DECIMAL),
       collateral,
       collateral_token,
-      price: Number(price) / 10 ** PRICE_DECIMAL, // WARNING: fixed decimal
+      price: BigDecimal(price.toString()).div(10 ** PRICE_DECIMAL), // WARNING: fixed decimal
     });
   })
   .onEventCreateTradingOrderWithBidReceiptsEvent((event, ctx) => {
     var base_token = parse_token(event.data_decoded.base_token.name);
     var collateral_token = parse_token(event.data_decoded.collateral_token.name);
 
-    var size = Number(event.data_decoded.size) / 10 ** token_decimal(base_token)!;
-    var collateral =
-      Number(event.data_decoded.collateral_in_deposit_token) / 10 ** token_decimal(collateral_token)!;
+    var size = BigDecimal(event.data_decoded.size.toString()).div(10 ** token_decimal(base_token)!);
+    var collateral = BigDecimal(event.data_decoded.collateral_in_deposit_token.toString()).div(
+      10 ** token_decimal(collateral_token)!
+    );
 
     var order_type = "Limit";
     var price = event.data_decoded.trigger_price;
@@ -300,7 +326,7 @@ trading
       size,
       collateral,
       collateral_token,
-      price: Number(price) / 10 ** PRICE_DECIMAL, // WARNING: fixed decimal
+      price: BigDecimal(price.toString()).div(10 ** PRICE_DECIMAL), // WARNING: fixed decima)l
       dov_index,
     });
   })
@@ -308,23 +334,34 @@ trading
     var base_token = parse_token(event.data_decoded.trading_symbol.name);
     var collateral_token = parse_token(event.data_decoded.realize_balance_token_type.name);
 
-    var exercise_balance_value =
-      Number(event.data_decoded.exercise_balance_value) / 10 ** token_decimal(collateral_token)!;
+    var exercise_balance_value = BigDecimal(event.data_decoded.exercise_balance_value.toString()).div(
+      10 ** token_decimal(collateral_token)!
+    );
     // borrow, trading fee
-    var fee_value = Number(event.data_decoded.fee_value) / 10 ** token_decimal(collateral_token)!;
+    var fee_value = BigDecimal(event.data_decoded.fee_value.toString()).div(
+      10 ** token_decimal(collateral_token)!
+    );
 
-    var user_remaining_value =
-      Number(event.data_decoded.user_remaining_value) / 10 ** token_decimal(collateral_token)!;
-    var user_remaining_in_usd = Number(event.data_decoded.user_remaining_in_usd) / 10 ** USD_DECIMAL;
+    var user_remaining_value = BigDecimal(event.data_decoded.user_remaining_value.toString()).div(
+      10 ** token_decimal(collateral_token)!
+    );
+    var user_remaining_in_usd = BigDecimal(event.data_decoded.user_remaining_in_usd.toString()).div(
+      10 ** USD_DECIMAL
+    );
 
-    var realized_loss_value =
-      Number(event.data_decoded.realized_loss_value) / 10 ** token_decimal(collateral_token)!;
+    var realized_loss_value = BigDecimal(event.data_decoded.realized_loss_value.toString()).div(
+      10 ** token_decimal(collateral_token)!
+    );
 
-    var fee_usd = user_remaining_value > 0 ? (fee_value * user_remaining_in_usd) / user_remaining_value : 0;
+    var fee_usd = user_remaining_value.isPositive()
+      ? fee_value.multipliedBy(user_remaining_in_usd).div(user_remaining_value)
+      : BigDecimal(0);
 
-    ctx.meter.Counter("protocol_fee").add(fee_value * PROTOCOL_FEE_SHARE, { coin_symbol: collateral_token });
-    ctx.meter.Counter("protocol_fee_usd").add(fee_usd * PROTOCOL_FEE_SHARE);
-    ctx.meter.Counter("tlp_fee_usd").add(fee_usd * TLP_FEE_SHARE);
+    ctx.meter
+      .Counter("protocol_fee")
+      .add(fee_value.multipliedBy(PROTOCOL_FEE_SHARE), { coin_symbol: collateral_token });
+    ctx.meter.Counter("protocol_fee_usd").add(fee_usd.multipliedBy(PROTOCOL_FEE_SHARE));
+    ctx.meter.Counter("tlp_fee_usd").add(fee_usd.multipliedBy(TLP_FEE_SHARE));
 
     ctx.eventLogger.emit("RealizeOption", {
       distinctId: event.data_decoded.position_user,
@@ -342,8 +379,9 @@ trading
   .onEventCancelTradingOrderEvent((event, ctx) => {
     var base_token = parse_token(event.data_decoded.base_token.name);
     var collateral_token = parse_token(event.data_decoded.collateral_token.name);
-    var released_collateral_amount =
-      Number(event.data_decoded.released_collateral_amount) / 10 ** token_decimal(collateral_token)!;
+    var released_collateral_amount = BigDecimal(event.data_decoded.released_collateral_amount.toString()).div(
+      10 ** token_decimal(collateral_token)!
+    );
 
     ctx.eventLogger.emit("CancelOrder", {
       distinctId: event.data_decoded.user,
@@ -357,10 +395,12 @@ trading
   .onEventReleaseCollateralEvent((event, ctx) => {
     var base_token = parse_token(event.data_decoded.base_token.name);
     var collateral_token = parse_token(event.data_decoded.collateral_token.name);
-    var released_collateral_amount =
-      Number(event.data_decoded.released_collateral_amount) / 10 ** token_decimal(collateral_token)!;
-    var remaining_collateral_amount =
-      Number(event.data_decoded.remaining_collateral_amount) / 10 ** token_decimal(collateral_token)!;
+    var released_collateral_amount = BigDecimal(event.data_decoded.released_collateral_amount.toString()).div(
+      10 ** token_decimal(collateral_token)!
+    );
+    var remaining_collateral_amount = BigDecimal(
+      event.data_decoded.remaining_collateral_amount.toString()
+    ).div(10 ** token_decimal(collateral_token)!);
 
     ctx.eventLogger.emit("ReleaseCollateral", {
       distinctId: event.data_decoded.user,
@@ -374,10 +414,12 @@ trading
   .onEventIncreaseCollateralEvent((event, ctx) => {
     var base_token = parse_token(event.data_decoded.base_token.name);
     var collateral_token = parse_token(event.data_decoded.collateral_token.name);
-    var increased_collateral_amount =
-      Number(event.data_decoded.increased_collateral_amount) / 10 ** token_decimal(collateral_token)!;
-    var remaining_collateral_amount =
-      Number(event.data_decoded.remaining_collateral_amount) / 10 ** token_decimal(collateral_token)!;
+    var increased_collateral_amount = BigDecimal(
+      event.data_decoded.increased_collateral_amount.toString()
+    ).div(10 ** token_decimal(collateral_token)!);
+    var remaining_collateral_amount = BigDecimal(
+      event.data_decoded.remaining_collateral_amount.toString()
+    ).div(10 ** token_decimal(collateral_token)!);
 
     ctx.eventLogger.emit("IncreaseCollateral", {
       distinctId: event.data_decoded.user,
@@ -429,30 +471,41 @@ position
       order_type = "Close";
     }
 
-    var filled_size = Number(event.data_decoded.filled_size) / 10 ** token_decimal(base_token)!;
-    var filled_price = Number(event.data_decoded.filled_price) / 10 ** PRICE_DECIMAL;
+    var filled_size = BigDecimal(event.data_decoded.filled_size.toString()).div(
+      10 ** token_decimal(base_token)!
+    );
+    var filled_price = BigDecimal(event.data_decoded.filled_price.toString()).div(10 ** PRICE_DECIMAL);
     var side = event.data_decoded.position_side ? "Long" : "Short";
 
-    var realized_trading_fee = Number(event.data_decoded.realized_trading_fee) / 10 ** collateral_decimal;
-    var realized_borrow_fee = Number(event.data_decoded.realized_borrow_fee) / 10 ** collateral_decimal;
-    var realized_fee = realized_trading_fee + realized_borrow_fee;
-    var realized_fee_in_usd = Number(event.data_decoded.realized_fee_in_usd) / 10 ** USD_DECIMAL;
+    var realized_trading_fee = BigDecimal(event.data_decoded.realized_trading_fee.toString()).div(
+      10 ** collateral_decimal
+    );
+    var realized_borrow_fee = BigDecimal(event.data_decoded.realized_borrow_fee.toString()).div(
+      10 ** collateral_decimal
+    );
+    var realized_fee = realized_trading_fee.plus(realized_borrow_fee);
+    var realized_fee_in_usd = BigDecimal(event.data_decoded.realized_fee_in_usd.toString()).div(
+      10 ** USD_DECIMAL
+    );
 
     var realized_amount = event.data_decoded.realized_amount_sign
-      ? Number(event.data_decoded.realized_amount) / 10 ** collateral_decimal
-      : -Number(event.data_decoded.realized_amount) / 10 ** collateral_decimal;
+      ? BigDecimal(event.data_decoded.realized_amount.toString()).div(10 ** collateral_decimal)
+      : BigDecimal(event.data_decoded.realized_amount.toString())
+          .negated()
+          .div(10 ** collateral_decimal);
 
-    var realized_pnl =
-      realized_fee > 0 ? ((realized_amount - realized_fee) * realized_fee_in_usd) / realized_fee : 0;
+    var realized_pnl = realized_fee.isPositive()
+      ? realized_amount.minus(realized_fee).multipliedBy(realized_fee_in_usd).div(realized_fee)
+      : 0;
     // no need to calculate realized_amount w/o fee, usually happended when option is exercised ITM
     // the realized_amount is actually unrealized and it will be calculated in RealizeOption
 
     ctx.meter
       .Counter("protocol_fee")
-      .add(realized_fee * PROTOCOL_FEE_SHARE, { coin_symbol: collateral_token });
-    ctx.meter.Counter("protocol_fee_usd").add(realized_fee_in_usd * PROTOCOL_FEE_SHARE);
-    ctx.meter.Counter("tlp_fee_usd").add(realized_fee_in_usd * TLP_FEE_SHARE);
-    ctx.meter.Counter("trading_volume_usd").add(filled_size * filled_price, { side, base_token });
+      .add(realized_fee.multipliedBy(PROTOCOL_FEE_SHARE), { coin_symbol: collateral_token });
+    ctx.meter.Counter("protocol_fee_usd").add(realized_fee_in_usd.multipliedBy(PROTOCOL_FEE_SHARE));
+    ctx.meter.Counter("tlp_fee_usd").add(realized_fee_in_usd.multipliedBy(TLP_FEE_SHARE));
+    ctx.meter.Counter("trading_volume_usd").add(filled_size.multipliedBy(filled_price), { side, base_token });
 
     ctx.eventLogger.emit("OrderFilled", {
       distinctId: event.data_decoded.user,
@@ -484,12 +537,16 @@ position
     let base_token = parse_token(base_token_name);
 
     let realized_funding_fee = event.data_decoded.realized_funding_sign
-      ? Number(event.data_decoded.realized_funding_fee) / 10 ** collateral_decimal
-      : -Number(event.data_decoded.realized_funding_fee) / 10 ** collateral_decimal;
+      ? BigDecimal(event.data_decoded.realized_funding_fee.toString()).div(10 ** collateral_decimal)
+      : BigDecimal(event.data_decoded.realized_funding_fee.toString())
+          .negated()
+          .div(10 ** collateral_decimal);
 
     let realized_funding_fee_usd = event.data_decoded.realized_funding_sign
-      ? Number(event.data_decoded.realized_funding_fee_usd) / 10 ** USD_DECIMAL
-      : -Number(event.data_decoded.realized_funding_fee_usd) / 10 ** USD_DECIMAL;
+      ? BigDecimal(event.data_decoded.realized_funding_fee_usd.toString()).div(10 ** USD_DECIMAL)
+      : BigDecimal(event.data_decoded.realized_funding_fee_usd.toString())
+          .negated()
+          .div(10 ** USD_DECIMAL);
 
     ctx.meter.Counter("tlp_fee_usd").add(realized_funding_fee_usd);
 
@@ -507,8 +564,9 @@ position
     let collateral_token = parse_token(collateral_token_name);
     let collateral_decimal = token_decimal(collateral_token);
 
-    let remaining_collateral_amount =
-      Number(event.data_decoded.remaining_collateral_amount) / 10 ** collateral_decimal;
+    let remaining_collateral_amount = BigDecimal(
+      event.data_decoded.remaining_collateral_amount.toString()
+    ).div(10 ** collateral_decimal);
 
     ctx.eventLogger.emit("RemovePosition", {
       distinctId: event.data_decoded.user,
