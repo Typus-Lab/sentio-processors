@@ -2,6 +2,7 @@ import { SuiNetwork, SuiObjectContext, SuiObjectProcessor, SuiWrappedObjectProce
 import { normalizeSuiAddress, normalizeStructTag } from "@mysten/sui/utils";
 import { getPriceBySymbol } from "@sentio/sdk/utils";
 import { BcsReader } from "@mysten/bcs";
+import { BigDecimal } from "@sentio/sdk";
 
 import { position, trading, lp_pool } from "./types/sui/typus_perp_mainnet.js";
 import { stake_pool } from "./types/sui/stake.js";
@@ -83,8 +84,8 @@ lp_pool
     ctx.eventLogger.emit("MintLp", {
       distinctId: event.data_decoded.sender,
       liquidity_token,
-      deposit_amount,
-      deposit_amount_usd,
+      deposit_amount: BigDecimal(deposit_amount),
+      deposit_amount_usd: BigDecimal(deposit_amount_usd),
       mint_fee_usd,
       minted_lp_amount,
     });
