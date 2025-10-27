@@ -28,6 +28,9 @@ safu
   .onEventManagerEvent(async (event, ctx) => {
     const action = event.data_decoded.action;
     const log = event.data_decoded.log;
+    if (log.length == 0) {
+      return;
+    }
     const safu_info = await ctx.store.get(SafuInfo, log[0].toString());
     var token: string | undefined;
     switch (action) {
