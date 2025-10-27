@@ -82,16 +82,16 @@ safu
           token,
         });
 
-        ctx.meter.Counter("SafuFee").add(fee, {
+        ctx.meter.Counter("SafuFee").add(BigDecimal(fee), {
           index: log[0].toString(),
           coin_symbol: token,
         });
 
         var price = await getPriceBySymbol(token, ctx.timestamp);
         if (price) {
-          ctx.meter.Counter("SafuFeeUSD").add(fee * price);
+          ctx.meter.Counter("SafuFeeUSD").add(BigDecimal(fee * price));
         }
-        ctx.meter.Counter("SafuAccumulatedRewardGeneratedUSD").add(balance * price!, {
+        ctx.meter.Counter("SafuAccumulatedRewardGeneratedUSD").add(BigDecimal(balance * price!), {
           coin_symbol: token,
         });
         break;
@@ -108,14 +108,14 @@ safu
           token,
         });
 
-        ctx.meter.Counter("SafuFee").add(fee, {
+        ctx.meter.Counter("SafuFee").add(BigDecimal(fee), {
           index: log[0].toString(),
           coin_symbol: token,
         });
 
         var price = await getPriceBySymbol(token, ctx.timestamp);
-        ctx.meter.Counter("SafuFeeUSD").add(fee * price!);
-        ctx.meter.Counter("SafuAccumulatedRewardGeneratedUSD").add(balance * price!, {
+        ctx.meter.Counter("SafuFeeUSD").add(BigDecimal(fee * price!));
+        ctx.meter.Counter("SafuAccumulatedRewardGeneratedUSD").add(BigDecimal(balance * price!), {
           coin_symbol: token,
         });
         break;
@@ -276,24 +276,24 @@ safu
           }
           if (log[6]) {
             var fee = Number(log[6]) / 10 ** token_decimal(token);
-            ctx.meter.Counter("SafuFee").add(fee, {
+            ctx.meter.Counter("SafuFee").add(BigDecimal(fee), {
               index: log[0].toString(),
               coin_symbol: token,
             });
             var price = await getPriceBySymbol(token, ctx.timestamp);
             if (price) {
-              ctx.meter.Counter("SafuFeeUSD").add(fee * price);
+              ctx.meter.Counter("SafuFeeUSD").add(BigDecimal(fee * price));
             }
           }
           if (log[7]) {
             var fee = Number(log[7]) / 10 ** 9;
-            ctx.meter.Counter("SafuFee").add(fee, {
+            ctx.meter.Counter("SafuFee").add(BigDecimal(fee), {
               index: log[0].toString(),
               coin_symbol: "SUI",
             });
             var price = await getPriceBySymbol("SUI", ctx.timestamp);
             if (price) {
-              ctx.meter.Counter("SafuFeeUSD").add(fee * price);
+              ctx.meter.Counter("SafuFeeUSD").add(BigDecimal(fee * price));
             }
           }
           break;
@@ -755,7 +755,7 @@ tds_authorized_entry
       const interest = u64_padding_.at(0)! - u64_padding_.at(2)! - u64_padding_.at(3)!;
       ctx.meter
         .Counter("AccumulatedRewardGeneratedUSD")
-        .add(((reward + interest) / 10 ** token_decimal(token)) * price!, {
+        .add(BigDecimal(((reward + interest) / 10 ** token_decimal(token)) * price!), {
           index: index.toString(),
           coin_symbol: token,
         });
@@ -782,13 +782,13 @@ tds_authorized_entry
       const interest = u64_padding_.at(0)! - u64_padding_.at(2)! - u64_padding_.at(3)!;
       ctx.meter
         .Counter("AccumulatedRewardGeneratedUSD")
-        .add(((reward + interest) / 10 ** token_decimal(token)) * price!, {
+        .add(BigDecimal(((reward + interest) / 10 ** token_decimal(token)) * price!), {
           index: index.toString(),
           coin_symbol: token,
         });
       // ctx.meter
       //   .Counter("withdrawScallop")
-      //   .add((Number(u64_padding_.at(1)) / 10 ** token_decimal(token)) * price, {
+      // BigDecimal(  .add((Number(u64_padding_.at(1)) / 10 ** token_decimal(token)) * price, {
       //     index: index.toString(),
       //     coin_symbol: token,
       //   });
@@ -848,13 +848,13 @@ tds_authorized_entry
     const interest = u64_padding_.at(0)! - u64_padding_.at(2)! - u64_padding_.at(3)!;
     ctx.meter
       .Counter("AccumulatedRewardGeneratedUSD")
-      .add(((reward + interest) / 10 ** token_decimal(token)) * price!, {
+      .add(BigDecimal(((reward + interest) / 10 ** token_decimal(token)) * price!), {
         index: index.toString(),
         coin_symbol: token,
       });
     // ctx.meter
     //   .Counter("withdrawScallop")
-    //   .add((Number(u64_padding_.at(1)) / 10 ** token_decimal(token)) * price, {
+    // BigDecimal(  .add((Number(u64_padding_.at(1)) / 10 ** token_decimal(token)) * price, {
     //     index: index.toString(),
     //     coin_symbol: token,
     //   });
@@ -892,7 +892,7 @@ tds_authorized_entry
     const interest = u64_padding_.at(0)! - u64_padding_.at(2)! - u64_padding_.at(3)!;
     ctx.meter
       .Counter("AccumulatedRewardGeneratedUSD")
-      .add(((reward + interest) / 10 ** token_decimal(token)) * price!, {
+      .add(BigDecimal(((reward + interest) / 10 ** token_decimal(token)) * price!), {
         index: index.toString(),
         coin_symbol: token,
       });
@@ -926,10 +926,12 @@ tds_authorized_entry
     // round
     const price = await getPriceBySymbol(token, ctx.timestamp);
     const reward = u64_padding_.at(0)!;
-    ctx.meter.Counter("AccumulatedRewardGeneratedUSD").add((reward / 10 ** token_decimal(token)) * price!, {
-      index: index.toString(),
-      coin_symbol: token,
-    });
+    ctx.meter
+      .Counter("AccumulatedRewardGeneratedUSD")
+      .add(BigDecimal((reward / 10 ** token_decimal(token)) * price!), {
+        index: index.toString(),
+        coin_symbol: token,
+      });
     ctx.eventLogger.emit("RewardLending", {
       distinctId: event.data_decoded.signer,
       index,
@@ -955,7 +957,7 @@ tds_authorized_entry
     const interest = u64_padding_.at(0)! - u64_padding_.at(2)! - u64_padding_.at(3)!;
     ctx.meter
       .Counter("AccumulatedRewardGeneratedUSD")
-      .add(((reward + interest) / 10 ** token_decimal(token)) * price!, {
+      .add(BigDecimal(((reward + interest) / 10 ** token_decimal(token)) * price!), {
         index: index.toString(),
         coin_symbol: token,
       });
@@ -989,10 +991,12 @@ tds_authorized_entry
     // round
     const price = await getPriceBySymbol(token, ctx.timestamp);
     const reward = u64_padding_.at(0)!;
-    ctx.meter.Counter("AccumulatedRewardGeneratedUSD").add((reward / 10 ** token_decimal(token)) * price!, {
-      index: index.toString(),
-      coin_symbol: token,
-    });
+    ctx.meter
+      .Counter("AccumulatedRewardGeneratedUSD")
+      .add(BigDecimal((reward / 10 ** token_decimal(token)) * price!), {
+        index: index.toString(),
+        coin_symbol: token,
+      });
     ctx.eventLogger.emit("RewardLending", {
       distinctId: event.data_decoded.signer,
       index,
@@ -1010,7 +1014,7 @@ typus_dov_single
     let token = parse_token(event.data_decoded.token.name);
     let amount = Number(event.data_decoded.amount) / 10 ** token_decimal(token);
 
-    // ctx.meter.Counter("totalDeposit").add(amount, {
+    // ctx.meter.Counter("totalDeposit").add(BigDecimal(amount, {
     //     index: event.data_decoded.index.toString(),
     //     coin_symbol: token,
     // });
@@ -1025,7 +1029,7 @@ typus_dov_single
     let token = parse_token(event.data_decoded.token.name);
     let amount = Number(event.data_decoded.amount) / 10 ** token_decimal(token);
 
-    // ctx.meter.Counter("totalWithdraw").add(amount, {
+    // ctx.meter.Counter("totalWithdraw").add(BigDecimal(amount, {
     //     index: event.data_decoded.index.toString(),
     //     coin_symbol: token,
     // });
@@ -1041,7 +1045,7 @@ typus_dov_single
     let amount = Number(event.data_decoded.amount) / 10 ** token_decimal(token);
     const price = await getPriceBySymbol(token, ctx.timestamp);
 
-    // ctx.meter.Counter("totalUnsubscribe").add(amount, {
+    // ctx.meter.Counter("totalUnsubscribe").add(BigDecimal(amount, {
     //     index: event.data_decoded.index.toString(),
     //     coin_symbol: token,
     // });
@@ -1057,7 +1061,7 @@ typus_dov_single
     let token = parse_token(event.data_decoded.token.name);
     let amount = Number(event.data_decoded.amount) / 10 ** token_decimal(token);
 
-    // ctx.meter.Counter("totalClaim").add(amount, {
+    // ctx.meter.Counter("totalClaim").add(BigDecimal(amount, {
     //     index: event.data_decoded.index.toString(),
     //     coin_symbol: token,
     // });
@@ -1073,17 +1077,17 @@ typus_dov_single
 
     const fee_amount = Number(event.data_decoded.fee_amount) / 10 ** token_decimal(token);
 
-    ctx.meter.Counter("harvestFee").add(fee_amount, {
+    ctx.meter.Counter("harvestFee").add(BigDecimal(fee_amount), {
       index: event.data_decoded.index.toString(),
       coin_symbol: token,
       token_address: normalizeStructTag(event.data_decoded.token.name),
     });
     const price = await getPriceBySymbol(token, ctx.timestamp);
     if (price) {
-      ctx.meter.Counter("AccumulatedFeeUSD").add(fee_amount * price);
+      ctx.meter.Counter("AccumulatedFeeUSD").add(BigDecimal(fee_amount * price));
     }
 
-    // ctx.meter.Counter("totalHarvest").add(Number(event.data_decoded.amount) / 10 ** token_decimal(token), {
+    // ctx.meter.Counter("totalHarvest").add(BigDecimal(Number(event.data_decoded.amount) / 10 ** token_decimal(token), {
     //     index: event.data_decoded.index.toString(),
     //     coin_symbol: token,
     // });
@@ -1113,17 +1117,17 @@ typus_dov_single
 
     let temp = event.data_decoded.u64_padding.at(0);
     let fee_amount = Number(temp ? temp : 0) / 10 ** token_decimal(token);
-    ctx.meter.Counter("compoundFee").add(fee_amount, {
+    ctx.meter.Counter("compoundFee").add(BigDecimal(fee_amount), {
       index: event.data_decoded.index.toString(),
       coin_symbol: token,
       token_address: normalizeStructTag(event.data_decoded.token.name),
     });
     const price = await getPriceBySymbol(token, ctx.timestamp);
     if (price) {
-      ctx.meter.Counter("AccumulatedFeeUSD").add(fee_amount * price);
+      ctx.meter.Counter("AccumulatedFeeUSD").add(BigDecimal(fee_amount * price));
     }
 
-    // ctx.meter.Counter("totalCompound").add(Number(event.data_decoded.amount) / 10 ** token_decimal(token), {
+    // ctx.meter.Counter("totalCompound").add(BigDecimal(Number(event.data_decoded.amount) / 10 ** token_decimal(token), {
     //     index: event.data_decoded.index.toString(),
     //     coin_symbol: token,
     // });
@@ -1140,7 +1144,7 @@ typus_dov_single
     let amount = Number(event.data_decoded.amount) / 10 ** token_decimal(token);
     const price = await getPriceBySymbol(token, ctx.timestamp);
     if (price) {
-      ctx.meter.Counter("AccumulatedExerciseUSD").add(amount * price);
+      ctx.meter.Counter("AccumulatedExerciseUSD").add(BigDecimal(amount * price));
     }
 
     ctx.eventLogger.emit("Exercise", {
@@ -1172,23 +1176,23 @@ typus_dov_single
     let incentive_bid_value = Number(event.data_decoded.incentive_bid_value) / 10 ** token_decimal(b_token);
     let incentive_fee = Number(event.data_decoded.incentive_fee) / 10 ** token_decimal(b_token);
 
-    ctx.meter.Counter("totalBidderFee").add(bidder_fee + incentive_fee, {
+    ctx.meter.Counter("totalBidderFee").add(BigDecimal(bidder_fee + incentive_fee), {
       index: event.data_decoded.index.toString(),
       coin_symbol: b_token,
       token_address: normalizeStructTag(event.data_decoded.b_token.name),
     });
     const price = await getPriceBySymbol(b_token, ctx.timestamp);
     if (price) {
-      ctx.meter.Counter("AccumulatedFeeUSD").add((bidder_fee + incentive_fee) * price);
+      ctx.meter.Counter("AccumulatedFeeUSD").add(BigDecimal((bidder_fee + incentive_fee) * price));
     }
 
     ctx.meter
       .Counter("AccumulatedPremium")
-      .add(bidder_bid_value + bidder_fee + incentive_bid_value + incentive_fee, {
+      .add(BigDecimal(bidder_bid_value + bidder_fee + incentive_bid_value + incentive_fee), {
         index: event.data_decoded.index.toString(),
         coin_symbol: b_token,
       });
-    ctx.meter.Counter("AccumulatedDeliverySize").add(delivery_size, {
+    ctx.meter.Counter("AccumulatedDeliverySize").add(BigDecimal(delivery_size), {
       index: event.data_decoded.index.toString(),
       coin_symbol: o_token,
     });
@@ -1198,7 +1202,7 @@ typus_dov_single
 
     try {
       price_o_token = await getPriceBySymbol(o_token, ctx.timestamp);
-      ctx.meter.Counter("AccumulatedNotionalVolumeUSD").add(delivery_size * price_o_token!, {
+      ctx.meter.Counter("AccumulatedNotionalVolumeUSD").add(BigDecimal(delivery_size * price_o_token!), {
         index: event.data_decoded.index.toString(),
         coin_symbol: o_token,
       });
@@ -1209,19 +1213,24 @@ typus_dov_single
       Number(event.data_decoded.depositor_incentive_value) / 10 ** token_decimal(b_token);
     try {
       price_b_token = await getPriceBySymbol(b_token, ctx.timestamp);
-      ctx.meter.Counter("AccumulatedRewardGeneratedUSD").add(depositor_incentive_value * price_b_token!, {
-        index: event.data_decoded.index.toString(),
-        coin_symbol: b_token,
-      });
       ctx.meter
-        .Counter("AccumulatedPremiumUSD")
-        .add((bidder_bid_value + bidder_fee + incentive_bid_value + incentive_fee) * price_b_token!, {
+        .Counter("AccumulatedRewardGeneratedUSD")
+        .add(BigDecimal(depositor_incentive_value * price_b_token!), {
           index: event.data_decoded.index.toString(),
           coin_symbol: b_token,
         });
       ctx.meter
+        .Counter("AccumulatedPremiumUSD")
+        .add(
+          BigDecimal((bidder_bid_value + bidder_fee + incentive_bid_value + incentive_fee) * price_b_token!),
+          {
+            index: event.data_decoded.index.toString(),
+            coin_symbol: b_token,
+          }
+        );
+      ctx.meter
         .Counter("AccumulatedRewardGeneratedUSD")
-        .add((bidder_bid_value + incentive_bid_value) * price_b_token!, {
+        .add(BigDecimal((bidder_bid_value + incentive_bid_value) * price_b_token!), {
           index: event.data_decoded.index.toString(),
           coin_symbol: b_token,
         });
@@ -1241,11 +1250,13 @@ typus_dov_single
 
     if (fixed_incentive_amount) {
       const sui_price = await getPriceBySymbol("SUI", ctx.timestamp);
-      ctx.meter.Counter("AccumulatedRewardGeneratedUSD").add(fixed_incentive_amount * sui_price!, {
-        index: event.data_decoded.index.toString(),
-        coin_symbol: "SUI",
-      });
-      // ctx.meter.Counter("fixed_incentive_amount").add(fixed_incentive_amount * sui_price!, {
+      ctx.meter
+        .Counter("AccumulatedRewardGeneratedUSD")
+        .add(BigDecimal(fixed_incentive_amount * sui_price!), {
+          index: event.data_decoded.index.toString(),
+          coin_symbol: "SUI",
+        });
+      // ctx.meter.Counter("fixed_incentive_amount").add(BigDecimal(fixed_incentive_amount * sui_price!, {
       //     index: event.data_decoded.index.toString(),
       //     coin_symbol: "SUI",
       // });
@@ -1288,7 +1299,7 @@ typus_dov_single
     const price_b_token = (await getPriceBySymbol(b_token, ctx.timestamp)) || 0;
     const price_o_token = (await getPriceBySymbol(o_token, ctx.timestamp)) || 0;
 
-    // ctx.meter.Counter("totalNewBid").add(Number(event.data_decoded.size) / 10 ** token_decimal(o_token), {
+    // ctx.meter.Counter("totalNewBid").add(BigDecimal(Number(event.data_decoded.size) / 10 ** token_decimal(o_token), {
     //     index: event.data_decoded.index.toString(),
     //     coin_symbol: o_token,
     // });
@@ -1323,10 +1334,12 @@ typus_dov_single
       oracle_price:
         Number(event.data_decoded.oracle_price) / 10 ** Number(event.data_decoded.oracle_price_decimal),
       share_price: Number(event.data_decoded.share_price) / 10 ** 8,
-      settle_balance:
-        Number(event.data_decoded.settle_balance) / 10 ** Number(event.data_decoded.d_token_decimal),
-      settled_balance:
-        Number(event.data_decoded.settled_balance) / 10 ** Number(event.data_decoded.d_token_decimal),
+      settle_balance: BigDecimal(
+        Number(event.data_decoded.settle_balance) / 10 ** Number(event.data_decoded.d_token_decimal)
+      ),
+      settled_balance: BigDecimal(
+        Number(event.data_decoded.settled_balance) / 10 ** Number(event.data_decoded.d_token_decimal)
+      ),
       price_d_token,
     });
   })
@@ -1402,14 +1415,14 @@ typus_dov_single
     } else if (event.data_decoded.log[5] > 0) {
       // compound
       let fee_amount = Number(event.data_decoded.log[6]) / 10 ** token_decimal(token);
-      ctx.meter.Counter("compoundFee").add(fee_amount, {
+      ctx.meter.Counter("compoundFee").add(BigDecimal(fee_amount), {
         index: index.toString(),
         coin_symbol: token,
         token_address: normalizeStructTag(event.data_decoded.token.name),
       });
       const price = await getPriceBySymbol(token, ctx.timestamp);
       if (price) {
-        ctx.meter.Counter("AccumulatedFeeUSD").add(fee_amount * price!);
+        ctx.meter.Counter("AccumulatedFeeUSD").add(BigDecimal(fee_amount * price!));
       }
 
       ctx.eventLogger.emit("Compound", {
@@ -1464,14 +1477,14 @@ typus_dov_single
       // harvest
       const fee_amount = Number(event.data_decoded.log[7]) / 10 ** token_decimal(b_token);
 
-      ctx.meter.Counter("harvestFee").add(fee_amount, {
+      ctx.meter.Counter("harvestFee").add(BigDecimal(fee_amount), {
         index: index.toString(),
         coin_symbol: b_token,
         token_address: normalizeStructTag(event.data_decoded.b_token.name),
       });
       const price = await getPriceBySymbol(b_token, ctx.timestamp);
       if (price) {
-        ctx.meter.Counter("AccumulatedFeeUSD").add(fee_amount * price!);
+        ctx.meter.Counter("AccumulatedFeeUSD").add(BigDecimal(fee_amount * price!));
       }
 
       ctx.eventLogger.emit("Harvest", {
@@ -1529,19 +1542,21 @@ typus_dov_single
 
     if (coin_symbol) {
       const price_b_token = await getPriceBySymbol(coin_symbol, ctx.timestamp);
-      ctx.meter.Counter("AccumulatedPremiumUSD").add((bidder_bid_value + bidder_fee) * price_b_token!, {
-        index: event.data_decoded.index.toString(),
-        coin_symbol,
-      });
+      ctx.meter
+        .Counter("AccumulatedPremiumUSD")
+        .add(BigDecimal((bidder_bid_value + bidder_fee) * price_b_token!), {
+          index: event.data_decoded.index.toString(),
+          coin_symbol,
+        });
     }
     const o_token = vaultInfo?.o_token;
     if (o_token) {
       const price_o_token = await getPriceBySymbol(o_token, ctx.timestamp);
-      ctx.meter.Counter("AccumulatedNotionalVolumeUSD").add(delivery_size * price_o_token!, {
+      ctx.meter.Counter("AccumulatedNotionalVolumeUSD").add(BigDecimal(delivery_size * price_o_token!), {
         index: event.data_decoded.index.toString(),
         coin_symbol: o_token,
       });
-      ctx.meter.Counter("AccumulatedDeliverySize").add(delivery_size, {
+      ctx.meter.Counter("AccumulatedDeliverySize").add(BigDecimal(delivery_size), {
         index: event.data_decoded.index.toString(),
         coin_symbol: o_token,
       });
