@@ -953,14 +953,16 @@ tds_authorized_entry
 
     const price = await getPriceBySymbol(token, ctx.timestamp);
 
-    const reward = u64_padding_.at(1)!;
-    const interest = u64_padding_.at(0)! - u64_padding_.at(2)! - u64_padding_.at(3)!;
-    ctx.meter
-      .Counter("AccumulatedRewardGeneratedUSD")
-      .add(BigDecimal(((reward + interest) / 10 ** token_decimal(token)) * price!), {
-        index: index.toString(),
-        coin_symbol: token,
-      });
+    try {
+      const reward = u64_padding_.at(1)!;
+      const interest = u64_padding_.at(0)! - (u64_padding_.at(2) ?? 0) - (u64_padding_.at(3) ?? 0);
+      ctx.meter
+        .Counter("AccumulatedRewardGeneratedUSD")
+        .add(BigDecimal(((reward + interest) / 10 ** token_decimal(token)) * price!), {
+          index: index.toString(),
+          coin_symbol: token,
+        });
+    } catch (e) {}
 
     ctx.eventLogger.emit("WithdrawLending", {
       distinctId: event.data_decoded.signer,
@@ -1354,8 +1356,9 @@ typus_dov_single
     }
     let total_deposit_amount;
     if (event.data_decoded.u64_padding.at(2)) {
-      total_deposit_amount =
-        event.data_decoded.u64_padding.at(2)! / BigInt(10) ** event.data_decoded.d_token_decimal;
+      total_deposit_amount = BigDecimal(event.data_decoded.u64_padding.at(2)!.toString()).div(
+        BigDecimal(10).pow(event.data_decoded.d_token_decimal.toString())
+      );
     }
 
     const index = event.data_decoded.index;
