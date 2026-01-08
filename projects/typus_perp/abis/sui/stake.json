@@ -4,11 +4,11 @@
   "result": {
     "admin": {
       "fileFormatVersion": 6,
-      "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+      "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
       "name": "admin",
       "friends": [
         {
-          "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+          "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
           "name": "stake_pool"
         }
       ],
@@ -58,13 +58,36 @@
               "type": {
                 "Vector": {
                   "Struct": {
-                    "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                    "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                     "module": "admin",
                     "name": "FeeInfo",
                     "typeArguments": []
                   }
                 }
               }
+            }
+          ]
+        },
+        "ProtocolFeeEvent": {
+          "abilities": {
+            "abilities": ["Copy", "Drop"]
+          },
+          "typeParameters": [],
+          "fields": [
+            {
+              "name": "token",
+              "type": {
+                "Struct": {
+                  "address": "0x1",
+                  "module": "type_name",
+                  "name": "TypeName",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "name": "amount",
+              "type": "U64"
             }
           ]
         },
@@ -116,7 +139,7 @@
               "name": "fee_pool",
               "type": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "admin",
                   "name": "FeePool",
                   "typeArguments": []
@@ -127,7 +150,7 @@
               "name": "liquidator_fee_pool",
               "type": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "admin",
                   "name": "FeePool",
                   "typeArguments": []
@@ -163,7 +186,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -173,66 +196,6 @@
             "Address",
             {
               "Reference": {
-                "Struct": {
-                  "address": "0x2",
-                  "module": "tx_context",
-                  "name": "TxContext",
-                  "typeArguments": []
-                }
-              }
-            }
-          ],
-          "return": []
-        },
-        "add_exp_leaderboard": {
-          "visibility": "Friend",
-          "isEntry": false,
-          "typeParameters": [],
-          "parameters": [
-            {
-              "Reference": {
-                "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
-                  "module": "admin",
-                  "name": "Version",
-                  "typeArguments": []
-                }
-              }
-            },
-            {
-              "Reference": {
-                "Struct": {
-                  "address": "0x4b0f4ee1a40ce37ec81c987cc4e76a665419e74b863319492fc7d26f708b835a",
-                  "module": "ecosystem",
-                  "name": "Version",
-                  "typeArguments": []
-                }
-              }
-            },
-            {
-              "MutableReference": {
-                "Struct": {
-                  "address": "0x4b0f4ee1a40ce37ec81c987cc4e76a665419e74b863319492fc7d26f708b835a",
-                  "module": "leaderboard",
-                  "name": "TypusLeaderboardRegistry",
-                  "typeArguments": []
-                }
-              }
-            },
-            "Address",
-            "U64",
-            {
-              "Reference": {
-                "Struct": {
-                  "address": "0x2",
-                  "module": "clock",
-                  "name": "Clock",
-                  "typeArguments": []
-                }
-              }
-            },
-            {
-              "MutableReference": {
                 "Struct": {
                   "address": "0x2",
                   "module": "tx_context",
@@ -252,7 +215,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -296,41 +259,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
-                  "module": "admin",
-                  "name": "Version",
-                  "typeArguments": []
-                }
-              }
-            },
-            {
-              "Struct": {
-                "address": "0x2",
-                "module": "balance",
-                "name": "Balance",
-                "typeArguments": [
-                  {
-                    "TypeParameter": 0
-                  }
-                ]
-              }
-            }
-          ],
-          "return": []
-        },
-        "charge_liquidator_fee": {
-          "visibility": "Friend",
-          "isEntry": false,
-          "typeParameters": [
-            {
-              "abilities": []
-            }
-          ],
-          "parameters": [
-            {
-              "MutableReference": {
-                "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -360,7 +289,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -398,7 +327,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -431,39 +360,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
-                  "module": "admin",
-                  "name": "Version",
-                  "typeArguments": []
-                }
-              }
-            },
-            {
-              "MutableReference": {
-                "Struct": {
-                  "address": "0x2",
-                  "module": "tx_context",
-                  "name": "TxContext",
-                  "typeArguments": []
-                }
-              }
-            }
-          ],
-          "return": []
-        },
-        "send_liquidator_fee": {
-          "visibility": "Private",
-          "isEntry": true,
-          "typeParameters": [
-            {
-              "abilities": []
-            }
-          ],
-          "parameters": [
-            {
-              "MutableReference": {
-                "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -491,7 +388,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -509,7 +406,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -537,7 +434,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -551,7 +448,7 @@
     },
     "stake_pool": {
       "fileFormatVersion": 6,
-      "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+      "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
       "name": "stake_pool",
       "friends": [],
       "structs": {
@@ -579,6 +476,28 @@
                   "typeArguments": []
                 }
               }
+            },
+            {
+              "name": "u64_padding",
+              "type": {
+                "Vector": "U64"
+              }
+            }
+          ]
+        },
+        "ActivateStakePoolEvent": {
+          "abilities": {
+            "abilities": ["Copy", "Drop"]
+          },
+          "typeParameters": [],
+          "fields": [
+            {
+              "name": "sender",
+              "type": "Address"
+            },
+            {
+              "name": "index",
+              "type": "U64"
             },
             {
               "name": "u64_padding",
@@ -617,7 +536,7 @@
               "name": "incentive_info",
               "type": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "stake_pool",
                   "name": "IncentiveInfo",
                   "typeArguments": []
@@ -628,12 +547,61 @@
               "name": "incentive_config",
               "type": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "stake_pool",
                   "name": "IncentiveConfig",
                   "typeArguments": []
                 }
               }
+            },
+            {
+              "name": "u64_padding",
+              "type": {
+                "Vector": "U64"
+              }
+            }
+          ]
+        },
+        "AutoCompoundEvent": {
+          "abilities": {
+            "abilities": ["Copy", "Drop"]
+          },
+          "typeParameters": [],
+          "fields": [
+            {
+              "name": "sender",
+              "type": "Address"
+            },
+            {
+              "name": "index",
+              "type": "U64"
+            },
+            {
+              "name": "incentive_token",
+              "type": {
+                "Struct": {
+                  "address": "0x1",
+                  "module": "type_name",
+                  "name": "TypeName",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "name": "incentive_price_index",
+              "type": "U64"
+            },
+            {
+              "name": "total_amount",
+              "type": "U64"
+            },
+            {
+              "name": "compound_users",
+              "type": "U64"
+            },
+            {
+              "name": "total_users",
+              "type": "U64"
             },
             {
               "name": "u64_padding",
@@ -667,6 +635,28 @@
                   "typeArguments": []
                 }
               }
+            },
+            {
+              "name": "u64_padding",
+              "type": {
+                "Vector": "U64"
+              }
+            }
+          ]
+        },
+        "DeactivateStakePoolEvent": {
+          "abilities": {
+            "abilities": ["Copy", "Drop"]
+          },
+          "typeParameters": [],
+          "fields": [
+            {
+              "name": "sender",
+              "type": "Address"
+            },
+            {
+              "name": "index",
+              "type": "U64"
             },
             {
               "name": "u64_padding",
@@ -822,7 +812,7 @@
               "name": "config",
               "type": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "stake_pool",
                   "name": "IncentiveConfig",
                   "typeArguments": []
@@ -833,7 +823,7 @@
               "name": "info",
               "type": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "stake_pool",
                   "name": "IncentiveInfo",
                   "typeArguments": []
@@ -925,7 +915,7 @@
               "type": {
                 "Vector": {
                   "Struct": {
-                    "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                    "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                     "module": "stake_pool",
                     "name": "DeactivatingShares",
                     "typeArguments": []
@@ -955,6 +945,18 @@
               }
             },
             {
+              "name": "snapshot_ts_ms",
+              "type": "U64"
+            },
+            {
+              "name": "tlp_price",
+              "type": "U64"
+            },
+            {
+              "name": "harvested_amount",
+              "type": "U64"
+            },
+            {
               "name": "u64_padding",
               "type": {
                 "Vector": "U64"
@@ -976,7 +978,7 @@
               "name": "stake_pool_info",
               "type": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "stake_pool",
                   "name": "StakePoolInfo",
                   "typeArguments": []
@@ -987,7 +989,7 @@
               "name": "stake_pool_config",
               "type": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "stake_pool",
                   "name": "StakePoolConfig",
                   "typeArguments": []
@@ -1029,6 +1031,52 @@
             },
             {
               "name": "incentive_balance_value",
+              "type": "U64"
+            },
+            {
+              "name": "u64_padding",
+              "type": {
+                "Vector": "U64"
+              }
+            }
+          ]
+        },
+        "SnapshotEvent": {
+          "abilities": {
+            "abilities": ["Copy", "Drop"]
+          },
+          "typeParameters": [],
+          "fields": [
+            {
+              "name": "sender",
+              "type": "Address"
+            },
+            {
+              "name": "index",
+              "type": "U64"
+            },
+            {
+              "name": "user_share_id",
+              "type": "U64"
+            },
+            {
+              "name": "shares",
+              "type": "U64"
+            },
+            {
+              "name": "tlp_price",
+              "type": "U64"
+            },
+            {
+              "name": "last_ts_ms",
+              "type": "U64"
+            },
+            {
+              "name": "current_ts_ms",
+              "type": "U64"
+            },
+            {
+              "name": "exp",
               "type": "U64"
             },
             {
@@ -1126,7 +1174,7 @@
               "name": "pool_info",
               "type": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "stake_pool",
                   "name": "StakePoolInfo",
                   "typeArguments": []
@@ -1137,7 +1185,7 @@
               "name": "config",
               "type": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "stake_pool",
                   "name": "StakePoolConfig",
                   "typeArguments": []
@@ -1149,7 +1197,7 @@
               "type": {
                 "Vector": {
                   "Struct": {
-                    "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                    "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                     "module": "stake_pool",
                     "name": "Incentive",
                     "typeArguments": []
@@ -1173,6 +1221,10 @@
           "fields": [
             {
               "name": "unlock_countdown_ts_ms",
+              "type": "U64"
+            },
+            {
+              "name": "usd_per_exp",
               "type": "U64"
             },
             {
@@ -1215,6 +1267,14 @@
             {
               "name": "active",
               "type": "Bool"
+            },
+            {
+              "name": "new_tlp_price",
+              "type": "U64"
+            },
+            {
+              "name": "depositors_count",
+              "type": "U64"
             },
             {
               "name": "u64_padding",
@@ -1359,7 +1419,7 @@
               "name": "previous_incentive_config",
               "type": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "stake_pool",
                   "name": "IncentiveConfig",
                   "typeArguments": []
@@ -1370,12 +1430,34 @@
               "name": "new_incentive_config",
               "type": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "stake_pool",
                   "name": "IncentiveConfig",
                   "typeArguments": []
                 }
               }
+            },
+            {
+              "name": "u64_padding",
+              "type": {
+                "Vector": "U64"
+              }
+            }
+          ]
+        },
+        "UpdatePoolInfoU64PaddingEvent": {
+          "abilities": {
+            "abilities": ["Copy", "Drop"]
+          },
+          "typeParameters": [],
+          "fields": [
+            {
+              "name": "sender",
+              "type": "Address"
+            },
+            {
+              "name": "index",
+              "type": "U64"
             },
             {
               "name": "u64_padding",
@@ -1466,7 +1548,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -1476,7 +1558,56 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
+                  "module": "stake_pool",
+                  "name": "StakePoolRegistry",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64",
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "clock",
+                  "name": "Clock",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "tx_context",
+                  "name": "TxContext",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": []
+        },
+        "activate_stake_pool": {
+          "visibility": "Private",
+          "isEntry": true,
+          "typeParameters": [],
+          "parameters": [
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
+                  "module": "admin",
+                  "name": "Version",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -1509,7 +1640,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -1519,7 +1650,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -1560,7 +1691,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -1570,7 +1701,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -1591,43 +1722,58 @@
           ],
           "return": []
         },
-        "create_user_last_incentive_ts_ms": {
-          "visibility": "Friend",
-          "isEntry": false,
-          "typeParameters": [],
+        "auto_compound": {
+          "visibility": "Private",
+          "isEntry": true,
+          "typeParameters": [
+            {
+              "abilities": []
+            }
+          ],
           "parameters": [
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
-                  "module": "stake_pool",
-                  "name": "StakePool",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
+                  "module": "admin",
+                  "name": "Version",
                   "typeArguments": []
                 }
               }
             },
-            "U64"
-          ],
-          "return": [
             {
-              "Struct": {
-                "address": "0x2",
-                "module": "vec_map",
-                "name": "VecMap",
-                "typeArguments": [
-                  {
-                    "Struct": {
-                      "address": "0x1",
-                      "module": "type_name",
-                      "name": "TypeName",
-                      "typeArguments": []
-                    }
-                  },
-                  "U64"
-                ]
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
+                  "module": "stake_pool",
+                  "name": "StakePoolRegistry",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64",
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "clock",
+                  "name": "Clock",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "tx_context",
+                  "name": "TxContext",
+                  "typeArguments": []
+                }
               }
             }
-          ]
+          ],
+          "return": []
         },
         "deactivate_incentive_token": {
           "visibility": "Private",
@@ -1641,7 +1787,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -1651,7 +1797,56 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
+                  "module": "stake_pool",
+                  "name": "StakePoolRegistry",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64",
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "clock",
+                  "name": "Clock",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "tx_context",
+                  "name": "TxContext",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": []
+        },
+        "deactivate_stake_pool": {
+          "visibility": "Private",
+          "isEntry": true,
+          "typeParameters": [],
+          "parameters": [
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
+                  "module": "admin",
+                  "name": "Version",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -1684,7 +1879,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -1694,7 +1889,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -1727,233 +1922,6 @@
           ],
           "return": []
         },
-        "get_incentive": {
-          "visibility": "Friend",
-          "isEntry": false,
-          "typeParameters": [],
-          "parameters": [
-            {
-              "Reference": {
-                "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
-                  "module": "stake_pool",
-                  "name": "StakePool",
-                  "typeArguments": []
-                }
-              }
-            },
-            {
-              "Reference": {
-                "Struct": {
-                  "address": "0x1",
-                  "module": "type_name",
-                  "name": "TypeName",
-                  "typeArguments": []
-                }
-              }
-            }
-          ],
-          "return": [
-            {
-              "Reference": {
-                "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
-                  "module": "stake_pool",
-                  "name": "Incentive",
-                  "typeArguments": []
-                }
-              }
-            }
-          ]
-        },
-        "get_incentive_tokens": {
-          "visibility": "Friend",
-          "isEntry": false,
-          "typeParameters": [],
-          "parameters": [
-            {
-              "Reference": {
-                "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
-                  "module": "stake_pool",
-                  "name": "StakePool",
-                  "typeArguments": []
-                }
-              }
-            }
-          ],
-          "return": [
-            {
-              "Vector": {
-                "Struct": {
-                  "address": "0x1",
-                  "module": "type_name",
-                  "name": "TypeName",
-                  "typeArguments": []
-                }
-              }
-            }
-          ]
-        },
-        "get_last_incentive_price_index": {
-          "visibility": "Friend",
-          "isEntry": false,
-          "typeParameters": [],
-          "parameters": [
-            {
-              "Reference": {
-                "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
-                  "module": "stake_pool",
-                  "name": "StakePool",
-                  "typeArguments": []
-                }
-              }
-            }
-          ],
-          "return": [
-            {
-              "Struct": {
-                "address": "0x2",
-                "module": "vec_map",
-                "name": "VecMap",
-                "typeArguments": [
-                  {
-                    "Struct": {
-                      "address": "0x1",
-                      "module": "type_name",
-                      "name": "TypeName",
-                      "typeArguments": []
-                    }
-                  },
-                  "U64"
-                ]
-              }
-            }
-          ]
-        },
-        "get_mut_incentive": {
-          "visibility": "Friend",
-          "isEntry": false,
-          "typeParameters": [],
-          "parameters": [
-            {
-              "MutableReference": {
-                "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
-                  "module": "stake_pool",
-                  "name": "StakePool",
-                  "typeArguments": []
-                }
-              }
-            },
-            {
-              "Reference": {
-                "Struct": {
-                  "address": "0x1",
-                  "module": "type_name",
-                  "name": "TypeName",
-                  "typeArguments": []
-                }
-              }
-            }
-          ],
-          "return": [
-            {
-              "MutableReference": {
-                "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
-                  "module": "stake_pool",
-                  "name": "Incentive",
-                  "typeArguments": []
-                }
-              }
-            }
-          ]
-        },
-        "get_mut_stake_pool": {
-          "visibility": "Friend",
-          "isEntry": false,
-          "typeParameters": [],
-          "parameters": [
-            {
-              "MutableReference": {
-                "Struct": {
-                  "address": "0x2",
-                  "module": "object",
-                  "name": "UID",
-                  "typeArguments": []
-                }
-              }
-            },
-            "U64"
-          ],
-          "return": [
-            {
-              "MutableReference": {
-                "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
-                  "module": "stake_pool",
-                  "name": "StakePool",
-                  "typeArguments": []
-                }
-              }
-            }
-          ]
-        },
-        "get_stake_pool": {
-          "visibility": "Friend",
-          "isEntry": false,
-          "typeParameters": [],
-          "parameters": [
-            {
-              "Reference": {
-                "Struct": {
-                  "address": "0x2",
-                  "module": "object",
-                  "name": "UID",
-                  "typeArguments": []
-                }
-              }
-            },
-            "U64"
-          ],
-          "return": [
-            {
-              "Reference": {
-                "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
-                  "module": "stake_pool",
-                  "name": "StakePool",
-                  "typeArguments": []
-                }
-              }
-            }
-          ]
-        },
-        "get_user_share_ids": {
-          "visibility": "Friend",
-          "isEntry": false,
-          "typeParameters": [],
-          "parameters": [
-            {
-              "Reference": {
-                "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
-                  "module": "stake_pool",
-                  "name": "StakePool",
-                  "typeArguments": []
-                }
-              }
-            },
-            "Address"
-          ],
-          "return": [
-            {
-              "Vector": "U64"
-            }
-          ]
-        },
         "get_user_shares": {
           "visibility": "Friend",
           "isEntry": false,
@@ -1962,7 +1930,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -1974,9 +1942,31 @@
           ],
           "return": [
             {
-              "Vector": {
-                "Vector": "U8"
+              "Vector": "U8"
+            }
+          ]
+        },
+        "get_user_shares_by_user_share_id": {
+          "visibility": "Friend",
+          "isEntry": false,
+          "typeParameters": [],
+          "parameters": [
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
+                  "module": "stake_pool",
+                  "name": "StakePoolRegistry",
+                  "typeArguments": []
+                }
               }
+            },
+            "U64",
+            "U64"
+          ],
+          "return": [
+            {
+              "Vector": "U8"
             }
           ]
         },
@@ -1992,7 +1982,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -2002,14 +1992,13 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
                 }
               }
             },
-            "U64",
             "U64",
             {
               "Reference": {
@@ -2047,49 +2036,6 @@
             }
           ]
         },
-        "migrate_to_staked_tlp": {
-          "visibility": "Private",
-          "isEntry": true,
-          "typeParameters": [
-            {
-              "abilities": []
-            }
-          ],
-          "parameters": [
-            {
-              "Reference": {
-                "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
-                  "module": "admin",
-                  "name": "Version",
-                  "typeArguments": []
-                }
-              }
-            },
-            {
-              "MutableReference": {
-                "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
-                  "module": "stake_pool",
-                  "name": "StakePoolRegistry",
-                  "typeArguments": []
-                }
-              }
-            },
-            "U64",
-            {
-              "Reference": {
-                "Struct": {
-                  "address": "0x2",
-                  "module": "tx_context",
-                  "name": "TxContext",
-                  "typeArguments": []
-                }
-              }
-            }
-          ],
-          "return": []
-        },
         "new_stake_pool": {
           "visibility": "Private",
           "isEntry": true,
@@ -2102,7 +2048,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -2112,7 +2058,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -2132,43 +2078,6 @@
             }
           ],
           "return": []
-        },
-        "remove_incentive": {
-          "visibility": "Friend",
-          "isEntry": false,
-          "typeParameters": [],
-          "parameters": [
-            {
-              "MutableReference": {
-                "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
-                  "module": "stake_pool",
-                  "name": "StakePool",
-                  "typeArguments": []
-                }
-              }
-            },
-            {
-              "Reference": {
-                "Struct": {
-                  "address": "0x1",
-                  "module": "type_name",
-                  "name": "TypeName",
-                  "typeArguments": []
-                }
-              }
-            }
-          ],
-          "return": [
-            {
-              "Struct": {
-                "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
-                "module": "stake_pool",
-                "name": "Incentive",
-                "typeArguments": []
-              }
-            }
-          ]
         },
         "remove_incentive_token": {
           "visibility": "Public",
@@ -2182,7 +2091,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -2192,7 +2101,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -2226,6 +2135,75 @@
             }
           ]
         },
+        "snapshot": {
+          "visibility": "Public",
+          "isEntry": false,
+          "typeParameters": [],
+          "parameters": [
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
+                  "module": "admin",
+                  "name": "Version",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
+                  "module": "stake_pool",
+                  "name": "StakePoolRegistry",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x4b0f4ee1a40ce37ec81c987cc4e76a665419e74b863319492fc7d26f708b835a",
+                  "module": "ecosystem",
+                  "name": "Version",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x4b0f4ee1a40ce37ec81c987cc4e76a665419e74b863319492fc7d26f708b835a",
+                  "module": "user",
+                  "name": "TypusUserRegistry",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64",
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "clock",
+                  "name": "Clock",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "tx_context",
+                  "name": "TxContext",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": []
+        },
         "stake": {
           "visibility": "Public",
           "isEntry": false,
@@ -2238,7 +2216,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -2248,7 +2226,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -2266,14 +2244,6 @@
                     "TypeParameter": 0
                   }
                 ]
-              }
-            },
-            {
-              "Struct": {
-                "address": "0x1",
-                "module": "option",
-                "name": "Option",
-                "typeArguments": ["U64"]
               }
             },
             {
@@ -2311,7 +2281,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -2321,14 +2291,13 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
                 }
               }
             },
-            "U64",
             "U64",
             {
               "Reference": {
@@ -2378,7 +2347,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -2388,14 +2357,13 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
                 }
               }
             },
-            "U64",
             "U64",
             {
               "Struct": {
@@ -2440,7 +2408,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -2450,7 +2418,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -2509,7 +2477,7 @@
           ],
           "return": []
         },
-        "update_unlock_countdown_ts_ms": {
+        "update_pool_info_u64_padding": {
           "visibility": "Private",
           "isEntry": true,
           "typeParameters": [],
@@ -2517,7 +2485,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -2527,7 +2495,48 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
+                  "module": "stake_pool",
+                  "name": "StakePoolRegistry",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64",
+            "U64",
+            "U64",
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "tx_context",
+                  "name": "TxContext",
+                  "typeArguments": []
+                }
+              }
+            }
+          ],
+          "return": []
+        },
+        "update_unlock_countdown_ts_ms": {
+          "visibility": "Private",
+          "isEntry": true,
+          "typeParameters": [],
+          "parameters": [
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
+                  "module": "admin",
+                  "name": "Version",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "MutableReference": {
+                "Struct": {
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -2561,7 +2570,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -2571,7 +2580,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xc427209145715a00a93d7e674a95c556a7147d79fda1bbaeb1a1cac5f9923966",
+                  "address": "0x6cf6c6cc05316e238a338ba82c018d38a1af7e6da26b85fffa433df98e8f1bdb",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -2585,6 +2594,16 @@
                 "module": "option",
                 "name": "Option",
                 "typeArguments": ["U64"]
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "clock",
+                  "name": "Clock",
+                  "typeArguments": []
+                }
               }
             },
             {

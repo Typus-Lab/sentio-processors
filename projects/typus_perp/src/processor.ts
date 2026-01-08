@@ -8,11 +8,12 @@ import { position, trading, lp_pool } from "./types/sui/typus_perp_mainnet.js";
 import { stake_pool } from "./types/sui/stake.js";
 import { leaderboard } from "./types/sui/0x4b0f4ee1a40ce37ec81c987cc4e76a665419e74b863319492fc7d26f708b835a.js";
 
-const startCheckpoint = BigInt(129298199);
+const startCheckpoint = BigInt(227468202);
 
 const network = SuiNetwork.MAIN_NET;
 
-const LIQUIDITY_POOL_0 = "0x98110aae0ffaf294259066380a2d35aba74e42860f1e87ee9c201f471eb3ba03";
+const LIQUIDITY_POOL_0 = "0xf2e497409f87e5993aead0b9057b2f57a6261dce0978fa605034a74daa1081a6"; // isolated
+const LIQUIDITY_POOL_1 = "0x9a9b2352dac2e15bfac214a59f03326444578b3f4fa2f386bf615d08d0223812"; // general
 
 const USD_DECIMAL = 9;
 const PRICE_DECIMAL = 8;
@@ -676,20 +677,100 @@ SuiObjectProcessor.bind({
   async (object, df, ctx) => {
     const liquidityPool = await ctx.coder.decodeType(object, lp_pool.LiquidityPool.type());
     const tvl_usd = liquidityPool?.pool_info.tvl_usd!;
-    ctx.meter.Gauge("tvl_usd").record(Number(tvl_usd) / 10 ** USD_DECIMAL);
+    ctx.meter.Gauge("tvl_usd").record(Number(tvl_usd) / 10 ** USD_DECIMAL, { index: "0" });
     const total_share_supply = liquidityPool?.pool_info.total_share_supply!;
     if (total_share_supply > 0) {
       const price = Number(tvl_usd) / Number(total_share_supply);
-      ctx.meter.Gauge("tlp_price").record(price);
+      ctx.meter.Gauge("tlp_price").record(price, { index: "0" });
     }
     if (liquidityPool?.token_pools) {
       for (let token_pool of liquidityPool?.token_pools) {
         // token_pool.config.spot_config.target_weight_bp;
         let token = parse_token("0x" + token_pool.token_type.name);
         var value = Number(token_pool.state.liquidity_amount) / 10 ** token_decimal(token);
-        ctx.meter.Gauge("tvl").record(value, { coin_symbol: token });
+        ctx.meter.Gauge("tvl").record(value, { index: "0", coin_symbol: token });
         var value = Number(token_pool.state.reserved_amount) / 10 ** token_decimal(token);
-        ctx.meter.Gauge("reserved_amount").record(value, { coin_symbol: token });
+        ctx.meter.Gauge("reserved_amount").record(value, { index: "0", coin_symbol: token });
+      }
+    }
+    // let balances = df as any;
+    // for (let balance of balances) {
+    //   if (balance.type.includes("Balance")) {
+    //     let token = parse_token("0x" + balance.fields.name.fields.name);
+    //     let value = Number(balance.fields.value) / 10 ** token_decimal(token);
+    //     ctx.meter.Gauge("tvl").record(value, { coin_symbol: token });
+    //   }
+    // }
+  },
+  60,
+  60,
+  undefined,
+  { owned: true }
+);
+
+SuiObjectProcessor.bind({
+  network,
+  startCheckpoint,
+  objectId: LIQUIDITY_POOL_0,
+}).onTimeInterval(
+  async (object, df, ctx) => {
+    const index = "0";
+    const liquidityPool = await ctx.coder.decodeType(object, lp_pool.LiquidityPool.type());
+    const tvl_usd = liquidityPool?.pool_info.tvl_usd!;
+    ctx.meter.Gauge("tvl_usd").record(Number(tvl_usd) / 10 ** USD_DECIMAL, { index });
+    const total_share_supply = liquidityPool?.pool_info.total_share_supply!;
+    if (total_share_supply > 0) {
+      const price = Number(tvl_usd) / Number(total_share_supply);
+      ctx.meter.Gauge("tlp_price").record(price, { index });
+    }
+    if (liquidityPool?.token_pools) {
+      for (let token_pool of liquidityPool?.token_pools) {
+        // token_pool.config.spot_config.target_weight_bp;
+        let token = parse_token("0x" + token_pool.token_type.name);
+        var value = Number(token_pool.state.liquidity_amount) / 10 ** token_decimal(token);
+        ctx.meter.Gauge("tvl").record(value, { index, coin_symbol: token });
+        var value = Number(token_pool.state.reserved_amount) / 10 ** token_decimal(token);
+        ctx.meter.Gauge("reserved_amount").record(value, { index, coin_symbol: token });
+      }
+    }
+    // let balances = df as any;
+    // for (let balance of balances) {
+    //   if (balance.type.includes("Balance")) {
+    //     let token = parse_token("0x" + balance.fields.name.fields.name);
+    //     let value = Number(balance.fields.value) / 10 ** token_decimal(token);
+    //     ctx.meter.Gauge("tvl").record(value, { coin_symbol: token });
+    //   }
+    // }
+  },
+  60,
+  60,
+  undefined,
+  { owned: true }
+);
+
+SuiObjectProcessor.bind({
+  network,
+  startCheckpoint,
+  objectId: LIQUIDITY_POOL_1,
+}).onTimeInterval(
+  async (object, df, ctx) => {
+    const index = "1";
+    const liquidityPool = await ctx.coder.decodeType(object, lp_pool.LiquidityPool.type());
+    const tvl_usd = liquidityPool?.pool_info.tvl_usd!;
+    ctx.meter.Gauge("tvl_usd").record(Number(tvl_usd) / 10 ** USD_DECIMAL, { index });
+    const total_share_supply = liquidityPool?.pool_info.total_share_supply!;
+    if (total_share_supply > 0) {
+      const price = Number(tvl_usd) / Number(total_share_supply);
+      ctx.meter.Gauge("tlp_price").record(price, { index });
+    }
+    if (liquidityPool?.token_pools) {
+      for (let token_pool of liquidityPool?.token_pools) {
+        // token_pool.config.spot_config.target_weight_bp;
+        let token = parse_token("0x" + token_pool.token_type.name);
+        var value = Number(token_pool.state.liquidity_amount) / 10 ** token_decimal(token);
+        ctx.meter.Gauge("tvl").record(value, { index, coin_symbol: token });
+        var value = Number(token_pool.state.reserved_amount) / 10 ** token_decimal(token);
+        ctx.meter.Gauge("reserved_amount").record(value, { index, coin_symbol: token });
       }
     }
     // let balances = df as any;
