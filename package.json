@@ -11,7 +11,7 @@
   ],
   "type": "module",
   "dependencies": {
-    "@sentio/sdk": "3.0.0-rc-next.3",
+    "@sentio/sdk": "2.62.5",
     "node-fetch": "^3.3.1"
   },
   "resolutions": {
@@ -25,5 +25,6 @@
   },
   "scripts": {
     "new": "yarn sentio create -p -d projects"
-  }
+  },
+  "packageManager": "yarn@1.22.19+sha512.ff4579ab459bb25aa7c0ff75b62acebe576f6084b36aa842971cf250a5d8c6cd3bc9420b22ce63c7f93a0857bc6ef29291db39c3e7a23aab5adfd5a4dd6c5d71"
 }
