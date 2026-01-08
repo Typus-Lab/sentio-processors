@@ -676,9 +676,9 @@ SuiWrappedObjectProcessor.bind({
   async (objects, ctx) => {
     // ctx.meter.Gauge("num_of_vaults").record(objects.length);
     for (const object of objects) {
-      console.log("object", JSON.stringify(object));
+      // console.log("object", JSON.stringify(object));
       const liquidityPool = await ctx.coder.decodeType(object, lp_pool.LiquidityPool.type());
-      console.log("liquidityPool", JSON.stringify(liquidityPool));
+      // console.log("liquidityPool", JSON.stringify(liquidityPool));
       if (liquidityPool) {
         const index = liquidityPool?.index.toString();
         const tvl_usd = liquidityPool?.pool_info.tvl_usd!;
