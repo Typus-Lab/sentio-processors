@@ -239,7 +239,7 @@ trading
     ctx.meter.Counter("insurance_fee").add(liquidator_fee, { coin_symbol: collateral_token });
     ctx.meter.Counter("protocol_fee_usd").add(liquidator_fee_usd);
     let value_for_lp_pool_usd = value_for_lp_pool.multipliedBy(collateral_price);
-    ctx.meter.Counter("tlp_fee_usd").add(value_for_lp_pool_usd);
+    ctx.meter.Counter("tlp_fee_usd").add(value_for_lp_pool_usd, { base_token });
 
     if (position_size) {
       ctx.meter
@@ -361,7 +361,7 @@ trading
       .Counter("protocol_fee")
       .add(fee_value.multipliedBy(PROTOCOL_FEE_SHARE), { coin_symbol: collateral_token });
     ctx.meter.Counter("protocol_fee_usd").add(fee_usd.multipliedBy(PROTOCOL_FEE_SHARE));
-    ctx.meter.Counter("tlp_fee_usd").add(fee_usd.multipliedBy(TLP_FEE_SHARE));
+    ctx.meter.Counter("tlp_fee_usd").add(fee_usd.multipliedBy(TLP_FEE_SHARE), { base_token });
 
     ctx.eventLogger.emit("RealizeOption", {
       distinctId: event.data_decoded.position_user,
@@ -504,7 +504,7 @@ position
       .Counter("protocol_fee")
       .add(realized_fee.multipliedBy(PROTOCOL_FEE_SHARE), { coin_symbol: collateral_token });
     ctx.meter.Counter("protocol_fee_usd").add(realized_fee_in_usd.multipliedBy(PROTOCOL_FEE_SHARE));
-    ctx.meter.Counter("tlp_fee_usd").add(realized_fee_in_usd.multipliedBy(TLP_FEE_SHARE));
+    ctx.meter.Counter("tlp_fee_usd").add(realized_fee_in_usd.multipliedBy(TLP_FEE_SHARE), { base_token });
     ctx.meter.Counter("trading_volume_usd").add(filled_size.multipliedBy(filled_price), { side, base_token });
 
     ctx.eventLogger.emit("OrderFilled", {
@@ -548,7 +548,7 @@ position
           .negated()
           .div(10 ** USD_DECIMAL);
 
-    ctx.meter.Counter("tlp_fee_usd").add(realized_funding_fee_usd);
+    ctx.meter.Counter("tlp_fee_usd").add(realized_funding_fee_usd, { base_token });
 
     ctx.eventLogger.emit("RealizeFunding", {
       distinctId: event.data_decoded.user,
