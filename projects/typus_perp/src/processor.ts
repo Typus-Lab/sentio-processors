@@ -12,8 +12,7 @@ const startCheckpoint = BigInt(227468202);
 
 const network = SuiNetwork.MAIN_NET;
 
-const LIQUIDITY_POOL_REGISTRY = "0x32db917d2ed873a5bd8664efb220bfc7af4175638e30c8fc2b69b80888aab5d2";
-
+const LIQUIDITY_POOL_REGISTRY = "0x9090a55fea75d0b135dfa53e6bbe234c0b0e9d0e0b21c615f32f0048bc35aca4";
 const USD_DECIMAL = 9;
 const PRICE_DECIMAL = 8;
 const TLP_DECIMAL = 9;

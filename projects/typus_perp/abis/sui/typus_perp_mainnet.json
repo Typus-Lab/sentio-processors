@@ -4,31 +4,31 @@
   "result": {
     "admin": {
       "fileFormatVersion": 6,
-      "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+      "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
       "name": "admin",
       "friends": [
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "competition"
         },
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "lp_pool"
         },
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "position"
         },
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "profit_vault"
         },
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "trading"
         },
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "treasury_caps"
         }
       ],
@@ -78,7 +78,7 @@
               "type": {
                 "Vector": {
                   "Struct": {
-                    "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                    "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                     "module": "admin",
                     "name": "FeeInfo",
                     "typeArguments": []
@@ -182,7 +182,7 @@
               "name": "fee_pool",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "FeePool",
                   "typeArguments": []
@@ -193,7 +193,7 @@
               "name": "liquidator_fee_pool",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "FeePool",
                   "typeArguments": []
@@ -229,7 +229,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -258,7 +258,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -326,7 +326,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -401,7 +401,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -435,7 +435,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -465,7 +465,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -503,7 +503,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -536,7 +536,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -568,7 +568,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -596,7 +596,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -614,7 +614,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -642,7 +642,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -656,11 +656,11 @@
     },
     "competition": {
       "fileFormatVersion": 6,
-      "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+      "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
       "name": "competition",
       "friends": [
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "position"
         }
       ],
@@ -721,7 +721,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -761,7 +761,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "competition",
                   "name": "CompetitionConfig",
                   "typeArguments": []
@@ -801,7 +801,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -840,7 +840,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -850,7 +850,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "competition",
                   "name": "CompetitionConfig",
                   "typeArguments": []
@@ -877,31 +877,31 @@
     },
     "error": {
       "fileFormatVersion": 6,
-      "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+      "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
       "name": "error",
       "friends": [
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "admin"
         },
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "competition"
         },
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "lp_pool"
         },
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "position"
         },
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "profit_vault"
         },
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "trading"
         }
       ],
@@ -1250,6 +1250,13 @@
           "parameters": [],
           "return": ["U64"]
         },
+        "option_collateral_position_not_supported": {
+          "visibility": "Friend",
+          "isEntry": false,
+          "typeParameters": [],
+          "parameters": [],
+          "return": ["U64"]
+        },
         "oracle_mismatched": {
           "visibility": "Friend",
           "isEntry": false,
@@ -1307,6 +1314,13 @@
           "return": ["U64"]
         },
         "portfolio_index_mismatched": {
+          "visibility": "Friend",
+          "isEntry": false,
+          "typeParameters": [],
+          "parameters": [],
+          "return": ["U64"]
+        },
+        "position_cool_down_threshold": {
           "visibility": "Friend",
           "isEntry": false,
           "typeParameters": [],
@@ -1520,15 +1534,15 @@
     },
     "escrow": {
       "fileFormatVersion": 6,
-      "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+      "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
       "name": "escrow",
       "friends": [
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "lp_pool"
         },
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "trading"
         }
       ],
@@ -1643,7 +1657,7 @@
           "return": [
             {
               "Struct": {
-                "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                 "module": "escrow",
                 "name": "UnsettledBidReceipt",
                 "typeArguments": []
@@ -1658,7 +1672,7 @@
           "parameters": [
             {
               "Struct": {
-                "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                 "module": "escrow",
                 "name": "UnsettledBidReceipt",
                 "typeArguments": []
@@ -1705,7 +1719,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "escrow",
                   "name": "UnsettledBidReceipt",
                   "typeArguments": []
@@ -1732,11 +1746,11 @@
     },
     "lending": {
       "fileFormatVersion": 6,
-      "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+      "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
       "name": "lending",
       "friends": [
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "lp_pool"
         }
       ],
@@ -1832,7 +1846,7 @@
           ]
         },
         "withdraw_scallop_basic": {
-          "visibility": "Public",
+          "visibility": "Friend",
           "isEntry": false,
           "typeParameters": [
             {
@@ -1924,15 +1938,15 @@
     },
     "lp_pool": {
       "fileFormatVersion": 6,
-      "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+      "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
       "name": "lp_pool",
       "friends": [
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "position"
         },
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "trading"
         }
       ],
@@ -1966,7 +1980,7 @@
               "name": "config",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Config",
                   "typeArguments": []
@@ -1977,7 +1991,7 @@
               "name": "state",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "State",
                   "typeArguments": []
@@ -2134,7 +2148,7 @@
               "name": "spot_config",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "SpotConfig",
                   "typeArguments": []
@@ -2145,7 +2159,7 @@
               "name": "margin_config",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "MarginConfig",
                   "typeArguments": []
@@ -2311,7 +2325,7 @@
               "type": {
                 "Vector": {
                   "Struct": {
-                    "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                    "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                     "module": "lp_pool",
                     "name": "TokenPool",
                     "typeArguments": []
@@ -2323,7 +2337,7 @@
               "name": "pool_info",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "LiquidityPoolInfo",
                   "typeArguments": []
@@ -2335,7 +2349,7 @@
               "type": {
                 "Vector": {
                   "Struct": {
-                    "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                    "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                     "module": "escrow",
                     "name": "UnsettledBidReceipt",
                     "typeArguments": []
@@ -3178,7 +3192,7 @@
               "name": "config",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Config",
                   "typeArguments": []
@@ -3189,7 +3203,7 @@
               "name": "state",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "State",
                   "typeArguments": []
@@ -3321,7 +3335,7 @@
               "name": "previous_margin_config",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "MarginConfig",
                   "typeArguments": []
@@ -3332,7 +3346,7 @@
               "name": "new_margin_config",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "MarginConfig",
                   "typeArguments": []
@@ -3406,7 +3420,7 @@
               "name": "previous_spot_config",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "SpotConfig",
                   "typeArguments": []
@@ -3417,7 +3431,7 @@
               "name": "new_spot_config",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "SpotConfig",
                   "typeArguments": []
@@ -3560,7 +3574,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -3570,7 +3584,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -3637,7 +3651,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -3659,6 +3673,37 @@
           ],
           "return": ["U64", "U64", "U64", "U64"]
         },
+        "calculate_fee_": {
+          "visibility": "Friend",
+          "isEntry": false,
+          "typeParameters": [],
+          "parameters": [
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
+                  "module": "lp_pool",
+                  "name": "LiquidityPool",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Struct": {
+                "address": "0x1",
+                "module": "type_name",
+                "name": "TypeName",
+                "typeArguments": []
+              }
+            },
+            "U64",
+            "U64",
+            "Bool",
+            "U64",
+            "U64"
+          ],
+          "return": ["U64", "U64"]
+        },
         "calculate_lp_fee": {
           "visibility": "Friend",
           "isEntry": false,
@@ -3667,7 +3712,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "LiquidityPool",
                   "typeArguments": []
@@ -3696,7 +3741,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -3726,7 +3771,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "LiquidityPool",
                   "typeArguments": []
@@ -3748,7 +3793,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -3768,7 +3813,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "LiquidityPool",
                   "typeArguments": []
@@ -3802,7 +3847,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -3812,7 +3857,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -3823,7 +3868,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "treasury_caps",
                   "name": "TreasuryCaps",
                   "typeArguments": []
@@ -3891,7 +3936,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -3901,7 +3946,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -3943,7 +3988,7 @@
             },
             {
               "Struct": {
-                "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                 "module": "lp_pool",
                 "name": "RebalanceProcess",
                 "typeArguments": []
@@ -3987,7 +4032,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "LiquidityPool",
                   "typeArguments": []
@@ -4013,7 +4058,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -4048,7 +4093,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -4061,7 +4106,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "LiquidityPool",
                   "typeArguments": []
@@ -4078,7 +4123,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -4105,7 +4150,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -4133,7 +4178,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -4146,7 +4191,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "LiquidityPool",
                   "typeArguments": []
@@ -4163,7 +4208,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "LiquidityPool",
                   "typeArguments": []
@@ -4185,7 +4230,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "TokenPool",
                   "typeArguments": []
@@ -4202,7 +4247,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -4212,7 +4257,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -4250,7 +4295,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "LiquidityPool",
                   "typeArguments": []
@@ -4262,7 +4307,7 @@
             {
               "Vector": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "escrow",
                   "name": "UnsettledBidReceipt",
                   "typeArguments": []
@@ -4279,7 +4324,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -4304,7 +4349,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "LiquidityPool",
                   "typeArguments": []
@@ -4326,7 +4371,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "TokenPool",
                   "typeArguments": []
@@ -4343,7 +4388,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "LiquidityPool",
                   "typeArguments": []
@@ -4373,7 +4418,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "LiquidityPool",
                   "typeArguments": []
@@ -4395,7 +4440,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -4425,7 +4470,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -4435,7 +4480,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -4531,7 +4576,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -4541,7 +4586,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -4615,7 +4660,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -4625,7 +4670,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -4664,16 +4709,13 @@
           "typeParameters": [
             {
               "abilities": []
-            },
-            {
-              "abilities": []
             }
           ],
           "parameters": [
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -4683,7 +4725,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -4693,7 +4735,7 @@
             "U64",
             {
               "Struct": {
-                "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                 "module": "lp_pool",
                 "name": "ManagerDepositReceipt",
                 "typeArguments": []
@@ -4724,7 +4766,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -4734,7 +4776,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -4780,7 +4822,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -4790,7 +4832,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -4823,7 +4865,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -4833,7 +4875,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -4923,7 +4965,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -4933,7 +4975,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -5062,7 +5104,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -5072,7 +5114,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -5146,7 +5188,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -5156,7 +5198,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -5166,7 +5208,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "treasury_caps",
                   "name": "TreasuryCaps",
                   "typeArguments": []
@@ -5244,7 +5286,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -5254,7 +5296,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -5284,7 +5326,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "LiquidityPool",
                   "typeArguments": []
@@ -5315,7 +5357,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "LiquidityPool",
                   "typeArguments": []
@@ -5351,7 +5393,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "LiquidityPool",
                   "typeArguments": []
@@ -5383,7 +5425,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "LiquidityPool",
                   "typeArguments": []
@@ -5393,7 +5435,7 @@
             {
               "Vector": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "escrow",
                   "name": "UnsettledBidReceipt",
                   "typeArguments": []
@@ -5418,7 +5460,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -5428,7 +5470,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -5481,7 +5523,7 @@
           "return": [
             {
               "Struct": {
-                "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                 "module": "lp_pool",
                 "name": "RebalanceProcess",
                 "typeArguments": []
@@ -5513,7 +5555,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -5523,7 +5565,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -5578,7 +5620,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "LiquidityPool",
                   "typeArguments": []
@@ -5612,7 +5654,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -5622,7 +5664,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -5655,7 +5697,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -5665,7 +5707,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -5694,7 +5736,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "LiquidityPool",
                   "typeArguments": []
@@ -5721,7 +5763,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -5731,7 +5773,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -5764,7 +5806,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -5774,7 +5816,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -5810,7 +5852,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -5820,7 +5862,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -5905,7 +5947,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "TokenPool",
                   "typeArguments": []
@@ -5923,7 +5965,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -5933,7 +5975,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -5966,7 +6008,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -5976,7 +6018,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -6029,7 +6071,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -6039,7 +6081,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -6124,7 +6166,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -6134,7 +6176,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -6168,7 +6210,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "LiquidityPool",
                   "typeArguments": []
@@ -6192,7 +6234,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -6202,7 +6244,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -6311,7 +6353,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -6321,7 +6363,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -6358,7 +6400,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -6368,7 +6410,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -6418,27 +6460,27 @@
     },
     "math": {
       "fileFormatVersion": 6,
-      "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+      "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
       "name": "math",
       "friends": [
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "admin"
         },
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "competition"
         },
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "lp_pool"
         },
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "position"
         },
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "trading"
         }
       ],
@@ -6526,11 +6568,11 @@
     },
     "position": {
       "fileFormatVersion": 6,
-      "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+      "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
       "name": "position",
       "friends": [
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "trading"
         }
       ],
@@ -6591,7 +6633,7 @@
               "name": "symbol",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "symbol",
                   "name": "Symbol",
                   "typeArguments": []
@@ -6694,6 +6736,10 @@
               "type": "U64"
             },
             {
+              "name": "update_ts_ms",
+              "type": "U64"
+            },
+            {
               "name": "position_id",
               "type": "U64"
             },
@@ -6744,7 +6790,7 @@
               "name": "symbol",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "symbol",
                   "name": "Symbol",
                   "typeArguments": []
@@ -6809,7 +6855,7 @@
                   "typeArguments": [
                     {
                       "Struct": {
-                        "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                        "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                         "module": "position",
                         "name": "OptionCollateralInfo",
                         "typeArguments": []
@@ -6852,7 +6898,7 @@
               "name": "symbol",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "symbol",
                   "name": "Symbol",
                   "typeArguments": []
@@ -6908,7 +6954,7 @@
               "name": "symbol",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "symbol",
                   "name": "Symbol",
                   "typeArguments": []
@@ -7006,7 +7052,7 @@
               "name": "symbol",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "symbol",
                   "name": "Symbol",
                   "typeArguments": []
@@ -7063,7 +7109,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -7090,7 +7136,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -7108,7 +7154,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -7163,7 +7209,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -7200,7 +7246,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "TradingOrder",
                   "typeArguments": []
@@ -7219,7 +7265,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -7238,6 +7284,64 @@
           ],
           "return": ["Bool"]
         },
+        "check_position_update_timestamp": {
+          "visibility": "Friend",
+          "isEntry": false,
+          "typeParameters": [],
+          "parameters": [
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
+                  "module": "position",
+                  "name": "Position",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "clock",
+                  "name": "Clock",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64"
+          ],
+          "return": []
+        },
+        "check_position_update_timestamp_": {
+          "visibility": "Friend",
+          "isEntry": false,
+          "typeParameters": [],
+          "parameters": [
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
+                  "module": "position",
+                  "name": "Position",
+                  "typeArguments": []
+                }
+              }
+            },
+            {
+              "Reference": {
+                "Struct": {
+                  "address": "0x2",
+                  "module": "clock",
+                  "name": "Clock",
+                  "typeArguments": []
+                }
+              }
+            },
+            "U64"
+          ],
+          "return": ["Bool"]
+        },
         "create_order": {
           "visibility": "Friend",
           "isEntry": false,
@@ -7250,7 +7354,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -7259,7 +7363,7 @@
             },
             {
               "Struct": {
-                "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                 "module": "symbol",
                 "name": "Symbol",
                 "typeArguments": []
@@ -7319,7 +7423,7 @@
           "return": [
             {
               "Struct": {
-                "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                 "module": "position",
                 "name": "TradingOrder",
                 "typeArguments": []
@@ -7335,7 +7439,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -7344,7 +7448,7 @@
             },
             {
               "Struct": {
-                "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                 "module": "symbol",
                 "name": "Symbol",
                 "typeArguments": []
@@ -7412,7 +7516,7 @@
           "return": [
             {
               "Struct": {
-                "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                 "module": "position",
                 "name": "TradingOrder",
                 "typeArguments": []
@@ -7436,7 +7540,7 @@
             },
             {
               "Struct": {
-                "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                 "module": "symbol",
                 "name": "Symbol",
                 "typeArguments": []
@@ -7460,7 +7564,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -7525,7 +7629,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "TradingOrder",
                   "typeArguments": []
@@ -7587,7 +7691,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -7649,7 +7753,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -7681,7 +7785,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "TradingOrder",
                   "typeArguments": []
@@ -7699,7 +7803,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "TradingOrder",
                   "typeArguments": []
@@ -7726,7 +7830,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "TradingOrder",
                   "typeArguments": []
@@ -7744,7 +7848,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "TradingOrder",
                   "typeArguments": []
@@ -7762,7 +7866,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "TradingOrder",
                   "typeArguments": []
@@ -7789,7 +7893,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "TradingOrder",
                   "typeArguments": []
@@ -7807,7 +7911,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "TradingOrder",
                   "typeArguments": []
@@ -7825,7 +7929,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "TradingOrder",
                   "typeArguments": []
@@ -7843,7 +7947,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "TradingOrder",
                   "typeArguments": []
@@ -7861,7 +7965,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "TradingOrder",
                   "typeArguments": []
@@ -7896,7 +8000,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "TradingOrder",
                   "typeArguments": []
@@ -7914,7 +8018,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "TradingOrder",
                   "typeArguments": []
@@ -7936,7 +8040,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -7954,7 +8058,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -7972,7 +8076,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -7999,7 +8103,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -8017,7 +8121,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -8039,7 +8143,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -8067,7 +8171,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -8085,7 +8189,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -8103,7 +8207,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -8121,7 +8225,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -8132,7 +8236,7 @@
           "return": [
             {
               "Struct": {
-                "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                 "module": "symbol",
                 "name": "Symbol",
                 "typeArguments": []
@@ -8148,7 +8252,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -8166,7 +8270,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -8188,7 +8292,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -8222,7 +8326,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "TradingOrder",
                   "typeArguments": []
@@ -8240,7 +8344,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -8262,7 +8366,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -8271,7 +8375,7 @@
             },
             {
               "Struct": {
-                "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                 "module": "symbol",
                 "name": "Symbol",
                 "typeArguments": []
@@ -8322,7 +8426,7 @@
           "return": [
             {
               "Struct": {
-                "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                 "module": "position",
                 "name": "TradingOrder",
                 "typeArguments": []
@@ -8338,7 +8442,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -8373,7 +8477,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -8395,7 +8499,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -8435,7 +8539,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "competition",
                   "name": "CompetitionConfig",
                   "typeArguments": []
@@ -8444,7 +8548,7 @@
             },
             {
               "Struct": {
-                "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                 "module": "position",
                 "name": "TradingOrder",
                 "typeArguments": []
@@ -8458,7 +8562,7 @@
                 "typeArguments": [
                   {
                     "Struct": {
-                      "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                      "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                       "module": "position",
                       "name": "Position",
                       "typeArguments": []
@@ -8500,7 +8604,7 @@
           "return": [
             {
               "Struct": {
-                "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                 "module": "position",
                 "name": "Position",
                 "typeArguments": []
@@ -8526,7 +8630,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -8566,7 +8670,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "competition",
                   "name": "CompetitionConfig",
                   "typeArguments": []
@@ -8576,7 +8680,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "LiquidityPool",
                   "typeArguments": []
@@ -8615,7 +8719,7 @@
             },
             {
               "Struct": {
-                "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                 "module": "position",
                 "name": "TradingOrder",
                 "typeArguments": []
@@ -8629,7 +8733,7 @@
                 "typeArguments": [
                   {
                     "Struct": {
-                      "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                      "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                       "module": "position",
                       "name": "Position",
                       "typeArguments": []
@@ -8671,7 +8775,7 @@
           "return": [
             {
               "Struct": {
-                "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                 "module": "position",
                 "name": "Position",
                 "typeArguments": []
@@ -8740,7 +8844,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "LiquidityPool",
                   "typeArguments": []
@@ -8750,7 +8854,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -8784,7 +8888,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -8794,7 +8898,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "LiquidityPool",
                   "typeArguments": []
@@ -8804,7 +8908,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -8845,7 +8949,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -8885,7 +8989,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -8894,7 +8998,7 @@
             },
             {
               "Struct": {
-                "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                 "module": "position",
                 "name": "TradingOrder",
                 "typeArguments": []
@@ -8928,7 +9032,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -8937,7 +9041,7 @@
             },
             {
               "Struct": {
-                "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                 "module": "position",
                 "name": "Position",
                 "typeArguments": []
@@ -8985,7 +9089,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -9004,7 +9108,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -9013,7 +9117,7 @@
             },
             {
               "Struct": {
-                "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                 "module": "position",
                 "name": "Position",
                 "typeArguments": []
@@ -9063,7 +9167,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -9135,7 +9239,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -9163,7 +9267,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "position",
                   "name": "Position",
                   "typeArguments": []
@@ -9184,11 +9288,11 @@
     },
     "profit_vault": {
       "fileFormatVersion": 6,
-      "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+      "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
       "name": "profit_vault",
       "friends": [
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "trading"
         }
       ],
@@ -9231,7 +9335,7 @@
               "name": "user_profit",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "profit_vault",
                   "name": "UserProfit",
                   "typeArguments": []
@@ -9269,7 +9373,7 @@
                     {
                       "Vector": {
                         "Struct": {
-                          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                           "module": "profit_vault",
                           "name": "LockedUserProfit",
                           "typeArguments": []
@@ -9292,7 +9396,7 @@
               "name": "user_profit",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "profit_vault",
                   "name": "UserProfit",
                   "typeArguments": []
@@ -9345,7 +9449,7 @@
                     {
                       "Vector": {
                         "Struct": {
-                          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                           "module": "profit_vault",
                           "name": "UserProfit",
                           "typeArguments": []
@@ -9376,7 +9480,7 @@
               "name": "user_profit",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "profit_vault",
                   "name": "UserProfit",
                   "typeArguments": []
@@ -9411,7 +9515,7 @@
               "name": "user_profit",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "profit_vault",
                   "name": "UserProfit",
                   "typeArguments": []
@@ -9515,7 +9619,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -9525,7 +9629,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "profit_vault",
                   "name": "ProfitVault",
                   "typeArguments": []
@@ -9554,7 +9658,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -9582,7 +9686,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -9611,7 +9715,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -9621,7 +9725,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "profit_vault",
                   "name": "LockVault",
                   "typeArguments": []
@@ -9646,7 +9750,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -9656,7 +9760,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "profit_vault",
                   "name": "ProfitVault",
                   "typeArguments": []
@@ -9681,7 +9785,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "profit_vault",
                   "name": "ProfitVault",
                   "typeArguments": []
@@ -9704,7 +9808,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -9714,7 +9818,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "profit_vault",
                   "name": "ProfitVault",
                   "typeArguments": []
@@ -9724,7 +9828,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "profit_vault",
                   "name": "LockVault",
                   "typeArguments": []
@@ -9768,7 +9872,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "profit_vault",
                   "name": "ProfitVault",
                   "typeArguments": []
@@ -9819,7 +9923,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -9829,7 +9933,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "profit_vault",
                   "name": "ProfitVault",
                   "typeArguments": []
@@ -9862,7 +9966,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -9872,7 +9976,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "profit_vault",
                   "name": "ProfitVault",
                   "typeArguments": []
@@ -9882,7 +9986,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "profit_vault",
                   "name": "LockVault",
                   "typeArguments": []
@@ -9912,7 +10016,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -9922,7 +10026,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "profit_vault",
                   "name": "ProfitVault",
                   "typeArguments": []
@@ -9955,7 +10059,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "profit_vault",
                   "name": "ProfitVault",
                   "typeArguments": []
@@ -10002,15 +10106,15 @@
     },
     "symbol": {
       "fileFormatVersion": 6,
-      "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+      "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
       "name": "symbol",
       "friends": [
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "position"
         },
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "trading"
         }
       ],
@@ -10055,7 +10159,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "symbol",
                   "name": "Symbol",
                   "typeArguments": []
@@ -10099,7 +10203,7 @@
           "return": [
             {
               "Struct": {
-                "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                 "module": "symbol",
                 "name": "Symbol",
                 "typeArguments": []
@@ -10115,7 +10219,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "symbol",
                   "name": "Symbol",
                   "typeArguments": []
@@ -10138,7 +10242,7 @@
     },
     "trading": {
       "fileFormatVersion": 6,
-      "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+      "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
       "name": "trading",
       "friends": [],
       "structs": {
@@ -10167,7 +10271,7 @@
               "name": "market_info",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketInfo",
                   "typeArguments": []
@@ -10178,7 +10282,7 @@
               "name": "market_config",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketConfig",
                   "typeArguments": []
@@ -10944,6 +11048,10 @@
               "type": "U64"
             },
             {
+              "name": "cool_down_threshold_ts_ms",
+              "type": "U64"
+            },
+            {
               "name": "u64_padding",
               "type": {
                 "Vector": "U64"
@@ -11060,7 +11168,7 @@
                     "U64",
                     {
                       "Struct": {
-                        "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                        "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                         "module": "trading",
                         "name": "Markets",
                         "typeArguments": []
@@ -11164,7 +11272,7 @@
                     },
                     {
                       "Struct": {
-                        "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                        "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                         "module": "trading",
                         "name": "SymbolMarket",
                         "typeArguments": []
@@ -11608,7 +11716,7 @@
               "name": "market_info",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketInfo",
                   "typeArguments": []
@@ -11619,7 +11727,7 @@
               "name": "market_config",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketConfig",
                   "typeArguments": []
@@ -11714,7 +11822,7 @@
               "name": "previous_market_config",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketConfig",
                   "typeArguments": []
@@ -11725,7 +11833,7 @@
               "name": "new_market_config",
               "type": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketConfig",
                   "typeArguments": []
@@ -11780,7 +11888,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -11790,7 +11898,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -11816,6 +11924,7 @@
             {
               "Vector": "U64"
             },
+            "U64",
             "U64",
             "U64",
             "U64",
@@ -11886,7 +11995,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -11896,7 +12005,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -11939,7 +12048,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -11949,7 +12058,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -12008,7 +12117,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -12018,7 +12127,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -12028,7 +12137,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -12096,7 +12205,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -12106,7 +12215,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -12116,7 +12225,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -12211,7 +12320,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -12221,7 +12330,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -12231,7 +12340,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -12323,7 +12432,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "competition",
                   "name": "CompetitionConfig",
                   "typeArguments": []
@@ -12364,7 +12473,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -12374,7 +12483,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -12404,7 +12513,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -12414,7 +12523,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -12448,7 +12557,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -12458,7 +12567,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -12468,7 +12577,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -12529,7 +12638,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -12539,7 +12648,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -12549,7 +12658,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -12602,7 +12711,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -12612,7 +12721,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -12622,7 +12731,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -12699,7 +12808,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -12733,7 +12842,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -12743,7 +12852,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -12753,7 +12862,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -12804,7 +12913,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -12834,7 +12943,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -12844,7 +12953,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -12870,7 +12979,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -12880,7 +12989,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -12913,7 +13022,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -12923,7 +13032,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -12933,7 +13042,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -13016,7 +13125,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -13026,7 +13135,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -13036,7 +13145,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -13114,7 +13223,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -13124,7 +13233,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -13134,7 +13243,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -13175,7 +13284,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -13185,7 +13294,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -13195,7 +13304,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -13287,7 +13396,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "competition",
                   "name": "CompetitionConfig",
                   "typeArguments": []
@@ -13323,7 +13432,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -13333,7 +13442,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -13343,7 +13452,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -13353,7 +13462,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "profit_vault",
                   "name": "ProfitVault",
                   "typeArguments": []
@@ -13435,7 +13544,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "competition",
                   "name": "CompetitionConfig",
                   "typeArguments": []
@@ -13472,7 +13581,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -13482,7 +13591,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -13492,7 +13601,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -13502,7 +13611,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "profit_vault",
                   "name": "ProfitVault",
                   "typeArguments": []
@@ -13584,7 +13693,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "competition",
                   "name": "CompetitionConfig",
                   "typeArguments": []
@@ -13622,7 +13731,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -13632,7 +13741,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -13671,7 +13780,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -13681,7 +13790,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -13691,7 +13800,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -13783,7 +13892,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "competition",
                   "name": "CompetitionConfig",
                   "typeArguments": []
@@ -13827,7 +13936,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -13837,7 +13946,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -13847,7 +13956,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -13926,7 +14035,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -13936,7 +14045,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -13965,7 +14074,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -13975,7 +14084,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -14008,7 +14117,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -14018,7 +14127,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -14054,7 +14163,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -14064,7 +14173,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -14074,7 +14183,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -14134,7 +14243,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -14144,7 +14253,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -14177,7 +14286,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -14187,7 +14296,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -14220,7 +14329,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "Markets",
                   "typeArguments": []
@@ -14242,7 +14351,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -14252,7 +14361,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -14262,7 +14371,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "lp_pool",
                   "name": "Registry",
                   "typeArguments": []
@@ -14316,7 +14425,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -14326,7 +14435,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -14384,6 +14493,14 @@
                     "Vector": "U64"
                   }
                 ]
+              }
+            },
+            {
+              "Struct": {
+                "address": "0x1",
+                "module": "option",
+                "name": "Option",
+                "typeArguments": ["U64"]
               }
             },
             {
@@ -14491,7 +14608,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -14501,7 +14618,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "trading",
                   "name": "MarketRegistry",
                   "typeArguments": []
@@ -14527,11 +14644,11 @@
     },
     "treasury_caps": {
       "fileFormatVersion": 6,
-      "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+      "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
       "name": "treasury_caps",
       "friends": [
         {
-          "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+          "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
           "name": "lp_pool"
         }
       ],
@@ -14569,7 +14686,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "treasury_caps",
                   "name": "TreasuryCaps",
                   "typeArguments": []
@@ -14606,7 +14723,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -14616,7 +14733,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0xec30955b1e100617a02fecec432d2c845f17b2f3d68827f390563faba112513b",
+                  "address": "0x9003219180252ae6b81d2893b41d430488669027219537236675c0c2924c94d9",
                   "module": "treasury_caps",
                   "name": "TreasuryCaps",
                   "typeArguments": []

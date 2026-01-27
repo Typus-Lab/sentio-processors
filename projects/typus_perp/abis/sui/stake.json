@@ -4,116 +4,15 @@
   "result": {
     "admin": {
       "fileFormatVersion": 6,
-      "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+      "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
       "name": "admin",
       "friends": [
         {
-          "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+          "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
           "name": "stake_pool"
         }
       ],
       "structs": {
-        "FeeInfo": {
-          "abilities": {
-            "abilities": ["Copy", "Drop", "Store"]
-          },
-          "typeParameters": [],
-          "fields": [
-            {
-              "name": "token",
-              "type": {
-                "Struct": {
-                  "address": "0x1",
-                  "module": "type_name",
-                  "name": "TypeName",
-                  "typeArguments": []
-                }
-              }
-            },
-            {
-              "name": "value",
-              "type": "U64"
-            }
-          ]
-        },
-        "FeePool": {
-          "abilities": {
-            "abilities": ["Store", "Key"]
-          },
-          "typeParameters": [],
-          "fields": [
-            {
-              "name": "id",
-              "type": {
-                "Struct": {
-                  "address": "0x2",
-                  "module": "object",
-                  "name": "UID",
-                  "typeArguments": []
-                }
-              }
-            },
-            {
-              "name": "fee_infos",
-              "type": {
-                "Vector": {
-                  "Struct": {
-                    "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
-                    "module": "admin",
-                    "name": "FeeInfo",
-                    "typeArguments": []
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "ProtocolFeeEvent": {
-          "abilities": {
-            "abilities": ["Copy", "Drop"]
-          },
-          "typeParameters": [],
-          "fields": [
-            {
-              "name": "token",
-              "type": {
-                "Struct": {
-                  "address": "0x1",
-                  "module": "type_name",
-                  "name": "TypeName",
-                  "typeArguments": []
-                }
-              }
-            },
-            {
-              "name": "amount",
-              "type": "U64"
-            }
-          ]
-        },
-        "SendFeeEvent": {
-          "abilities": {
-            "abilities": ["Copy", "Drop"]
-          },
-          "typeParameters": [],
-          "fields": [
-            {
-              "name": "token",
-              "type": {
-                "Struct": {
-                  "address": "0x1",
-                  "module": "type_name",
-                  "name": "TypeName",
-                  "typeArguments": []
-                }
-              }
-            },
-            {
-              "name": "amount",
-              "type": "U64"
-            }
-          ]
-        },
         "Version": {
           "abilities": {
             "abilities": ["Key"]
@@ -134,28 +33,6 @@
             {
               "name": "value",
               "type": "U64"
-            },
-            {
-              "name": "fee_pool",
-              "type": {
-                "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
-                  "module": "admin",
-                  "name": "FeePool",
-                  "typeArguments": []
-                }
-              }
-            },
-            {
-              "name": "liquidator_fee_pool",
-              "type": {
-                "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
-                  "module": "admin",
-                  "name": "FeePool",
-                  "typeArguments": []
-                }
-              }
             },
             {
               "name": "authority",
@@ -186,7 +63,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -215,7 +92,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -247,40 +124,6 @@
           ],
           "return": []
         },
-        "charge_fee": {
-          "visibility": "Friend",
-          "isEntry": false,
-          "typeParameters": [
-            {
-              "abilities": []
-            }
-          ],
-          "parameters": [
-            {
-              "MutableReference": {
-                "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
-                  "module": "admin",
-                  "name": "Version",
-                  "typeArguments": []
-                }
-              }
-            },
-            {
-              "Struct": {
-                "address": "0x2",
-                "module": "balance",
-                "name": "Balance",
-                "typeArguments": [
-                  {
-                    "TypeParameter": 0
-                  }
-                ]
-              }
-            }
-          ],
-          "return": []
-        },
         "install_ecosystem_manager_cap_entry": {
           "visibility": "Private",
           "isEntry": true,
@@ -289,7 +132,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -327,7 +170,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -348,38 +191,6 @@
           ],
           "return": []
         },
-        "send_fee": {
-          "visibility": "Private",
-          "isEntry": true,
-          "typeParameters": [
-            {
-              "abilities": []
-            }
-          ],
-          "parameters": [
-            {
-              "MutableReference": {
-                "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
-                  "module": "admin",
-                  "name": "Version",
-                  "typeArguments": []
-                }
-              }
-            },
-            {
-              "MutableReference": {
-                "Struct": {
-                  "address": "0x2",
-                  "module": "tx_context",
-                  "name": "TxContext",
-                  "typeArguments": []
-                }
-              }
-            }
-          ],
-          "return": []
-        },
         "upgrade": {
           "visibility": "Private",
           "isEntry": true,
@@ -388,7 +199,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -406,7 +217,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -434,7 +245,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -448,7 +259,7 @@
     },
     "stake_pool": {
       "fileFormatVersion": 6,
-      "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+      "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
       "name": "stake_pool",
       "friends": [],
       "structs": {
@@ -536,7 +347,7 @@
               "name": "incentive_info",
               "type": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "IncentiveInfo",
                   "typeArguments": []
@@ -547,7 +358,7 @@
               "name": "incentive_config",
               "type": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "IncentiveConfig",
                   "typeArguments": []
@@ -797,7 +608,7 @@
               "name": "config",
               "type": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "IncentiveConfig",
                   "typeArguments": []
@@ -808,7 +619,7 @@
               "name": "info",
               "type": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "IncentiveInfo",
                   "typeArguments": []
@@ -900,7 +711,7 @@
               "type": {
                 "Vector": {
                   "Struct": {
-                    "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                    "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                     "module": "stake_pool",
                     "name": "DeactivatingShares",
                     "typeArguments": []
@@ -948,7 +759,7 @@
               "name": "stake_pool_info",
               "type": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "StakePoolInfo",
                   "typeArguments": []
@@ -959,7 +770,7 @@
               "name": "stake_pool_config",
               "type": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "StakePoolConfig",
                   "typeArguments": []
@@ -1129,7 +940,7 @@
               "name": "pool_info",
               "type": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "StakePoolInfo",
                   "typeArguments": []
@@ -1140,7 +951,7 @@
               "name": "config",
               "type": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "StakePoolConfig",
                   "typeArguments": []
@@ -1152,7 +963,7 @@
               "type": {
                 "Vector": {
                   "Struct": {
-                    "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                    "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                     "module": "stake_pool",
                     "name": "Incentive",
                     "typeArguments": []
@@ -1374,7 +1185,7 @@
               "name": "previous_incentive_config",
               "type": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "IncentiveConfig",
                   "typeArguments": []
@@ -1385,7 +1196,7 @@
               "name": "new_incentive_config",
               "type": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "IncentiveConfig",
                   "typeArguments": []
@@ -1503,7 +1314,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -1513,7 +1324,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -1552,7 +1363,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -1562,7 +1373,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -1595,7 +1406,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -1605,7 +1416,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -1646,7 +1457,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -1656,7 +1467,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -1689,7 +1500,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -1699,7 +1510,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -1742,7 +1553,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -1752,7 +1563,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -1791,7 +1602,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -1801,7 +1612,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -1834,7 +1645,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -1844,7 +1655,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -1885,7 +1696,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -1909,7 +1720,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -1937,7 +1748,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -1947,7 +1758,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -2003,7 +1814,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -2013,7 +1824,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -2046,7 +1857,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -2056,7 +1867,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -2098,7 +1909,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -2108,7 +1919,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -2171,7 +1982,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -2181,7 +1992,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -2236,7 +2047,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -2246,7 +2057,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -2302,7 +2113,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -2312,7 +2123,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -2363,7 +2174,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -2373,7 +2184,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -2440,7 +2251,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -2450,7 +2261,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -2481,7 +2292,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -2491,7 +2302,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
@@ -2525,7 +2336,7 @@
             {
               "Reference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "admin",
                   "name": "Version",
                   "typeArguments": []
@@ -2535,7 +2346,7 @@
             {
               "MutableReference": {
                 "Struct": {
-                  "address": "0x2c5f2cbb705b18ccd8060730923ee9ecb55ba32f4475508576564f7295f5c627",
+                  "address": "0xd280f3a072bca4b7b5b450f40c82a30b3935cd1d12d927eb9d1f790520a83d3b",
                   "module": "stake_pool",
                   "name": "StakePoolRegistry",
                   "typeArguments": []
