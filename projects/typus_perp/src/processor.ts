@@ -86,6 +86,7 @@ lp_pool
 
     ctx.eventLogger.emit("MintLp", {
       distinctId: event.data_decoded.sender,
+      index: event.data_decoded.index,
       liquidity_token,
       deposit_amount,
       deposit_amount_usd,
@@ -123,6 +124,7 @@ lp_pool
 
     ctx.eventLogger.emit("BurnLp", {
       distinctId: event.data_decoded.sender,
+      index: event.data_decoded.index,
       liquidity_token,
       burn_lp_amount,
       burn_amount_usd,
